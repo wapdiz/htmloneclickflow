@@ -77,7 +77,7 @@ gulp.task('image:build', function () {
 });
 
 gulp.task('build', [
-    'html:build'
+    'html:build',
     'style:build',
     'image:build'
 ]);

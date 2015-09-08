@@ -1,0 +1,239 @@
+<!doctype html>
+<html class="fixed" lang="ru" >
+    <!-- @if(isset($page_settings['sidebar']) && $page_settings['sidebar'] == 'compact')
+        sidebar-left-collapsed
+    @endif -->
+<head>
+    
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <title>Главная</title>
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/assets/vendor/magnific-popup/magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="/assets/vendor/summernote/summernote.css" />
+    <link rel="stylesheet" href="/assets/vendor/summernote/summernote-bs3.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="/assets/stylesheets/theme.css" />
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="/assets/stylesheets/skins/default.css" />
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="/assets/stylesheets/theme-custom.css">
+
+    <!-- Head Libs -->
+    <script src="/assets/vendor/modernizr/modernizr.js"></script>
+
+</head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+        <!-- {{Общий хедер, используется на всех страницах}} -->
+        <!-- @include('main-header') -->
+        //= template/main-header.html
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+
+        <!-- start: sidebar -->
+        <!-- {{ыше - хрень, левый сайдбар один, меняется класс в <html>}} -->
+        //= template/sidebar-left-main.html
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <!-- {{Хедер над секцией контента и дополнительной менюшкой}} -->
+            //= template/page-header.html
+
+            <!-- start: page -->
+            <div class="row">
+                <div class="col-md-6 col-lg-12 col-xl-6">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6 col-xl-6">
+                            <section class="panel panel-featured-left panel-featured-primary">
+                                <div class="panel-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-primary">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Подписки за сегодня</h4>
+                                                <div class="info">
+                                                    <strong class="amount">0</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-6">
+                            <section class="panel panel-featured-left panel-featured-tertiary">
+                                <div class="panel-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-tertiary">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Ребиллы</h4>
+                                                <div class="info">
+                                                    <strong class="amount">0</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-6">
+                            <section class="panel panel-featured-left panel-featured-quartenary">
+                                <div class="panel-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-quartenary">
+                                                <i class="fa  fa-money"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Заработано за день</h4>
+                                                <div class="info">
+                                                    <strong class="amount"><i class="fa fa-rub"></i> 0</strong><br>
+                                                    <strong class="amount"><i class="fa fa-usd"></i> 0</strong><br>
+                                                    <strong class="amount"><i class="fa fa-eur"></i> 0</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-6">
+                            <section class="panel panel-featured-left panel-featured-secondary">
+                                <div class="panel-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-secondary">
+                                                <i class="fa fa-usd"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Баланс</h4>
+                                                <div class="info">
+                                                    <strong class="amount"><i class="fa fa-rub"></i> 0</strong><br>
+                                                    <strong class="amount"><i class="fa fa-usd"></i> 0</strong><br>
+                                                    <strong class="amount"><i class="fa fa-eur"></i> 0</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-12 col-xl-6" id="plot_container">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="flot-container" style="width: 419.9px; height: 256px; padding: 0px; position: relative;">
+                                    <canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 420px; height: 256px;" width="420" height="256"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 52px; top: 232px; left: 50px; text-align: center;">12:00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 52px; top: 232px; left: 114px; text-align: center;">14:00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 52px; top: 232px; left: 177px; text-align: center;">16:00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 52px; top: 232px; left: 240px; text-align: center;">18:00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 52px; top: 232px; left: 304px; text-align: center;">20:00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 52px; top: 232px; left: 367px; text-align: center;">22:00</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 216px; left: 2px; text-align: right;">-1.0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 162px; left: 2px; text-align: right;">-0.5</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 108px; left: 6px; text-align: right;">0.0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 54px; left: 6px; text-align: right;">0.5</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 6px; text-align: right;">1.0</div></div></div><canvas class="flot-overlay" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 420px; height: 256px;" width="420" height="256"></canvas><div class="legend"><div style="position: absolute; width: 66px; height: 44px; top: 16px; right: 19px; opacity: 0.85; background-color: rgb(255, 255, 255);"> </div><table style="position:absolute;top:16px;right:19px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(175,216,248);overflow:hidden"></div></div></td><td class="legendLabel">Ребиллы</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(203,75,75);overflow:hidden"></div></div></td><td class="legendLabel">Подписки</td></tr></tbody></table></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                        <div class="col-md-6">
+                    <section class="panel">
+                        <header class="panel-heading">
+
+                            <h2 class="panel-title">МТС: добавление LP</h2>
+                            <p class="panel-subtitle">2015-08-11 18:49:45</p>
+                        </header>
+                        <div class="panel-body">
+                            Добавлены новые LP:<div>1) Hot Tube - 20 рублей в сутки, адалт;</div><div>2) Sexy Kiski - 35 рублей раз в 2 дня, адалт;</div><div>3) TurboBox - 20 рублей в сутки, файлы.</div><div><br></div><div>Просьба обновить свои сплиты.</div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- end: page -->
+        </section>
+    </div>
+    <!-- {{Правый сайдбар, пока тупо для совместимости}} -->
+    //= template/sidebar-right.html
+</section>
+
+<!-- Vendor -->
+<script src="/assets/vendor/jquery/jquery.js"></script>
+<script src="/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="/assets/vendor/nanoscroller/nanoscroller.js"></script>
+<script src="/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="/assets/vendor/magnific-popup/magnific-popup.js"></script>
+<script src="/assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+<!-- Specific Page Vendor -->
+
+<script src="/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+<script src="/assets/vendor/summernote/summernote.js"></script>
+
+<script src="/assets/vendor/flot/jquery.flot.js"></script>
+<script src="/assets/vendor/flot/jquery.flot.time.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="/assets/javascripts/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="/assets/javascripts/theme.custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="/assets/javascripts/theme.init.js"></script>
+
+<!-- {{Прошлая версия нотификейшенов  на бекбоне}} -->
+<!-- <script src="/js/underscore-min.js"></script> -->
+<!-- <script src="/js/backbone-min.js"></script> -->
+<!-- <script src="/js/backbone/tickets.js"></script> -->
+
+<script src="/js/header_notification/index_header.js"></script>
+
+<script src="/assets/vendor/pnotify/pnotify.custom.js"></script>
+<link rel="stylesheet" href="/assets/vendor/pnotify/pnotify.custom.css" />
+<script src="/js/notification_main.js" ></script>
+
+
+
+<!-- {{Блок под алерты}} -->
+    <div id="alert_message">{{$alert_message}}</div>
+
+
+<!-- {{Юзерские скрипты, подключаются если есть переменная}} -->
+        <script src="/js/{{$script}}"></script>
+
+<!-- {{Юзерские стили, подключаются если есть переменная}} -->
+        <link rel="stylesheet" href="/css/{{$style}}">
+
+</body>
+</html>

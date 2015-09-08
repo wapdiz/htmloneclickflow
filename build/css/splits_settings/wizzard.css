@@ -1,0 +1,7 @@
+div.marg-hor{
+  height:15px;
+}
+div.marg-ver{
+	width: 5px;
+	display:inline-block;
+}

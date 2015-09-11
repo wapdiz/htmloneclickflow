@@ -24,6 +24,22 @@ body {
 		}
 	}
 
+	.btn-group-split{
+		.btn{
+			width: 90%;
+			&.btn-num-left{
+				width: 10%;
+				border-right: 0;
+			}
+			&.btn-num-right{
+				width: 10%;
+				border-left: 0;
+			}
+		}
+	}
+
+	
+
 	// SOCIAL BUTTONS
 	// -----------------------------------------------------------------------------
 	/* Buttons - Social */

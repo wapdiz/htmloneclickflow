@@ -48,19 +48,19 @@ html.dark {
 // -----------------------------------------------------------------------------
 /* weights */
 .text-light {
-	font-weight: $font-weight-light;
+	font-weight: $font-weight-light !important;
 }
 
 .text-normal {
-	font-weight: $font-weight-normal;
+	font-weight: $font-weight-normal !important;
 }
 
 .text-semibold {
-	font-weight: $font-weight-semibold;
+	font-weight: $font-weight-semibold !important;
 }
 
 .text-bold {
-	font-weight: $font-weight-bold;
+	font-weight: $font-weight-bold !important;
 }
 
 // TEXT OTHERS
@@ -76,7 +76,9 @@ html.dark {
 .text-capitalize {
 	text-transform: capitalize;
 }
-
+.text-overflow{
+	@include text-overflow();
+}
 // BORDERS
 // -----------------------------------------------------------------------------
 .rounded {
@@ -190,7 +192,7 @@ html.dark {
 }
 
 /* spacement left  */
-.mr-none {
+.ml-none {
 	margin-left: 0 !important;
 }
 

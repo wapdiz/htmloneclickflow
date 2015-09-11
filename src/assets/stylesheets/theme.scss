@@ -1,8 +1,7 @@
 // COMMON IMPORTS
 // -----------------------------------------------------------------------------
-@import "config/imports";
-     
-// BASIC
+@import "config/imports";   
+// BASIC 
 // -----------------------------------------------------------------------------
 @import "base/skeleton";
 @import "base/bootstrap_extend";
@@ -10,7 +9,7 @@
 @import "base/sidebar_left";
 @import "base/sidebar_left_sizing";
 @import "base/sidebar_right";
-@import "base/content_with_menu";
+@import "base/content_with_menu"; 
 @import "base/menu";
 @import "base/page_header";
 @import "base/elements";
@@ -18,7 +17,7 @@
 @import "base/form";
 @import "base/nanoscroll";
 @import "base/toolbar";
-
+   
 // GUI
 // -----------------------------------------------------------------------------
 @import "gui/images";
@@ -72,8 +71,7 @@
 @import "modules/forms/codemirror";
 @import "modules/maps/gmaps";
 @import "modules/maps/jqvmap";
- 
-
+     
 // MAILBOX
 // -----------------------------------------------------------------------------
 @import "modules/mailbox/mailbox";
@@ -83,12 +81,12 @@
 @import "modules/pages/invoice";
 @import "modules/pages/errors";
 @import "modules/pages/sign";
-@import "modules/pages/calendar";
+@import "modules/pages/calendar";                  
 @import "modules/pages/timeline";
 @import "modules/pages/media-gallery";
 @import "modules/pages/log-viewer";
 @import "modules/pages/search-results";
-
+     
 // SKINS
 // -----------------------------------------------------------------------------
-@import "skins/dark";
+@import "skins/dark"; 

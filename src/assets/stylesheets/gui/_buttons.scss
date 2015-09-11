@@ -10,6 +10,18 @@ body {
 
 	.btn {
 		white-space: normal;
+		border: 0;
+		padding: 10px 20px;
+		font-weight: $font-weight-bold;
+		&.btn-default{
+			color: $color-info;
+			border:2px solid $color-info-inverse;
+		}
+		&.btn-info-light{
+			color: #fff;
+			text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+			background-color: darken($color-info-inverse,10%);
+		}
 	}
 
 	// SOCIAL BUTTONS

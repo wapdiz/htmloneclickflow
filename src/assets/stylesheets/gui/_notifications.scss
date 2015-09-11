@@ -4,7 +4,7 @@
 .notifications {
 	display: inline-block;
 	list-style: none;
-	margin: 4px -10px 0 0;
+	margin: 0 -10px 0 0;
 	padding: 0;
 	vertical-align: middle;
 
@@ -21,7 +21,7 @@
 			position: relative;
 			width: 30px;
 			text-align: center;
-			border: 3px solid #e3e7ea;
+			border: 3px solid lighten($color-info-inverse,10%);
 
 			i {
 				color: #b8c4ca;

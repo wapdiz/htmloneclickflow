@@ -12,7 +12,7 @@ $grid-gutter-width: 30px;
 // TYPOGRAPHY
 // =============================================================================
 $font-primary: "Verdana", Arial, sans-serif;
-$font-secundary: "Shadows Into Light", cursive;
+$font-secundary: "PT Sans", sans-serif;
 
 $root-font-size: 10;
 $body-font-size: 13;
@@ -54,10 +54,10 @@ $color-default-inverse: #777;
 
 $color-muted: #999;
 
-$color-primary: #CCC;
+$color-primary: #03a9f4;
 $color-primary-inverse: #FFF;
 
-$color-success: #47a447;
+$color-success: #ccdb38;
 $color-success-inverse: #FFF;
 
 $color-warning: #ed9c28;
@@ -66,8 +66,8 @@ $color-warning-inverse: #FFF;
 $color-danger: #d2322d;
 $color-danger-inverse: #FFF;
 
-$color-info: #5bc0de;
-$color-info-inverse: #FFF;
+$color-info: #607d8b;
+$color-info-inverse: #c5d0d8;
 
 $color-secondary: #E36159;
 $color-secondary-inverse: #FFF;
@@ -136,7 +136,7 @@ $header-height: 60px;
 	// notification menu - title
 	// -------------------------
 	// background
-	$header-notification-menu-title-background: $color-primary;
+	$header-notification-menu-title-background: $color-info;
 
 	// border
 	$header-notification-menu-border-radius: 3px 3px 0 0;
@@ -289,11 +289,11 @@ $content-body-padding: 20px;
 // MENU
 // =============================================================================
 // backgrounds
-$menu-item-active-background: lighten($sidebar-background, 2%);
+$menu-item-active-background: darken($sidebar-background, 3%);
 
 // borders
 $menu-item-active-border-color: $color-primary;
-$menu-item-active-border-width: 2px;
+$menu-item-active-border-width: 4px;
 $menu-item-border-color: #2D3138;
 $menu-children-border-color: rgba(69,74,84,0.7);
 
@@ -302,16 +302,16 @@ $menu-item-text-color: #fff;
 $menu-item-arrow-color: #fff;
 
 // paddings
-$menu-item-padding-horizontal: 25px;
+$menu-item-padding-horizontal: 20px;
 $menu-item-padding-vertical: 12px;
 $menu-item-padding: $menu-item-padding-vertical $menu-item-padding-horizontal;
 
 
 $menu-children-padding-horizontal: 15px;
 $menu-children-padding-vertical: 6px;
-$menu-children-padding: $menu-children-padding-vertical $menu-children-padding-horizontal $menu-children-padding-vertical ($menu-children-padding-horizontal + 42);
-$menu-children-level1-padding: $menu-children-padding-vertical $menu-children-padding-horizontal $menu-children-padding-vertical ($menu-children-padding-horizontal + 67);
-$menu-children-level2-padding: $menu-children-padding-vertical $menu-children-padding-horizontal $menu-children-padding-vertical ($menu-children-padding-horizontal + 82);
+$menu-children-padding: $menu-item-padding-vertical $menu-item-padding-horizontal $menu-item-padding-vertical ($menu-children-padding-horizontal + 42);
+$menu-children-level1-padding: $menu-item-padding-vertical $menu-item-padding-horizontal $menu-item-padding-vertical ($menu-children-padding-horizontal + 67);
+$menu-children-level2-padding: $menu-item-padding-vertical $menu-item-padding-horizontal $menu-item-padding-vertical ($menu-children-padding-horizontal + 82);
 
 $menu-item-arrow-padding: 14px 25px;
 $menu-item-children-arrow-padding: 6px 25px;
@@ -330,7 +330,7 @@ $panel-heading-background: #f6f6f6;
 $panel-heading-padding: 18px;
 
 	// title
-	$panel-title-color: #33353F;
+	$panel-title-color: #2b2e33;
 	$panel-title-size: 20px;
 
 	// subtitle

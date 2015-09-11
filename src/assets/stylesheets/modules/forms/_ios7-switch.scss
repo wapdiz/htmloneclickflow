@@ -7,8 +7,7 @@
 	.ios-switch {
 		height: 35px;
 		width: 65px;
-
-		.handle {
+    .handle {
 			height: 31px;
 			width: 31px;
 		}
@@ -24,6 +23,28 @@
 
 	}
 
+  &.switch-disabled {
+    .background-fill{
+      background-color: $color-info;
+      background-image: url(../images/switch-pattern.png);
+      background-position: 0 0;
+      animation: moderation .5s infinite linear;
+    }
+  }
+
+  .ios-switch {
+    height: 18px;
+    width: 33px;
+
+    .handle {
+      height: 16px;
+      width: 16px;
+      top: 1px;
+      box-shadow: none;
+    }
+
+  }
+
 	&.switch-lg {
 
 		.ios-switch {
@@ -33,7 +54,7 @@
 			.handle {
 				height: 41px;
 				width: 41px;
-			}
+      }
 
 		}
 
@@ -42,12 +63,14 @@
 	&.switch-sm {
 
 		.ios-switch {
-			height: 25px;
-			width: 55px;
+			height: 18px;
+			width: 33px;
 
 			.handle {
-				height: 21px;
-				width: 21px;
+				height: 16px;
+				width: 16px;
+        top: 1px;
+        box-shadow: none;
 			}
 
 		}
@@ -63,6 +86,7 @@
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
+  box-shadow: 0 1px 0 rgba(#000,.1) inset;
 }
 
 .ios-switch .background-fill {
@@ -72,6 +96,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  box-shadow: 0 1px 0 rgba(#000,.1) inset;
 }
 
 .ios-switch .on-background {
@@ -94,12 +119,7 @@
 .ios-switch .state-background {
   border-radius: 100px;
   z-index: 2;
-  background-image: -o-linear-gradient(#ffffff, #FDFDFD);
-  background-image: -ms-linear-gradient(#ffffff, #FDFDFD);
-  background-image: -moz-linear-gradient(#ffffff, #FDFDFD);
-  background-image: -webkit-linear-gradient(#ffffff, #FDFDFD);
-  background-image: linear-gradient(#ffffff, #FDFDFD);
-  border: 2px solid #E5E5E5;
+  background-color: #E5E5E5;
   -o-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -116,13 +136,12 @@
   -webkit-transition: .4s;
   transition: .4s;
 }
-
 .ios-switch .handle {
   width: 41px;
   height: 41px;
   background-color: white;
   top: 2px;
-  left: 2px;
+  left: 1px;
   position: absolute;
   border-radius: 20px;
   box-shadow: 0 0 3px 1px hsla(0, 0%, 0%, .075), 0 3px 5px hsla(0, 0%, 0%, .15), 1px 2px 2px hsla(0, 0%, 0%, .05);
@@ -194,7 +213,26 @@
   -webkit-transform: translate3d(30px, 0, 0);
   transform: translate3d(30px, 0, 0);
 }
-
+.switch-sm .ios-switch.on .handle {
+  @include transform(translate(15px, 0));
+  @include transform(translate3d(15px, 0, 0));
+}
+.switch-disabled{
+  .ios-switch{
+    &.on{
+      .handle {
+        // left: 16px;
+      }
+    }
+    .background-fill{
+      transition: none;
+    }
+    .handle {
+      animation: none !important;
+      transform: none !important;
+    }
+  } 
+} 
 .ios-switch.on .on-background {
   opacity: 1;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
@@ -209,6 +247,14 @@
   transform: scale(0);
 }
 
+@keyframes moderation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -8px 0;
+  }
+}
 @keyframes expand-on {
   0% {
     padding-right: 0;

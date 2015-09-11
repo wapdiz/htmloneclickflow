@@ -171,8 +171,8 @@
                     
 
 
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'index')}}">
-                        <a href="/">
+                    <li class="@@nav_active.home">
+                        <a href="index.html">
                             <i class="fa fa-home" aria-hidden="true"></i>
                             <span>Главная</span>
                         </a>
@@ -221,19 +221,17 @@
                         </ul>
                     </li>
 
-                    <li class="nav-parent
-                        {{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'stream_group')}}
-                    ">
+                    <li class="nav-parent @@nav_expanded.streams">
                         <a>
                             <i class="fa fa-sitemap" aria-hidden="true"></i>
                             <span>Потоки</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'streams_create')}}">
+                            <li class="@@nav_active.streams_1">
                                 <a href="/streams/create">Добавить</a>
                             </li>
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'streams')}}">
-                                <a href="/streams">Просмотр</a>
+                            <li class="@@nav_active.streams_2">
+                                <a href="streams.html">Просмотр</a>
                             </li>
                         </ul>
                     </li>
@@ -253,7 +251,7 @@
                             <span>Выплаты</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'payment_last')}}">
+                            <li class="">
                                 <a href="/payment/last">Просмотр</a>
                             </li>
                             <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'payment_request')}}">
@@ -273,36 +271,6 @@
                             <span>Кредитование</span>
                         </a>
                     </li>
-                    <!-- @if(isset($addMenu))
-                        @foreach($addMenu as $link)
-                            @if($link['parent'] == false) -->
-                                <li>
-                                    <a href="/articles/view?id={{$link['id']}}">
-                                        <i class="fa fa-home" aria-hidden="true"></i>
-                                        <span>{{$link['title']}}</span>
-                                    </a>
-                                </li>
-                            <!-- @else
-                            {{Значит родитель(контейнер)!}} -->
-                                <li class="nav-parent">
-                                    <a>
-                                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                                        <span>{{$link['title']}}</span>
-                                    </a>
-                                    <ul class="nav nav-children">
-                                        <!-- @if(isset($link['child']))
-                                            @foreach($link['child'] as $child) -->
-                                                <li>
-                                                    <a href="/articles/view?id={{$child['id']}}">{{$child['title']}}</a>
-                                                </li>
-                                            <!-- @endforeach
-                                        @endif -->
-                                    </ul>
-                                </li>
-                            <!-- @endif
-                        @endforeach
-                    @endif -->
-
                 </ul>
             </nav>
         </div>

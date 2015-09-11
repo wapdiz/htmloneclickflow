@@ -48,6 +48,29 @@ h6,
 	font-size: 1.6em;
 }
 
+/* Text-transform */
+.tt-u{
+	text-transform: uppercase;
+}
+
+/* Text-Align */
+.text-left{
+	text-align: left !important;
+}
+
+/* Font-weight */
+.fw-light{
+	font-weight: $font-weight-light !important;
+}
+.fw-normal{
+	font-weight: $font-weight-normal !important;
+}
+.fw-semibold{
+	font-weight: $font-weight-semibold !important;
+}
+.fw-bold{
+	font-weight: $font-weight-bold !important;
+}
 /* Drop Caps */
 p.drop-caps {
 	&:first-child:first-letter {

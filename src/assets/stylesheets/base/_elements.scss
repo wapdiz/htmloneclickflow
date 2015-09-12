@@ -48,11 +48,6 @@ h6,
 	font-size: 1.6em;
 }
 
-/* Text-transform */
-.tt-u{
-	text-transform: uppercase;
-}
-
 /* Text-Align */
 .text-left{
 	text-align: left !important;
@@ -149,6 +144,10 @@ hr.dotted {
 hr.solid {
 	height: 0;
 	border-bottom: 1px solid #ddd;
+}
+
+hr.hr-panel {
+	margin: $panel-body-padding (-$panel-body-padding);
 }
 
 /* Buttons Icon */

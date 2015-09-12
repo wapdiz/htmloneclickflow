@@ -13,17 +13,34 @@ body {
 		border: 0;
 		padding: 10px 20px;
 		font-weight: $font-weight-bold;
+		&.btn-sm{
+			@include font-size(14); 
+			padding: 6px 10px;
+		}
+		&.btn-hr-left{
+			margin-left: 1px !important;
+		}
+		&.btn-hr-right{
+			margin-right: 1px !important;
+		}
 		&.btn-default{
 			color: $color-info;
 			border:2px solid $color-info-inverse;
+			padding: 8px 18px;
 		}
 		&.btn-info-light{
 			color: #fff;
 			text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 			background-color: darken($color-info-inverse,10%);
 		}
+		&.btn-success-light{
+			color: #fff;
+			text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+			background-color: lighten($color-success,10%);
+		}
 	}
 
+	/* Button Group */
 	.btn-group-split{
 		.btn{
 			width: 90%;

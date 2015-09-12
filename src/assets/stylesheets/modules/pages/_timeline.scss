@@ -394,6 +394,8 @@ $timeline-simple-line-left: 30px;
 								}
 								.panel-title{
 									@include font-size(14);
+									font-family: $font-primary;
+									// font-weight: $font-weight-bold;
 								}
 							}
 							.panel-body{

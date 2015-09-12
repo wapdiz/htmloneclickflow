@@ -1,13 +1,11 @@
 <!doctype html>
 <html class="fixed" lang="ru" >
-    <!-- @if(isset($page_settings['sidebar']) && $page_settings['sidebar'] == 'compact')
-        sidebar-left-collapsed
-    @endif -->
+
 <head>
     <!-- Basic -->
 <meta charset="UTF-8">
 
-<title>Главная</title>
+<title>Настройки сплита</title>
 
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -36,6 +34,7 @@
     <!-- Specific Page Vendor CSS -->
     <link rel="stylesheet" href="assets/vendor/summernote/summernote.css" />
     <link rel="stylesheet" href="assets/vendor/summernote/summernote-bs3.css" />
+
 </head>
 <body>
 <section class="body">
@@ -366,7 +365,7 @@
                     
 
 
-                    <li class="nav-active">
+                    <li class="@@nav_active.home">
                         <a href="index.html">
                             <i class="fa fa-home" aria-hidden="true"></i>
                             <span>Главная</span>
@@ -416,16 +415,16 @@
                         </ul>
                     </li>
 
-                    <li class="nav-parent @@nav_expanded.streams @@nav_active.streams">
+                    <li class="nav-parent nav-expanded nav-active">
                         <a>
                             <i class="fa fa-sitemap" aria-hidden="true"></i>
                             <span>Потоки</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="@@nav_active.streams_1">
+                            <li class="nav-active_1">
                                 <a href="/streams/create">Добавить</a>
                             </li>
-                            <li class="@@nav_active.streams_2">
+                            <li class="nav-active_2">
                                 <a href="streams.html">Просмотр</a>
                             </li>
                         </ul>
@@ -479,136 +478,216 @@
             <!-- {{Хедер над секцией контента и дополнительной менюшкой}} -->
             <header class="page-header">
                 <ol class="breadcrumbs">
-                    <li>
-                        <a href="index.html">
-                            <i class="fa fa-home"></i>
-                            <b class="separator"></b>
-                        </a>
-                    </li>
-                    <li><span>Mailbox <b class="separator"></b></span></li>
-                    <li><span>Inbox <b class="separator"></b></span></li>
+                    <li><a href="streams.html">Потоки <b class="separator"></b></a></li>
+                    <li><span>Настройка сплита <b class="separator"></b></span></li>
                 </ol>
             </header>
 
             <!-- start: page -->
-            <div class="row">
-                <div class="col-md-6 col-lg-12 col-xl-6">
-                    <div class="row">
-                        <div class="col-md-12 col-lg-6 col-xl-6">
-                            <section class="panel panel-featured-left panel-featured-primary">
-                                <div class="panel-body">
-                                    <div class="widget-summary">
-                                        <div class="widget-summary-col widget-summary-col-icon">
-                                            <div class="summary-icon bg-primary">
-                                                <i class="fa fa-plus"></i>
-                                            </div>
-                                        </div>
-                                        <div class="widget-summary-col">
-                                            <div class="summary">
-                                                <h4 class="title">Подписки за сегодня</h4>
-                                                <div class="info">
-                                                    <strong class="amount">0</strong>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                        <div class="col-md-12 col-lg-6 col-xl-6">
-                            <section class="panel panel-featured-left panel-featured-tertiary">
-                                <div class="panel-body">
-                                    <div class="widget-summary">
-                                        <div class="widget-summary-col widget-summary-col-icon">
-                                            <div class="summary-icon bg-tertiary">
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </div>
-                                        </div>
-                                        <div class="widget-summary-col">
-                                            <div class="summary">
-                                                <h4 class="title">Ребиллы</h4>
-                                                <div class="info">
-                                                    <strong class="amount">0</strong>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                        <div class="col-md-12 col-lg-6 col-xl-6">
-                            <section class="panel panel-featured-left panel-featured-quartenary">
-                                <div class="panel-body">
-                                    <div class="widget-summary">
-                                        <div class="widget-summary-col widget-summary-col-icon">
-                                            <div class="summary-icon bg-quartenary">
-                                                <i class="fa  fa-money"></i>
-                                            </div>
-                                        </div>
-                                        <div class="widget-summary-col">
-                                            <div class="summary">
-                                                <h4 class="title">Заработано за день</h4>
-                                                <div class="info">
-                                                    <strong class="amount"><i class="fa fa-rub"></i> 0</strong><br>
-                                                    <strong class="amount"><i class="fa fa-usd"></i> 0</strong><br>
-                                                    <strong class="amount"><i class="fa fa-eur"></i> 0</strong>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                        <div class="col-md-12 col-lg-6 col-xl-6">
-                            <section class="panel panel-featured-left panel-featured-secondary">
-                                <div class="panel-body">
-                                    <div class="widget-summary">
-                                        <div class="widget-summary-col widget-summary-col-icon">
-                                            <div class="summary-icon bg-secondary">
-                                                <i class="fa fa-usd"></i>
-                                            </div>
-                                        </div>
-                                        <div class="widget-summary-col">
-                                            <div class="summary">
-                                                <h4 class="title">Баланс</h4>
-                                                <div class="info">
-                                                    <strong class="amount"><i class="fa fa-rub"></i> 0</strong><br>
-                                                    <strong class="amount"><i class="fa fa-usd"></i> 0</strong><br>
-                                                    <strong class="amount"><i class="fa fa-eur"></i> 0</strong>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
+
+            <section class="panel">
+                <header class="panel-heading">
+                    <div class="panel-actions">
+                        <a href="#" class="fa fa-caret-down"></a>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-12 col-xl-6" id="plot_container">
-                    <section class="panel">
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <div class="flot-container" style="width: 419.9px; height: 256px; padding: 0px; position: relative;">
-                                    <canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 420px; height: 256px;" width="420" height="256"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 52px; top: 232px; left: 50px; text-align: center;">12:00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 52px; top: 232px; left: 114px; text-align: center;">14:00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 52px; top: 232px; left: 177px; text-align: center;">16:00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 52px; top: 232px; left: 240px; text-align: center;">18:00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 52px; top: 232px; left: 304px; text-align: center;">20:00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 52px; top: 232px; left: 367px; text-align: center;">22:00</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 216px; left: 2px; text-align: right;">-1.0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 162px; left: 2px; text-align: right;">-0.5</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 108px; left: 6px; text-align: right;">0.0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 54px; left: 6px; text-align: right;">0.5</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 6px; text-align: right;">1.0</div></div></div><canvas class="flot-overlay" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 420px; height: 256px;" width="420" height="256"></canvas><div class="legend"><div style="position: absolute; width: 66px; height: 44px; top: 16px; right: 19px; opacity: 0.85; background-color: rgb(255, 255, 255);"> </div><table style="position:absolute;top:16px;right:19px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(175,216,248);overflow:hidden"></div></div></td><td class="legendLabel">Ребиллы</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(203,75,75);overflow:hidden"></div></div></td><td class="legendLabel">Подписки</td></tr></tbody></table></div></div>
+
+                    <h2 class="panel-title">2 Сплит <span class="text-muted">( поток «Телетекст 2»)</span></h2>
+                </header>
+                <div class="panel-body">
+                    <a href="#" class="btn btn-primary text-uppercase">Настройки по умолчанию</a>
+                    <hr class="solid hr-panel">
+
+                    <h3 class="text-info mb-xlg">Настройки</h3>
+                    <form class="row" method="get">
+                        <div class="col-md-2 col-sm-3 form-group">
+                            <label class="control-label">Тип редиректа</label>
+                            <div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                        Как в потоке
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                        Прямой
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                                        Кликандер
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+                                        Блайнд
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios5" value="option5">
+                                        Баннер
+                                    </label>
                                 </div>
                             </div>
                         </div>
-                    </section>
-                </div>
-                <div class="col-md-6">
+                        <div class="col-md-2 col-sm-3 form-group">
+                            <label class="control-label">Тип устройства</label>
+                            <div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        Мобильный
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        Десктоп
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        Планшет
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 form-group">
+                            <label class="control-label">OS</label>
+                            <div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="OS" id="OS1" value="option1" checked>
+                                        Все
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="OS" id="OS2" value="option2">
+                                        Совпадает
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="OS" id="OS3" value="option3">
+                                        Исключает
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 form-group">
+                            <label class="control-label">Браузер</label>
+                            <div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="Browser" id="Browser1" value="option1" checked>
+                                        Все
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="Browser" id="Browser2" value="option2">
+                                        Совпадает
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="Browser" id="Browser3" value="option3">
+                                        Исключает
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="row mb-xlg">
+                        <div class="col-md-8">
+                            <table class="table spacing">
+                                <thead>
+                                    <tr>
+                                        <th class="info">Страна</th>
+                                        <th class="info">Оператор</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="active">Россия</td>
+                                        <td class="p-none">
+                                            <a href="#modalLP" class="btn-group modal-with-move-anim">
+                                                <span class="btn btn-sm btn-success">МТС</span>
+                                                <span class="btn btn-sm btn-hr-left btn-success-light">2</span>
+                                            </a>
+                                            <a href="#modalLP" class="btn-group modal-with-move-anim">
+                                                <span class="btn btn-sm btn-success">Билайн</span>
+                                            </a>
+                                            <a href="#modalLP" class="btn-group modal-with-move-anim">
+                                                <span class="btn btn-sm btn-success">Мегафон</span>
+                                                <span class="btn btn-sm btn-hr-left btn-success-light">42</span>
+                                            </a>
+                                            <a href="#modalLP" class="btn-group modal-with-move-anim">
+                                                <span class="btn btn-sm btn-success">ТЕЛЕ2</span>
+                                                <span class="btn btn-sm btn-hr-left btn-success-light">8</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="active">Азербайджан</td>
+                                        <td class="p-none">
+                                            <a href="#modalLP" class="btn-group modal-with-move-anim">
+                                                <span class="btn btn-sm btn-success">Baksell</span>
+                                                <span class="btn btn-sm btn-hr-left btn-success-light">2</span>
+                                            </a>
+                                            <a href="#modalLP" class="btn-group modal-with-move-anim">
+                                                <span class="btn btn-sm btn-success">Nar Mobile</span>
+                                                <span class="btn btn-sm btn-hr-left btn-success-light">4</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Modal LP -->
+                    <div id="modalLP" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
                         <section class="panel">
                             <header class="panel-heading">
-
-                                <h2 class="panel-title">МТС: добавление LP</h2>
-                                <p class="panel-subtitle">2015-08-11 18:49:45</p>
+                                <h2 class="panel-title">Are you sure?</h2>
                             </header>
                             <div class="panel-body">
-                                Добавлены новые LP:<div>1) Hot Tube - 20 рублей в сутки, адалт;</div><div>2) Sexy Kiski - 35 рублей раз в 2 дня, адалт;</div><div>3) TurboBox - 20 рублей в сутки, файлы.</div><div><br></div><div>Просьба обновить свои сплиты.</div>
+                                <div class="modal-wrapper">
+                                    <div class="modal-icon">
+                                        <i class="fa fa-question-circle"></i>
+                                    </div>
+                                    <div class="modal-text">
+                                        <p>Are you sure that you want to delete this image?</p>
+                                    </div>
+                                </div>
                             </div>
+                            <footer class="panel-footer">
+                                <div class="row">
+                                    <div class="col-md-12 text-right">
+                                        <button class="btn btn-primary modal-confirm">Confirm</button>
+                                        <button class="btn btn-default modal-dismiss">Cancel</button>
+                                    </div>
+                                </div>
+                            </footer>
                         </section>
                     </div>
+                    <div class="pt-xlg mb-lg">
+                        <a href="#" class="btn btn-default text-uppercase text-overflow mr-sm">
+                            Не сохранять
+                        </a>
+                        <a href="#" class="btn btn-primary text-uppercase text-overflow">
+                            Сохранить
+                        </a>
+                    </div>
                 </div>
+            </section>
             <!-- end: page -->
         </section>
     </div>
@@ -683,9 +762,8 @@
 </section>
 
 
-
 <!-- {{Блок под алерты}} -->
-    <!-- <div id="alert_message">{{$alert_message}}</div> -->
+<!-- <div id="alert_message">{{$alert_message}}</div> -->
 <!-- Vendor -->
 <script src="assets/vendor/jquery/jquery.js"></script>
 <script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
@@ -696,11 +774,6 @@
 <script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 
 <!-- Specific Page Vendor -->
-<script src="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
-<script src="assets/vendor/summernote/summernote.js"></script>
-
-<script src="assets/vendor/flot/jquery.flot.js"></script>
-<script src="assets/vendor/flot/jquery.flot.time.js"></script>
 
 <!-- Theme Base, Components and Settings -->
 <script src="assets/javascripts/theme.js"></script>
@@ -711,5 +784,7 @@
 <!-- Theme Initialization Files -->
 <script src="assets/javascripts/theme.init.js"></script>
 
+<!-- Examples -->
+<script src="assets/javascripts/ui-elements/examples.modals.js"></script>
 </body>
 </html>

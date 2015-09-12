@@ -3,6 +3,19 @@
 /* Tables - Basic */
 .table {
 	width: 100%;
+	&.spacing{
+		margin-left: -5px;
+		border-spacing: 5px;
+		border-collapse: separate;
+		thead,
+		tbody,
+		tr,
+		th,
+		td {
+			border: 0;
+			@include border-radius(4px);
+		}
+	}
 
 	.table {
 		background: transparent;
@@ -209,4 +222,20 @@ html.dark {
 .table > tfoot > tr.dark > th {
 	background-color: lighten($color-dark, 20%);
 	color: $color-dark-inverse;
+}
+
+.table > thead > tr > td.active,
+.table > tbody > tr > td.active,
+.table > tfoot > tr > td.active,
+.table > thead > tr > th.active,
+.table > tbody > tr > th.active,
+.table > tfoot > tr > th.active,
+.table > thead > tr.active > td,
+.table > tbody > tr.active > td,
+.table > tfoot > tr.active > td,
+.table > thead > tr.active > th,
+.table > tbody > tr.active > th,
+.table > tfoot > tr.active > th {
+	background-color: lighten($color-info-inverse,10%);
+	color: $color-black;
 }

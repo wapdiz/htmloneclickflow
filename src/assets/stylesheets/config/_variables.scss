@@ -56,7 +56,7 @@ $color-muted: #999;
 
 $color-primary: #03a9f4;
 $color-primary-inverse: #FFF;
-
+ 
 $color-success: #ccdb38;
 $color-success-inverse: #FFF;
 
@@ -326,7 +326,7 @@ $widget-tasks-colors: #D64B4B, #0090D9, #4DD79C, #D9A300, #C926FF, #FFFF26;
 // PANELS
 // =============================================================================
 // heading
-$panel-heading-background: #f6f6f6;
+$panel-heading-background: #fff;
 $panel-heading-padding: 18px;
 
 	// title
@@ -347,7 +347,9 @@ $panel-heading-padding: 18px;
 
 	$panel-action-color-hover: $panel-action-color;
 	$panel-action-background-hover: darken($panel-heading-background, 3%);
-
+//body
+$panel-body-bg: #fff;
+$panel-body-padding: 20px;
 // featured
 $panel-featured-border-width: 3px;
 

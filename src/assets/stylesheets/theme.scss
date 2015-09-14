@@ -1,7 +1,7 @@
 // COMMON IMPORTS
 // -----------------------------------------------------------------------------
 @import "config/imports";   
-// BASIC 
+// BASIC
 // -----------------------------------------------------------------------------
 @import "base/skeleton";
 @import "base/bootstrap_extend";
@@ -17,7 +17,6 @@
 @import "base/form";
 @import "base/nanoscroll";
 @import "base/toolbar";
-      
 // GUI
 // -----------------------------------------------------------------------------
 @import "gui/images";
@@ -28,14 +27,13 @@
 @import "gui/pagination";
 @import "gui/progress_bar";
 @import "gui/sidebar_widgets";
-
 // MODULES
 // -----------------------------------------------------------------------------
 @import "modules/ui-elements/panels";
 @import "modules/ui-elements/tabs";
 @import "modules/ui-elements/sliders";
 @import "modules/ui-elements/alerts";
-@import "modules/ui-elements/notifications";     
+@import "modules/ui-elements/notifications";
 @import "modules/ui-elements/progressbars";
 @import "modules/ui-elements/accordions";
 @import "modules/ui-elements/charts";
@@ -71,7 +69,7 @@
 @import "modules/forms/codemirror";
 @import "modules/maps/gmaps";
 @import "modules/maps/jqvmap";
-     
+
 // MAILBOX
 // -----------------------------------------------------------------------------
 @import "modules/mailbox/mailbox";

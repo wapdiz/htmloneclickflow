@@ -34,6 +34,7 @@ $font-weight-bold: 700;
 
 // spacement
 $spacement-increment: 5px;
+$spacement-tiny: $spacement-increment/2;
 $spacement-xs: $spacement-increment;
 $spacement-sm: $spacement-xs + $spacement-increment;
 $spacement-md: $spacement-sm + $spacement-increment;

@@ -178,11 +178,15 @@ textarea[data-toggle=autosize] {
 }
 
 select {
+	@include font-size(16);
 	border: 1px solid #E5E7E9;
 	border-radius: 6px;
 	height: 46px;
 	padding: 12px;
 	outline: none;
+}
+.form-control{
+	@include font-size(16);
 }
 
 /* Forms Validations */

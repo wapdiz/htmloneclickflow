@@ -906,6 +906,28 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	animation-name: bounceIn;
 }
 
+@include keyframes (bounceOut) {
+    0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(.9);
+	}
+	70% {
+		opacity: 1;
+		transform: scale(1.05);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(.3);
+	}
+}
+
+.bounceOut {
+	@include animation-name(bounceOut);
+}
+
 @-webkit-keyframes bounceInUp {
 	0% {
 		opacity: 0;
@@ -1331,6 +1353,22 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	-moz-animation-name: rotateIn;
 	-o-animation-name: rotateIn;
 	animation-name: rotateIn;
+}
+
+@include keyframes (rotate) {
+    0% {
+		transform-origin: center center;
+		transform: rotate(-200deg);
+	}
+
+	100% {
+		transform-origin: center center;
+		transform: rotate(0);
+	}
+}
+
+.rotate {
+	@include animation-name(rotate);
 }
 
 @-webkit-keyframes rotateInUpLeft {

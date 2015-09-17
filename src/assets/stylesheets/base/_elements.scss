@@ -104,6 +104,12 @@ blockquote {
 	background-color: $color-primary;
 	color: #FFF;
 	padding: 3px 6px;
+	@each $state in $states {
+		&.#{nth($state,1)} {
+			background: #{nth($state,2)};
+		}
+	}
+	@include border-radius(2px);
 }
 
 /* Divider Line */

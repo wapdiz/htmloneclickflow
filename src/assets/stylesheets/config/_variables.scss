@@ -56,7 +56,7 @@ $color-default-inverse: #777;
 $color-muted: #999;
 
 $color-primary: #03a9f4;
-$color-primary-inverse: #FFF;
+$color-primary-inverse: #9addfb;
  
 $color-success: #ccdb38;
 $color-success-inverse: #FFF;
@@ -92,6 +92,7 @@ $colors-list: (primary $color-primary $color-primary-inverse) (secondary $color-
 
 // states list
 $states: (primary $color-primary $color-primary-inverse) (success $color-success $color-success-inverse) (warning $color-warning $color-warning-inverse) (danger $color-danger $color-danger-inverse) (info $color-info $color-info-inverse) (dark $color-dark $color-dark-inverse);
+$states-inverse: (primary-inverse $color-primary-inverse) (success-inverse $color-success-inverse) (warning-inverse $color-warning-inverse) (danger-inverse $color-danger-inverse) (info-inverse $color-info-inverse) (dark-inverse $color-dark-inverse);
 
 // Dark Version
 $dark-bg: #1d2127;

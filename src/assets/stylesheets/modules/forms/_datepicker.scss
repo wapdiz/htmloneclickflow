@@ -4,6 +4,29 @@
 .input-daterange .input-group-addon {
 	min-width: 36px;
 }
+/* Datepicker - Custom */
+.input-group-time{
+	@include font-size(14);
+	.btn{
+		@include border-radius(4px !important);
+		padding-left: 0;
+		padding-right: 0;
+		&.btn-info-light{
+			color: $color-black;
+			font-weight: $font-weight-normal;
+			text-shadow: none;
+			@include box-shadow(none);
+			background: lighten($color-info-inverse,10%);
+		}
+	}
+	input{
+		@include font-size(14);
+	}
+	.input-group-addon{
+	    background-color: transparent;
+	    border: solid transparent;
+	}
+}
 
 /* Datepicker - Base */
 .datepicker {

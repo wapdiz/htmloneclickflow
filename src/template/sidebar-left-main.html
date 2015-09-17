@@ -183,20 +183,12 @@
                             <span>Рефералы</span>
                         </a>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'user_statistic_grupped')}}">
-                        <a href="/statistic_grupped">
+                    <li class="@@nav_expanded.statistic @@nav_active.statistic">
+                        <a href="statistic.html">
                             <i class="fa fa-table" aria-hidden="true"></i>
                             <span>Статистика</span>
                         </a>
                     </li>
-                    <!--
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'statistic')}}">
-                        <a href="/statistic">
-                            <i class="fa fa-table" aria-hidden="true"></i>
-                            <span>Статистика</span>
-                        </a>
-                    </li>
-                    -->
                     <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'news')}}">
                         <a href="/news">
                             <i class="fa fa-bullhorn" aria-hidden="true"></i>
@@ -228,7 +220,7 @@
                         </a>
                         <ul class="nav nav-children">
                             <li class="@@nav_active.streams_1">
-                                <a href="/streams/create">Добавить</a>
+                                <a href="streams-create.html">Добавить</a>
                             </li>
                             <li class="@@nav_active.streams_2">
                                 <a href="streams.html">Просмотр</a>

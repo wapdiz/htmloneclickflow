@@ -1,0 +1,1327 @@
+<!doctype html>
+<html class="fixed" lang="ru" >
+
+<head>
+    <link rel="stylesheet" href="assets/vendor/select2/select2.css" />
+    @@include('template/head.html', {
+        "title": "Статистика"
+    })
+    
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote.css" />
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote-bs3.css" />
+    
+
+</head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+        <!-- {{Общий хедер, используется на всех страницах}} -->
+        <!-- @include('main-header') -->
+        @@include('template/main-header.html')
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+
+        <!-- start: sidebar -->
+        <!-- {{Выше - хрень, левый сайдбар один, меняется класс в <html>}} -->
+        @@include('template/sidebar-left-main.html', {
+            "nav_active": {
+                "statistic": "nav-active"
+            }
+        })
+        
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <!-- {{Хедер над секцией контента и дополнительной менюшкой}} -->
+            <header class="page-header">
+                <ol class="breadcrumbs">
+                    <li><a href="statistic.html">Статистика <b class="separator"></b></a></li>
+                    <li><span>По операторам <b class="separator"></b></span></li>
+                </ol>
+            </header>
+
+            <!-- start: page -->
+            <section class="panel">
+                <header class="panel-heading">
+                    <h2 class="panel-title">Статистика по дням</h2>
+                </header>
+                <div class="panel-body">
+                    <h3 class="text-info mt-none mb-sm">Фильтры</h3>
+                <div class="form-group mb-xlg">
+                    <div class="col-xlg-2 col-lg-3 col-md-4 pl-none mt-xlg">
+                        <div class="input-daterange input-group input-group-time" data-plugin-datepicker="">
+                            <input type="text" class="form-control btn btn-info-light hasDatepicker" name="start" value="08.09.2015" id="statistic_date_start_day">
+                            <span class="input-group-addon">до</span>
+                            <input type="text" class="form-control btn btn-info-light hasDatepicker" name="end" value="15.09.2015" id="statistic_date_end_day">
+                        </div>
+                        <script>
+                            datepickerCustom.init('day');                            
+                        </script>
+                    </div>
+
+                    <div class="col-xlg-6 col-lg-7 col-md-8">
+                        <div class="timebuttons" id="dpFastButtonsPanel_day">
+                            <div class="timebuttons-wrap">
+                                <ul>
+                                    <li>
+                                        <div class="timebuttons-pos-start timebuttons-pos-active"><button id="date_today" onclick="           $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;-0d&quot;);          $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;-0d&quot;);            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_today">Сегодня</label></div>
+                                        <div class="timebuttons-pos-end"><button id="date_yesterday" onclick="            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;-1d&quot;);          $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;-1d&quot;);            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_yesterday">Вчера</label></div>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <div class="timebuttons-pos-start"><button id="date_week" onclick="          $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;14.9.2015&quot;);            $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;-0d&quot;);            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_week">Неделя</label></div>
+                                        <div class="timebuttons-pos-end"><button id="date_lastweek" onclick="            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;07.9.2015&quot;);            $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;13.9.2015&quot;);          $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_lastweek">Прошлая неделя</label></div>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <div class="timebuttons-pos-start"><button id="date_month" onclick="         $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;01.9.2015&quot;);            $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;-0d&quot;);            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_month">Месяц</label></div>
+                                        <div class="timebuttons-pos-end"><button id="date_lastmonth" onclick="            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;01.8.2015&quot;);            $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;31.08.2015&quot;);         $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_lastmonth">Прошлый месяц</label></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                                    <div class="col-md-3 form-group mb-xlg">
+            <select data-plugin-selectTwo class="form-control populate" id="customFilter_day_TDSStream">
+            <option value="all">Все потоки</option>
+
+                            <option value="3">павпа</option>
+                        </select>
+            </div>
+    
+    
+    <div class="col-md-3 form-group mb-xlg">
+
+ 
+
+            <select id="customFilter_day_Operators" data-plugin-selectTwo class="form-control populate">
+                <option value="all">Все операторы</option>
+                <option value="29">Baksell</option>
+                <option value="30">Nar Mobile</option>
+                <option value="24">Билайн</option>
+                <option value="25">Мегафон</option>
+                <option value="28">МТС</option>
+                <option value="27">ТЕЛЕ2</option>
+            </select>
+    </div>
+    
+    
+    <div class="col-md-3 form-group mb-xlg">
+
+            <select data-plugin-selectTwo class="form-control populate" id="customFilter_day_OSList">
+            <option value="all">Все ОС</option>
+
+                            <option value="1">Android</option>
+                            <option value="3">Windows Phone</option>
+                            <option value="4">Ubuntu</option>
+                            <option value="5">Mac OS</option>
+                            <option value="6">iOS</option>
+                            <option value="7">MeeGo</option>
+                            <option value="8">GNU/Linux</option>
+                            <option value="9">Windows</option>
+                            <option value="10">Symbian OS Series 60</option>
+                            <option value="11">Symbian^3</option>
+                            <option value="12">Symbian</option>
+                            <option value="13">Symbian OS Series 40</option>
+                            <option value="14">MocorDroid</option>
+                            <option value="15">Bada</option>
+                            <option value="16">Symbian OS</option>
+                            <option value="17">PlayStation</option>
+                            <option value="18">Windows CE</option>
+                            <option value="19">Mac</option>
+                            <option value="20">CyanogenMod</option>
+                            <option value="21">Windows RT</option>
+                            <option value="22">BlackBerry OS</option>
+                            <option value="23">Windows Mobile</option>
+                            <option value="24">PlayStation Portable</option>
+                            <option value="25">Unknown OS</option>
+                        </select>
+            </div>
+    
+    
+    <div class="col-md-3 form-group mb-xlg">
+
+            <select data-plugin-selectTwo class="form-control populate" id="customFilter_day_BrowserList">
+            <option value="all">Все браузеры</option>
+
+                            <option value="1">Chrome</option>
+                            <option value="2">Opera</option>
+                            <option value="3">Firefox</option>
+                            <option value="5">Chromium</option>
+                            <option value="9">IE Mobile</option>
+                            <option value="10">Mobile Safari</option>
+                            <option value="11">BlackBerry Browser</option>
+                            <option value="12">Nokia Browser</option>
+                            <option value="13">Kindle Browser</option>
+                            <option value="14">Chrome Mobile</option>
+                            <option value="15">Android Browser</option>
+                            <option value="16">UC Browser</option>
+                            <option value="17">Opera Mobile</option>
+                            <option value="18">Opera Mini</option>
+                            <option value="19">Nokia Ovi Browser</option>
+                            <option value="20">Yandex Browser</option>
+                            <option value="21">Nokia OSS Browser</option>
+                            <option value="22">Internet Explorer</option>
+                            <option value="23">Dolphin</option>
+                            <option value="24">NexPlayer</option>
+                            <option value="25">Amigo</option>
+                            <option value="26">Safari</option>
+                            <option value="27">Chrome Mobile iOS</option>
+                            <option value="28">NetFront</option>
+                            <option value="29">Midori</option>
+                            <option value="30">Maxthon</option>
+                            <option value="31">CoolNovo</option>
+                            <option value="32">IBrowse</option>
+                            <option value="33">Opera Next</option>
+                            <option value="34">MIUI Browser</option>
+                            <option value="35">Mercury</option>
+                            <option value="36">Mobile Silk</option>
+                            <option value="37">CometBird</option>
+                            <option value="38">Puffin</option>
+                            <option value="39">WeChat</option>
+                            <option value="40">Obigo</option>
+                            <option value="41">Jasmine</option>
+                        </select>
+            </div>
+    
+    
+    <div class="col-md-3 form-group mb-xlg">
+            <select data-plugin-selectTwo class="form-control populate" id="customFilter_day_DeviceModelList">
+            <option value="all">Все устройства</option>
+
+                            <option value="63">E612 - П:LG</option>
+                            <option value="81">P715 - П:LG</option>
+                            <option value="116">D325 - П:LG</option>
+                            <option value="131">D380 - П:LG</option>
+                            <option value="167">D285 - П:LG</option>
+                            <option value="173">E440 - П:LG</option>
+                            <option value="179">D722 - П:LG</option>
+                            <option value="188">P705 - П:LG</option>
+                            <option value="223">X145 - П:LG</option>
+                            <option value="242">E445 - П:LG</option>
+                            <option value="251">P713 - П:LG</option>
+                            <option value="265">P698 - П:LG</option>
+                            <option value="279">E455 - П:LG</option>
+                            <option value="281">P765 - П:LG</option>
+                            <option value="293">D690 - П:LG</option>
+                            <option value="309">E400 - П:LG</option>
+                            <option value="317">P500 - П:LG</option>
+                            <option value="318">D410 - П:LG</option>
+                            <option value="331">E615 - П:LG</option>
+                            <option value="333">E405 - П:LG</option>
+                            <option value="357">D295 - П:LG</option>
+                            <option value="360">H422 - П:LG</option>
+                            <option value="392">D618 - П:LG</option>
+                            <option value="410">P970 - П:LG</option>
+                            <option value="421">D802 - П:LG</option>
+                            <option value="423">D724 - П:LG</option>
+                            <option value="428">E435 - П:LG</option>
+                            <option value="434">D686 - П:LG</option>
+                            <option value="450">E420 - П:LG</option>
+                            <option value="513">D320 - П:LG</option>
+                            <option value="520">H324 - П:LG</option>
+                            <option value="552">P690 - П:LG</option>
+                            <option value="558">D170 - П:LG</option>
+                            <option value="585">F120K - П:LG</option>
+                            <option value="610">X135 - П:LG</option>
+                            <option value="615">D855 - П:LG</option>
+                            <option value="617">P768 - П:LG</option>
+                            <option value="651">D955 - П:LG</option>
+                            <option value="652">H502 - П:LG</option>
+                            <option value="656">P350 - П:LG</option>
+                            <option value="665">LS980 - П:LG</option>
+                            <option value="670">P990 - П:LG</option>
+                            <option value="674">E975 - П:LG</option>
+                            <option value="686">P880 - П:LG</option>
+                            <option value="711">V490 - П:LG</option>
+                            <option value="810">D335 - П:LG</option>
+                            <option value="826">GD510 - П:LG</option>
+                            <option value="64">unknown device - П:unknown device</option>
+                            <option value="65">Xperia P - П:SO</option>
+                            <option value="88">Xperia V - П:SO</option>
+                            <option value="89">Xperia E Dual - П:SO</option>
+                            <option value="90">Xperia S - П:SO</option>
+                            <option value="98">Xperia M - П:SO</option>
+                            <option value="111">Xperia C - П:SO</option>
+                            <option value="145">Xperia Z1 - П:SO</option>
+                            <option value="164">Xperia TX - П:SO</option>
+                            <option value="166">Xperia Z - П:SO</option>
+                            <option value="168">Xperia M2 - П:SO</option>
+                            <option value="171">Xperia E - П:SO</option>
+                            <option value="184">Xperia L - П:SO</option>
+                            <option value="191">Xperia E1 - П:SO</option>
+                            <option value="200">Xperia miro - П:SO</option>
+                            <option value="228">Xperia Tablet Z - П:SO</option>
+                            <option value="230">Xperia Z2 - П:SO</option>
+                            <option value="241">Xperia M2 Dual - П:SO</option>
+                            <option value="244">Xperia Z1 Compact - П:SO</option>
+                            <option value="246">Xperia J - П:SO</option>
+                            <option value="275">Xperia M Dual - П:SO</option>
+                            <option value="287">Xperia C3 Dual - П:SO</option>
+                            <option value="319">Xperia ZR - П:SO</option>
+                            <option value="321">Xperia Z3 Compact - П:SO</option>
+                            <option value="328">Xperia U - П:SO</option>
+                            <option value="336">Xperia E1 Dual - П:SO</option>
+                            <option value="361">Xperia ZL - П:SO</option>
+                            <option value="372">Xperia E3 Dual - П:SO</option>
+                            <option value="391">Xperia SP - П:SO</option>
+                            <option value="427">Xperia T2 Ultra Dual - П:SO</option>
+                            <option value="492">Xperia go - П:SO</option>
+                            <option value="494">Xperia tipo - П:SO</option>
+                            <option value="503">Xperia E3 - П:SO</option>
+                            <option value="532">Xperia ion - П:SO</option>
+                            <option value="566">Tablet S - П:SO</option>
+                            <option value="567">Xperia M2 Aqua - П:SO</option>
+                            <option value="570">Xperia tipo dual - П:SO</option>
+                            <option value="578">Xperia T3 - П:SO</option>
+                            <option value="626">Xperia Z3 - П:SO</option>
+                            <option value="644">Xperia C3 - П:SO</option>
+                            <option value="663">Xperia T2 Ultra - П:SO</option>
+                            <option value="676">Xperia arco S - П:SO</option>
+                            <option value="679">Xperia Z Ultra - П:SO</option>
+                            <option value="693">Xperia T - П:SO</option>
+                            <option value="706">Xperia SL - П:SO</option>
+                            <option value="738">Xperia Tablet Z3 Compact - П:SO</option>
+                            <option value="747">Xperia Tablet Z2 - П:SO</option>
+                            <option value="66">One Touch 5036D - П:AL</option>
+                            <option value="86">One Touch 4014D - П:AL</option>
+                            <option value="115">One Touch 4007D - П:AL</option>
+                            <option value="121">One Touch 4030D - П:AL</option>
+                            <option value="132">One Touch 5035X - П:AL</option>
+                            <option value="144">One Touch 6033X - П:AL</option>
+                            <option value="146">One Touch 4033D - П:AL</option>
+                            <option value="161">One Touch 6012X - П:AL</option>
+                            <option value="163">One Touch 7041D - П:AL</option>
+                            <option value="203">One Touch 985D - П:AL</option>
+                            <option value="214">One Touch 5020D - П:AL</option>
+                            <option value="240">One Touch 991 - П:AL</option>
+                            <option value="267">One Touch P320X - П:AL</option>
+                            <option value="299">One Touch 6032X - П:AL</option>
+                            <option value="303">One Touch 918D - П:AL</option>
+                            <option value="337">One Touch 6035R - П:AL</option>
+                            <option value="359">One Touch 5035D - П:AL</option>
+                            <option value="449">One Touch 4015D - П:AL</option>
+                            <option value="466">One Touch 6010D - П:AL</option>
+                            <option value="473">One Touch 6040X - П:AL</option>
+                            <option value="497">One Touch 7047D - П:AL</option>
+                            <option value="521">One Touch P310X - П:AL</option>
+                            <option value="534">One Touch 922 - П:AL</option>
+                            <option value="539">One Touch EVO7HD - П:AL</option>
+                            <option value="563">One Touch 995 - П:AL</option>
+                            <option value="572">One Touch 7025D - П:AL</option>
+                            <option value="599">One Touch 6030X - П:AL</option>
+                            <option value="692">One Touch 4010D - П:AL</option>
+                            <option value="736">One Touch 6040D - П:AL</option>
+                            <option value="67">GALAXY S4 mini - П:SA</option>
+                            <option value="68">GT-S6102 - П:SA</option>
+                            <option value="69">GT-I8262 - П:SA</option>
+                            <option value="72">GT-S7262 - П:SA</option>
+                            <option value="73">GALAXY POCKET Neo - П:SA</option>
+                            <option value="76">GALAXY CORE Plus - П:SA</option>
+                            <option value="77">SM-G355H - П:SA</option>
+                            <option value="79">GALAXY S5 mini - П:SA</option>
+                            <option value="84">GT-P7300 - П:SA</option>
+                            <option value="87">GT-I9082 - П:SA</option>
+                            <option value="91">GT-S5312 - П:SA</option>
+                            <option value="92">SM-G313H - П:SA</option>
+                            <option value="99">GT-S5830i - П:SA</option>
+                            <option value="104">GT-S5830 - П:SA</option>
+                            <option value="109">GT-S5830G - П:SA</option>
+                            <option value="110">GALAXY Tab 3 7.0" - П:SA</option>
+                            <option value="112">GALAXY S III - П:SA</option>
+                            <option value="117">GALAXY S III mini - П:SA</option>
+                            <option value="123">GT-I8160 - П:SA</option>
+                            <option value="124">GALAXY S II Plus - П:SA</option>
+                            <option value="141">SM-G7102 - П:SA</option>
+                            <option value="147">GT-S6802 - П:SA</option>
+                            <option value="156">SM-T113 - П:SA</option>
+                            <option value="157">GALAXY FAME Lite with NFC - П:SA</option>
+                            <option value="162">SM-T231 - П:SA</option>
+                            <option value="165">SM-G530H - П:SA</option>
+                            <option value="175">GT-S5300 - П:SA</option>
+                            <option value="177">GALAXY Tab 2 7" - П:SA</option>
+                            <option value="178">GT-I9060 - П:SA</option>
+                            <option value="180">GT-I9260 - П:SA</option>
+                            <option value="181">GALAXY Tab 3 8.0" - П:SA</option>
+                            <option value="183">GT-I5800 - П:SA</option>
+                            <option value="185">GALAXY S5 - П:SA</option>
+                            <option value="189">GALAXY Y Hello Kitty - П:SA</option>
+                            <option value="190">GALAXY Young DUOS - П:SA</option>
+                            <option value="201">GALAXY S DUOS - П:SA</option>
+                            <option value="202">GT-I9190 - П:SA</option>
+                            <option value="207">GALAXY Tab - П:SA</option>
+                            <option value="209">GT-I9192 - П:SA</option>
+                            <option value="211">GT-I8552 - П:SA</option>
+                            <option value="212">SM-A300F - П:SA</option>
+                            <option value="213">GT-S5660 - П:SA</option>
+                            <option value="215">GT-I9301I - П:SA</option>
+                            <option value="216">SM-G357FZ - П:SA</option>
+                            <option value="217">GALAXY TabPRO 8.4" LTE - П:SA</option>
+                            <option value="225">GALAXY FAME - П:SA</option>
+                            <option value="229">GT-S5302 - П:SA</option>
+                            <option value="232">GT-S5570 - П:SA</option>
+                            <option value="233">GT-S7270 - П:SA</option>
+                            <option value="248">GT-I5700 - П:SA</option>
+                            <option value="259">GALAXY Note II - П:SA</option>
+                            <option value="264">SM-G360H - П:SA</option>
+                            <option value="274">GALAXY Tab 3 10.1" - П:SA</option>
+                            <option value="278">GT-I9100 - П:SA</option>
+                            <option value="282">SM-J100FN - П:SA</option>
+                            <option value="285">GALAXY Tab 3 7.0" Lite - П:SA</option>
+                            <option value="289">GALAXY Mega 6.3 - П:SA</option>
+                            <option value="292">SM-T531 - П:SA</option>
+                            <option value="297">GT-I9003 - П:SA</option>
+                            <option value="298">GT-I9600 - П:SA</option>
+                            <option value="301">GT-I9070 - П:SA</option>
+                            <option value="306">GT-S7392 - П:SA</option>
+                            <option value="308">GALAXY Mega 5.8 - П:SA</option>
+                            <option value="310">SM-A700FD - П:SA</option>
+                            <option value="311">GALAXY ACE Plus - П:SA</option>
+                            <option value="316">SM-T561 - П:SA</option>
+                            <option value="327">GT-S6500D - П:SA</option>
+                            <option value="330">GT-I9500 - П:SA</option>
+                            <option value="334">GALAXY Note 10.1" - П:SA</option>
+                            <option value="335">GT-I9103 - П:SA</option>
+                            <option value="338">SPH-L710 - П:SA</option>
+                            <option value="339">SM-G130H - П:SA</option>
+                            <option value="354">GT-S5282 - П:SA</option>
+                            <option value="373">GT-I9001 - П:SA</option>
+                            <option value="374">GT-S5670 - П:SA</option>
+                            <option value="375">SM-G130E - П:SA</option>
+                            <option value="378">SM-A500F - П:SA</option>
+                            <option value="385">GALAXY Note 4 - П:SA</option>
+                            <option value="387">SM-G313HU - П:SA</option>
+                            <option value="388">GALAXY Tab 2 10.1" - П:SA</option>
+                            <option value="389">GT-S7272 - П:SA</option>
+                            <option value="390">GALAXY DUOS 2 - П:SA</option>
+                            <option value="393">SM-G850F - П:SA</option>
+                            <option value="395">GT-N7000 - П:SA</option>
+                            <option value="396">GT-I8200 - П:SA</option>
+                            <option value="398">SM-A300H - П:SA</option>
+                            <option value="402">GT-I9192I - П:SA</option>
+                            <option value="403">GALAXY Note 3 - П:SA</option>
+                            <option value="409">SM-T331 - П:SA</option>
+                            <option value="419">GALAXY S4 - П:SA</option>
+                            <option value="430">SM-G313HY - П:SA</option>
+                            <option value="431">SM-J100H - П:SA</option>
+                            <option value="435">GT-I9060I - П:SA</option>
+                            <option value="439">SGH-I317M - П:SA</option>
+                            <option value="442">SM-G920F - П:SA</option>
+                            <option value="446">Build - П:SA</option>
+                            <option value="447">GT-I9000 - П:SA</option>
+                            <option value="456">GT-I5500 - П:SA</option>
+                            <option value="457">GT-S5330 - П:SA</option>
+                            <option value="458">GT-S5363 - П:SA</option>
+                            <option value="459">GT-S5690 - П:SA</option>
+                            <option value="464">SGH-M919 - П:SA</option>
+                            <option value="468">SHV-E210S - П:SA</option>
+                            <option value="475">GALAXY Note 8.0" - П:SA</option>
+                            <option value="478">GALAXY Note 3 Neo Duos - П:SA</option>
+                            <option value="480">GT-I8150 - П:SA</option>
+                            <option value="482">SM-A500H - П:SA</option>
+                            <option value="484">GALAXY Tab S 8.4" LTE - П:SA</option>
+                            <option value="485">GALAXY Trend Lite - П:SA</option>
+                            <option value="493">SM-G318HZ - П:SA</option>
+                            <option value="500">GALAXY Note 10.1" 2014 Edition - П:SA</option>
+                            <option value="508">GALAXY S4 zoom - П:SA</option>
+                            <option value="514">SM-G316HU - П:SA</option>
+                            <option value="525">SM-G925F - П:SA</option>
+                            <option value="533">SM-G925A - П:SA</option>
+                            <option value="536">SM-G318H - П:SA</option>
+                            <option value="548">GT-C3222 - П:SA</option>
+                            <option value="549">GALAXY S III LTE - П:SA</option>
+                            <option value="574">SGH-I317 - П:SA</option>
+                            <option value="575">SM-T235Y - П:SA</option>
+                            <option value="576">SM-T116 - П:SA</option>
+                            <option value="581">GT-S5610 - П:SA</option>
+                            <option value="583">GT-E2222 - П:SA</option>
+                            <option value="586">SM-E500H - П:SA</option>
+                            <option value="590">SM-T365 - П:SA</option>
+                            <option value="597">GALAXY Tab 3 10.1" WiFi - П:SA</option>
+                            <option value="598">GT-C3222W - П:SA</option>
+                            <option value="600">GT-I8260 - П:SA</option>
+                            <option value="608">GALAXY Tab S 10.5" LTE - П:SA</option>
+                            <option value="622">SM-G361H - П:SA</option>
+                            <option value="646">GT-C3782 - П:SA</option>
+                            <option value="672">GALAXY S4 ACTIVE - П:SA</option>
+                            <option value="673">GALAXY Note 3 Neo - П:SA</option>
+                            <option value="687">GALAXY Tab 3 7.0" WiFi - П:SA</option>
+                            <option value="694">GT-C3322 - П:SA</option>
+                            <option value="695">GT-I8200L - П:SA</option>
+                            <option value="699">SM-G313HZ - П:SA</option>
+                            <option value="700">SHV-E330S - П:SA</option>
+                            <option value="701">GT-B5512 - П:SA</option>
+                            <option value="704">GALAXY Note 4 Edge - П:SA</option>
+                            <option value="708">GALAXY STAR - П:SA</option>
+                            <option value="709">GALAXY Trend Plus - П:SA</option>
+                            <option value="712">SM-C111 - П:SA</option>
+                            <option value="713">GT-C6712 - П:SA</option>
+                            <option value="714">SM-G530F - П:SA</option>
+                            <option value="715">GT-S5380D - П:SA</option>
+                            <option value="728">GALAXY Tab 2 7" WiFi - П:SA</option>
+                            <option value="729">GT-I9100G - П:SA</option>
+                            <option value="732">GALAXY Tab 2 10.1" WiFi - П:SA</option>
+                            <option value="735">GT-S7250D - П:SA</option>
+                            <option value="751">GALAXY Note 10.1" 2014 Edition LTE - П:SA</option>
+                            <option value="753">GALAXY TabPRO 10.1" LTE - П:SA</option>
+                            <option value="763">GT-P6800 - П:SA</option>
+                            <option value="764">GALAXY Tab 7" Plus - П:SA</option>
+                            <option value="765">s7562 - П:SA</option>
+                            <option value="771">GALAXY Tab 10.1" P7500 - П:SA</option>
+                            <option value="776">GT-S5222 - П:SA</option>
+                            <option value="778">OMNIA7 - П:SA</option>
+                            <option value="781">GALAXY Tab 4 10.1" LTE - П:SA</option>
+                            <option value="782">GT-E1282T - П:SA</option>
+                            <option value="786">SM-A700H - П:SA</option>
+                            <option value="788">SM-T355 - П:SA</option>
+                            <option value="790">GT-S5230 - П:SA</option>
+                            <option value="794">GT-I8200Q - П:SA</option>
+                            <option value="795">GT-S8600 - П:SA</option>
+                            <option value="797">GT-S5611 - П:SA</option>
+                            <option value="799">GT-S5292 - П:SA</option>
+                            <option value="800">SGH-I747 - П:SA</option>
+                            <option value="801">SM-N8000 - П:SA</option>
+                            <option value="806">GT-I9515 - П:SA</option>
+                            <option value="807">GT-I8350 - П:SA</option>
+                            <option value="808">SM-E7000 - П:SA</option>
+                            <option value="809">GT-C5212i - П:SA</option>
+                            <option value="812">GT-C3530 - П:SA</option>
+                            <option value="813">GT-C3322i - П:SA</option>
+                            <option value="816">GT-S3600i - П:SA</option>
+                            <option value="820">GALAXY Note II LTE - П:SA</option>
+                            <option value="823">GT-S3850 - П:SA</option>
+                            <option value="828">SM-G7200 - П:SA</option>
+                            <option value="829">GT-S3802 - П:SA</option>
+                            <option value="830">GT-C3752 - П:SA</option>
+                            <option value="70">iPhone - П:AP</option>
+                            <option value="107">iPad - П:AP</option>
+                            <option value="579">iPhone 5 - П:AP</option>
+                            <option value="588">iPhone 5S - П:AP</option>
+                            <option value="755">iPad 3 - П:AP</option>
+                            <option value="824">iPhone 5C - П:AP</option>
+                            <option value="71">Cyclone Explorer - П:SZ</option>
+                            <option value="74">A69 - П:MI</option>
+                            <option value="149">A61 - П:MI</option>
+                            <option value="176">A104 - П:MI</option>
+                            <option value="192">A28 - П:MI</option>
+                            <option value="193">A79 - П:MI</option>
+                            <option value="198">A94 - П:MI</option>
+                            <option value="234">S300 - П:MI</option>
+                            <option value="236">AQ5001 - П:MI</option>
+                            <option value="272">A093 - П:MI</option>
+                            <option value="322">A091 - П:MI</option>
+                            <option value="323">A59 - П:MI</option>
+                            <option value="489">D200 - П:MI</option>
+                            <option value="506">D320 - П:MI</option>
+                            <option value="543">A106 - П:MI</option>
+                            <option value="611">A092 - П:MI</option>
+                            <option value="645">Q324 - П:MI</option>
+                            <option value="669">A118R - П:MI</option>
+                            <option value="716">A36 - П:MI</option>
+                            <option value="75">IQ434 - П:FL</option>
+                            <option value="85">IQ442 - П:FL</option>
+                            <option value="94">IQ239 - П:FL</option>
+                            <option value="100">IQ4403 - П:FL</option>
+                            <option value="106">IQ447 - П:FL</option>
+                            <option value="136">IQ445 - П:FL</option>
+                            <option value="150">IQ431 - П:FL</option>
+                            <option value="160">IQ436 - П:FL</option>
+                            <option value="170">IQ4404 - П:FL</option>
+                            <option value="195">IQ449 - П:FL</option>
+                            <option value="204">IQ237 - П:FL</option>
+                            <option value="224">IQ4411 - П:FL</option>
+                            <option value="239">IQ450 - П:FL</option>
+                            <option value="250">IQ432 - П:FL</option>
+                            <option value="255">IQ245Plus - П:FL</option>
+                            <option value="256">IQ4405 - П:FL</option>
+                            <option value="260">IQ454 - П:FL</option>
+                            <option value="266">IQ238 - П:FL</option>
+                            <option value="268">IQ4490 - П:FL</option>
+                            <option value="325">IQ245 - П:FL</option>
+                            <option value="364">IQ280 - П:FL</option>
+                            <option value="365">IQ430 - П:FL</option>
+                            <option value="380">IQ235 - П:FL</option>
+                            <option value="415">IQ256 - П:FL</option>
+                            <option value="448">IQ440 - П:FL</option>
+                            <option value="469">IQ441 - П:FL</option>
+                            <option value="491">IQ446 - П:FL</option>
+                            <option value="523">Flylife Connect 7.85 3G Slim - П:FL</option>
+                            <option value="554">IQ246 - П:FL</option>
+                            <option value="571">IQ451 - П:FL</option>
+                            <option value="680">Flylife Connect 7 3G 2 - П:FL</option>
+                            <option value="78">X2DS - П:NK</option>
+                            <option value="101">XL - П:NK</option>
+                            <option value="127">X - П:NK</option>
+                            <option value="386">X2-01 - П:NK</option>
+                            <option value="397">C3-01 - П:NK</option>
+                            <option value="399">603 - П:NK</option>
+                            <option value="401">Lumia 525 - П:NK</option>
+                            <option value="404">E5-00 - П:NK</option>
+                            <option value="405">N9 - П:NK</option>
+                            <option value="407">Lumia 630 Dual SIM - П:NK</option>
+                            <option value="414">X7-00 - П:NK</option>
+                            <option value="416">C2-01 - П:NK</option>
+                            <option value="420">Lumia 530 Dual SIM - П:NK</option>
+                            <option value="424">5530c-2 - П:NK</option>
+                            <option value="425">Lumia 620 - П:NK</option>
+                            <option value="426">Lumia 800 - П:NK</option>
+                            <option value="429">700 - П:NK</option>
+                            <option value="433">Lumia 640 - П:NK</option>
+                            <option value="437">6303classic - П:NK</option>
+                            <option value="441">6303iclassic - П:NK</option>
+                            <option value="444">5230 - П:NK</option>
+                            <option value="445">C5-06 - П:NK</option>
+                            <option value="451">Lumia 720 - П:NK</option>
+                            <option value="472">225 - П:NK</option>
+                            <option value="486">X3-02 - П:NK</option>
+                            <option value="488">Lumia 510 - П:NK</option>
+                            <option value="490">Lumia 520 - П:NK</option>
+                            <option value="496">C7-00 - П:NK</option>
+                            <option value="498">311 - П:NK</option>
+                            <option value="499">C6-01 - П:NK</option>
+                            <option value="504">Lumia 610 - П:NK</option>
+                            <option value="510">5800d-1 - П:NK</option>
+                            <option value="515">220 - П:NK</option>
+                            <option value="519">300 - П:NK</option>
+                            <option value="524">Lumia 625H - П:NK</option>
+                            <option value="530">6700c-1 - П:NK</option>
+                            <option value="540">C6-00 - П:NK</option>
+                            <option value="541">E71-2 - П:NK</option>
+                            <option value="562">E72-1 - П:NK</option>
+                            <option value="565">E6-00 - П:NK</option>
+                            <option value="591">Lumia 900 - П:NK</option>
+                            <option value="602">C3-00 - П:NK</option>
+                            <option value="605">RM-978 - П:NK</option>
+                            <option value="606">Lumia 630 - П:NK</option>
+                            <option value="624">Lumia 430 - П:NK</option>
+                            <option value="627">Lumia 920 - П:NK</option>
+                            <option value="628">Lumia 635 - П:NK</option>
+                            <option value="630">Lumia 435 - П:NK</option>
+                            <option value="633">Lumia 535 - П:NK</option>
+                            <option value="640">5228 - П:NK</option>
+                            <option value="642">Lumia 710 - П:NK</option>
+                            <option value="643">Lumia 1320 - П:NK</option>
+                            <option value="647">5320d-1 - П:NK</option>
+                            <option value="648">E63-1 - П:NK</option>
+                            <option value="657">E71-1 - П:NK</option>
+                            <option value="659">808PureView - П:NK</option>
+                            <option value="675">N8 - П:NK</option>
+                            <option value="677">Lumia 625 - П:NK</option>
+                            <option value="678">Lumia 735 - П:NK</option>
+                            <option value="702">N95 - П:NK</option>
+                            <option value="717">501 - П:NK</option>
+                            <option value="727">5330-1d - П:NK</option>
+                            <option value="740">Lumia 820 - П:NK</option>
+                            <option value="754">500 - П:NK</option>
+                            <option value="758">Lumia 1520 - П:NK</option>
+                            <option value="768">909 - П:NK</option>
+                            <option value="789">C5-00 - П:NK</option>
+                            <option value="805">Lumia 640 XL - П:NK</option>
+                            <option value="825">E51-1 - П:NK</option>
+                            <option value="80">Desire 601 dual sim - П:HT</option>
+                            <option value="103">WildfireS A510e - П:HT</option>
+                            <option value="134">Desire 500 dual sim - П:HT</option>
+                            <option value="137">One V - П:HT</option>
+                            <option value="138">Desire 616 dual sim - П:HT</option>
+                            <option value="140">DesireSV - П:HT</option>
+                            <option value="169">Desire 200 - П:HT</option>
+                            <option value="172">Desire V - П:HT</option>
+                            <option value="182">Desire SV - П:HT</option>
+                            <option value="206">Desire C - П:HT</option>
+                            <option value="222">Desire 310 - П:HT</option>
+                            <option value="226">Desire 210 dual sim - П:HT</option>
+                            <option value="227">EVO3D X515m - П:HT</option>
+                            <option value="237">Hero - П:HT</option>
+                            <option value="238">One - П:HT</option>
+                            <option value="245">DesireS S510e - П:HT</option>
+                            <option value="247">Desire 400 dual sim - П:HT</option>
+                            <option value="254">Desire 300 - П:HT</option>
+                            <option value="271">One S - П:HT</option>
+                            <option value="290">One 801e - П:HT</option>
+                            <option value="312">One dual sim - П:HT</option>
+                            <option value="355">Desire 310 dual sim - П:HT</option>
+                            <option value="356">Sensation XE with Beats Audio Z715e - П:HT</option>
+                            <option value="358">Desire A8181 - П:HT</option>
+                            <option value="412">One M8 dual sim - П:HT</option>
+                            <option value="417">Desire 601 - П:HT</option>
+                            <option value="455">Legend - П:HT</option>
+                            <option value="462">Desire 516 dual sim - П:HT</option>
+                            <option value="477">DesireHD A9191 - П:HT</option>
+                            <option value="479">Sensation Z710e - П:HT</option>
+                            <option value="505">OneXplus - П:HT</option>
+                            <option value="507">Desire 626G dual sim - П:HT</option>
+                            <option value="511">Desire 620G dual sim - П:HT</option>
+                            <option value="516">One mini - П:HT</option>
+                            <option value="526">Desire 816 dual sim - П:HT</option>
+                            <option value="527">M8MINx - П:HT</option>
+                            <option value="528">OneSV - П:HT</option>
+                            <option value="537">Desire 700 dual sim - П:HT</option>
+                            <option value="538">One X - П:HT</option>
+                            <option value="550">Desire 600 dual sim - П:HT</option>
+                            <option value="551">Desire X - П:HT</option>
+                            <option value="553">Explorer A310e - П:HT</option>
+                            <option value="561">One mini 2 - П:HT</option>
+                            <option value="593">One max - П:HT</option>
+                            <option value="604">One M8 - П:HT</option>
+                            <option value="619">Wildfire A3333 - П:HT</option>
+                            <option value="625">Desire 526G dual sim - П:HT</option>
+                            <option value="636">Desire - П:HT</option>
+                            <option value="660">601 Dual - П:HT</option>
+                            <option value="661">7 Mozart T8698 - П:HT</option>
+                            <option value="683">Desire X dual sim - П:HT</option>
+                            <option value="688">Windows Phone 8S by HTC - П:HT</option>
+                            <option value="707">M8x - П:HT</option>
+                            <option value="710">Desire U dual sim - П:HT</option>
+                            <option value="722">Desire HD A9191 - П:HT</option>
+                            <option value="734">EVO 3D X515m - П:HT</option>
+                            <option value="741">HD2 T8585 - П:HT</option>
+                            <option value="743">Desire 816G dual sim - П:HT</option>
+                            <option value="757">Rhyme S510b - П:HT</option>
+                            <option value="774">D816d - П:HT</option>
+                            <option value="785">Desire 610 - П:HT</option>
+                            <option value="821">C2 - П:HT</option>
+                            <option value="822">7 Trophy - П:HT</option>
+                            <option value="82">S850 - П:LE</option>
+                            <option value="83">P770 - П:LE</option>
+                            <option value="93">A369i - П:LE</option>
+                            <option value="96">A328 - П:LE</option>
+                            <option value="118">S580 - П:LE</option>
+                            <option value="122">A7600-H - П:LE</option>
+                            <option value="133">A319 - П:LE</option>
+                            <option value="135">IdeaTab B8080-H - П:LE</option>
+                            <option value="153">A706 ROW - П:LE</option>
+                            <option value="155">A526 - П:LE</option>
+                            <option value="159">A606 - П:LE</option>
+                            <option value="174">A5000 - П:LE</option>
+                            <option value="187">A536 - П:LE</option>
+                            <option value="196">S660 - П:LE</option>
+                            <option value="231">A316i - П:LE</option>
+                            <option value="235">A369 - П:LE</option>
+                            <option value="243">A5500-H - П:LE</option>
+                            <option value="249">P780 - П:LE</option>
+                            <option value="263">A680 ROW - П:LE</option>
+                            <option value="277">K910L - П:LE</option>
+                            <option value="291">S720 - П:LE</option>
+                            <option value="300">IdeaTab A1000 - П:LE</option>
+                            <option value="302">A859 - П:LE</option>
+                            <option value="313">A3500-H - П:LE</option>
+                            <option value="329">A390 ROW - П:LE</option>
+                            <option value="343">S650 - П:LE</option>
+                            <option value="346">S860 - П:LE</option>
+                            <option value="363">P780 ROW - П:LE</option>
+                            <option value="367">A516 - П:LE</option>
+                            <option value="369">IdeaTab A3000 - П:LE</option>
+                            <option value="370">IdeaTab B6000-F - П:LE</option>
+                            <option value="371">S960 - П:LE</option>
+                            <option value="383">Unknown mobile - П:LE</option>
+                            <option value="476">Vibe Z2 - П:LE</option>
+                            <option value="517">B8000-H - П:LE</option>
+                            <option value="531">X2-EU - П:LE</option>
+                            <option value="547">S90-u - П:LE</option>
+                            <option value="560">IdeaTab S6000 - П:LE</option>
+                            <option value="569">A800 - П:LE</option>
+                            <option value="582">S820 ROW - П:LE</option>
+                            <option value="594">K900 ROW - П:LE</option>
+                            <option value="601">K910 - П:LE</option>
+                            <option value="618">A690 - П:LE</option>
+                            <option value="634">S890 - П:LE</option>
+                            <option value="638">S5000-H - П:LE</option>
+                            <option value="639">A630 - П:LE</option>
+                            <option value="653">A390t - П:LE</option>
+                            <option value="664">B6000-H - П:LE</option>
+                            <option value="681">A850 - П:LE</option>
+                            <option value="682">A850+ - П:LE</option>
+                            <option value="685">A396 - П:LE</option>
+                            <option value="696">X2-CU - П:LE</option>
+                            <option value="698">A6000 - П:LE</option>
+                            <option value="705">A656 TD - П:LE</option>
+                            <option value="723">IdeaTab B6000-H - П:LE</option>
+                            <option value="724">K80M - П:LE</option>
+                            <option value="725">S820 - П:LE</option>
+                            <option value="731">IdeaTab B8000-H - П:LE</option>
+                            <option value="739">IdeaTab A2107A - П:LE</option>
+                            <option value="748">TAB 2 A7-30HC - П:LE</option>
+                            <option value="762">TAB S8-50LC - П:LE</option>
+                            <option value="95">Blade Q Lux - П:ZT</option>
+                            <option value="108">T311 - П:ZT</option>
+                            <option value="119">Blade L2 - П:ZT</option>
+                            <option value="120">Kis 3 - П:ZT</option>
+                            <option value="126">V808 - П:ZT</option>
+                            <option value="128">V815W - П:ZT</option>
+                            <option value="139">Geek 2 - П:ZT</option>
+                            <option value="143">LEO M1 - П:ZT</option>
+                            <option value="158">Geek - П:ZT</option>
+                            <option value="221">LEO Q1 - П:ZT</option>
+                            <option value="273">Blade V2 Lite - П:ZT</option>
+                            <option value="284">V811W - П:ZT</option>
+                            <option value="296">V790 - П:ZT</option>
+                            <option value="305">V829 - П:ZT</option>
+                            <option value="349">V795 - П:ZT</option>
+                            <option value="350">Geek 2 LTE - П:ZT</option>
+                            <option value="379">V769M - П:ZT</option>
+                            <option value="460">V967S - П:ZT</option>
+                            <option value="461">Blade G Lux - П:ZT</option>
+                            <option value="465">T82 - П:ZT</option>
+                            <option value="467">V807 - П:ZT</option>
+                            <option value="544">LEO S1 - П:ZT</option>
+                            <option value="557">V889M - П:ZT</option>
+                            <option value="668">LEO Q2 - П:ZT</option>
+                            <option value="97">GSmart Roma R2 - П:GG</option>
+                            <option value="635">GSmart Mika M3 - П:GG</option>
+                            <option value="102">PAP4055DUO - П:PR</option>
+                            <option value="105">PAP3540DUO - П:PR</option>
+                            <option value="113">PMP7079D3G QUAD - П:PR</option>
+                            <option value="129">PMP7170B3G DUO - П:PR</option>
+                            <option value="194">PAP3350DUO - П:PR</option>
+                            <option value="220">PAP5500DUO - П:PR</option>
+                            <option value="280">PMP7280C3G QUAD - П:PR</option>
+                            <option value="286">PAP5400DUO - П:PR</option>
+                            <option value="348">PAP3501DUO - П:PR</option>
+                            <option value="376">PAP5300DUO - П:PR</option>
+                            <option value="454">PMP5785C3G QUAD - П:PR</option>
+                            <option value="573">PAP4044DUO - П:PR</option>
+                            <option value="612">PAP4500TDUO - П:PR</option>
+                            <option value="649">PMP7110D3G - П:PR</option>
+                            <option value="746">PMP7280C3G - П:PR</option>
+                            <option value="749">PMP7480D3G QUAD - П:PR</option>
+                            <option value="750">PMP7170B3GCE - П:PR</option>
+                            <option value="766">PMP7100D3G QUAD - П:PR</option>
+                            <option value="769">PMP7380D3G QUAD - П:PR</option>
+                            <option value="772">PMP5101D3G QUAD - П:PR</option>
+                            <option value="773">PMP3007C3G - П:PR</option>
+                            <option value="793">PAP5501 - П:PR</option>
+                            <option value="796">PMP7100D3G - П:PR</option>
+                            <option value="114">U8812D - П:HU</option>
+                            <option value="186">Y511-U30 - П:HU</option>
+                            <option value="197">P7-L10 - П:HU</option>
+                            <option value="199">U9200 - П:HU</option>
+                            <option value="208">Y600-U20 - П:HU</option>
+                            <option value="210">Y300-0100 - П:HU</option>
+                            <option value="219">MTC 950 - П:HU</option>
+                            <option value="257">Y220-U10 - П:HU</option>
+                            <option value="261">G750-U10 - П:HU</option>
+                            <option value="269">MediaPad - П:HU</option>
+                            <option value="304">U8825-1 - П:HU</option>
+                            <option value="307">G630-U10 - П:HU</option>
+                            <option value="315">U8800Pro - П:HU</option>
+                            <option value="332">U8950-1 - П:HU</option>
+                            <option value="344">MediaPad 7 Lite II - П:HU</option>
+                            <option value="347">Y330-U01 - П:HU</option>
+                            <option value="353">G525-U00 - П:HU</option>
+                            <option value="400">Y320-U10 - П:HU</option>
+                            <option value="406">G730-U10 - П:HU</option>
+                            <option value="408">Y511-U10 - П:HU</option>
+                            <option value="411">Y220-U00 - П:HU</option>
+                            <option value="413">Y511-T00 - П:HU</option>
+                            <option value="422">Y330-U11 - П:HU</option>
+                            <option value="432">Y520-U22 - П:HU</option>
+                            <option value="440">Y625-U32 - П:HU</option>
+                            <option value="443">G610-U20 - П:HU</option>
+                            <option value="453">Y530-U00 - П:HU</option>
+                            <option value="481">Y320-T00 - П:HU</option>
+                            <option value="501">P6-U06 - П:HU</option>
+                            <option value="522">U9508 - П:HU</option>
+                            <option value="542">P2-6011 - П:HU</option>
+                            <option value="546">U8815 - П:HU</option>
+                            <option value="555">G510-0200 - П:HU</option>
+                            <option value="556">MediaPad 10 LINK - П:HU</option>
+                            <option value="568">G700-U10 - П:HU</option>
+                            <option value="592">Y221-U22 - П:HU</option>
+                            <option value="595">U8186 - П:HU</option>
+                            <option value="613">U9200E - П:HU</option>
+                            <option value="620">Y210-0200 - П:HU</option>
+                            <option value="621">H30-U10 - П:HU</option>
+                            <option value="654">MediaPad 7 Youth 2 - П:HU</option>
+                            <option value="658">G6-U10 - П:HU</option>
+                            <option value="662">U8655 - П:HU</option>
+                            <option value="671">HN3-U00 - П:HU</option>
+                            <option value="684">MediaPad 7 Lite - П:HU</option>
+                            <option value="697">G6-U00 - П:HU</option>
+                            <option value="703">U8860 - П:HU</option>
+                            <option value="742">MediaPad 7 Youth - П:HU</option>
+                            <option value="767">MediaPad 10 FHD - П:HU</option>
+                            <option value="779">Y541-U02 - П:HU</option>
+                            <option value="784">Ideos - П:HU</option>
+                            <option value="811">P7-L00 - П:HU</option>
+                            <option value="814">MediaPad X1 7.0 - П:HU</option>
+                            <option value="818">Y300-0000 - П:HU</option>
+                            <option value="125">U59GT-C - П:CU</option>
+                            <option value="130">T7X 3G - П:OY</option>
+                            <option value="205">T72HRi 3G - П:OY</option>
+                            <option value="295">T72X 3G - П:OY</option>
+                            <option value="326">T72MR 3G - П:OY</option>
+                            <option value="341">T72V 3G - П:OY</option>
+                            <option value="366">T14N 3G - П:OY</option>
+                            <option value="509">T7D 3G - П:OY</option>
+                            <option value="535">T102MR 3G - П:OY</option>
+                            <option value="559">T34 - П:OY</option>
+                            <option value="587">Unknown tablet - П:OY</option>
+                            <option value="603">T72 3G - П:OY</option>
+                            <option value="607">T80 3G - П:OY</option>
+                            <option value="726">T84HVi 3G - П:OY</option>
+                            <option value="730">T37 - П:OY</option>
+                            <option value="744">T104HVi 3G - П:OY</option>
+                            <option value="756">T82P 3G - П:OY</option>
+                            <option value="759">T84M 3G - П:OY</option>
+                            <option value="783">T104HMi 3G - П:OY</option>
+                            <option value="802">T3 3G - П:OY</option>
+                            <option value="142">W536 - П:PH</option>
+                            <option value="148">W737 - П:PH</option>
+                            <option value="152">W6610 - П:PH</option>
+                            <option value="218">W3568 - П:PH</option>
+                            <option value="253">W832 - П:PH</option>
+                            <option value="258">S388 - П:PH</option>
+                            <option value="262">S308 - П:PH</option>
+                            <option value="294">W632 - П:PH</option>
+                            <option value="495">Unknown mobile - П:PH</option>
+                            <option value="577">W3500 - П:PH</option>
+                            <option value="737">V387 - П:PH</option>
+                            <option value="151">Nexus 5 - П:GO</option>
+                            <option value="320">Nexus 7 - П:GO</option>
+                            <option value="368">Galaxy Nexus - П:GO</option>
+                            <option value="667">Nexus 6 - П:GO</option>
+                            <option value="718">Nexus One - П:GO</option>
+                            <option value="819">Nexus 4 - П:GO</option>
+                            <option value="154">TX41 - П:PT</option>
+                            <option value="351">TX33 - П:PT</option>
+                            <option value="502">TX29 - П:PT</option>
+                            <option value="689">TX77 - П:PT</option>
+                            <option value="691">TX69 - П:PT</option>
+                            <option value="733">TX18 - П:PT</option>
+                            <option value="745">TX34 - П:PT</option>
+                            <option value="780">TX32 - П:PT</option>
+                            <option value="804">TX80 - П:PT</option>
+                            <option value="252">ZenFone 4 - П:AU</option>
+                            <option value="324">Transformer Pad TF700T - П:AU</option>
+                            <option value="345">MeMO Pad FHD 10 LTE - П:AU</option>
+                            <option value="362">Fonepad 7 - П:AU</option>
+                            <option value="384">Unknown mobile - П:AU</option>
+                            <option value="438">MeMO Pad - П:AU</option>
+                            <option value="470">Fonepad 7 Dual SIM - П:AU</option>
+                            <option value="487">Fonepad Note 6 - П:AU</option>
+                            <option value="609">Transformer Pad TF700KL - П:AU</option>
+                            <option value="614">Transformer Pad TF103CG - П:AU</option>
+                            <option value="632">Fonepad 8 - П:AU</option>
+                            <option value="719">Fonepad - П:AU</option>
+                            <option value="752">Transformer Pad TF300TG - П:AU</option>
+                            <option value="760">Transformer Pad TF300TL - П:AU</option>
+                            <option value="770">MeMO Pad FHD 10 - П:AU</option>
+                            <option value="775">MeMO Pad HD 7 - П:AU</option>
+                            <option value="270">Xperia X10 - П:SE</option>
+                            <option value="276">Xperia arc S - П:SE</option>
+                            <option value="288">Xperia X8 - П:SE</option>
+                            <option value="352">Xperia ray - П:SE</option>
+                            <option value="418">Xperia neo - П:SE</option>
+                            <option value="463">Xperia arc - П:SE</option>
+                            <option value="483">Live with Walkman - П:SE</option>
+                            <option value="596">Xperia active - П:SE</option>
+                            <option value="616">txt - П:SE</option>
+                            <option value="623">Xperia Sola - П:SE</option>
+                            <option value="629">Xperia mini - П:SE</option>
+                            <option value="655">Xperia neo V - П:SE</option>
+                            <option value="283">A06 - П:BI</option>
+                            <option value="314">101 Copper - П:AR</option>
+                            <option value="650">35b Titanium - П:AR</option>
+                            <option value="815">101b Copper - П:AR</option>
+                            <option value="340">Iconia Tab A500 - П:AC</option>
+                            <option value="452">Iconia Tab A501 - П:AC</option>
+                            <option value="512">Iconia Tab A701 - П:AC</option>
+                            <option value="721">Iconia A - П:AC</option>
+                            <option value="792">Iconia A3 - П:AC</option>
+                            <option value="342">MI 3W - П:XI</option>
+                            <option value="631">HM Note 1W - П:XI</option>
+                            <option value="690">HM 1SW - П:XI</option>
+                            <option value="720">HM Note 1LTE - П:XI</option>
+                            <option value="377">unknown device - П:Unknown mobile</option>
+                            <option value="381">Unknown mobile - П:Unknown mobile</option>
+                            <option value="382">Unknown desktop - П:Unknown desktop</option>
+                            <option value="394">BlackBerry Touch - П:RM</option>
+                            <option value="584">BlackBerry Kbd - П:RM</option>
+                            <option value="817">BlackBerry 9790 - П:RM</option>
+                            <option value="436">DROID RAZR - П:MR</option>
+                            <option value="471">Xplorer - П:SM</option>
+                            <option value="474">NaviPad TM-7855 3G - П:TZ</option>
+                            <option value="761">NaviPad TM-7887 3G (revision 1) - П:TZ</option>
+                            <option value="798">NaviPad TM-7857 3G (revision 1) - П:TZ</option>
+                            <option value="518">JY-G2 - П:JI</option>
+                            <option value="529">JY-F1 - П:JI</option>
+                            <option value="637">JY-F2 - П:JI</option>
+                            <option value="545">ZP980 - П:ZP</option>
+                            <option value="827">ZP780 - П:ZP</option>
+                            <option value="564">7056G - П:BX</option>
+                            <option value="641">Sorbonne - П:BX</option>
+                            <option value="580">E4001 - П:MD</option>
+                            <option value="589">Vivo Y15 - П:BB</option>
+                            <option value="666">Rainbow - П:WI</option>
+                            <option value="777">Venue 8 HSPA+ - П:DL</option>
+                            <option value="787">i10 - П:RA</option>
+                            <option value="791">Unknown tablet - П:Unknown tablet</option>
+                            <option value="803">T7S - П:HN</option>
+                        </select>
+            </div>
+    
+    
+    <div class="col-md-3 form-group mb-xlg">
+
+            <select data-plugin-selectTwo class="form-control populate" id="customFilter_day_Categories">
+            <option value="all">Все категории</option>
+
+                            <option value="1">Музыка</option>
+                            <option value="2">Кино</option>
+                            <option value="3">Софт</option>
+                            <option value="4">Адалт</option>
+                            <option value="5">Авто</option>
+                            <option value="7">Игры</option>
+                            <option value="8">Видео</option>
+                            <option value="9">Гороскопы</option>
+                            <option value="10">Сонники</option>
+                            <option value="11">Диеты</option>
+                            <option value="12">Авторизация</option>
+                            <option value="13">Новости</option>
+                        </select>
+            </div>
+    
+    
+    <div class="col-md-3 form-group mb-xlg">
+            <select data-plugin-selectTwo class="form-control populate" id="customFilter_day_CountryList">
+            <option value="all">Все страны</option>
+
+                            <option value="24">Albania</option>
+                            <option value="47">Argentina</option>
+                            <option value="20">Armenia</option>
+                            <option value="76">Australia</option>
+                            <option value="42">Austria</option>
+                            <option value="17">Azerbaijan</option>
+                            <option value="69">Bahrain</option>
+                            <option value="55">Bangladesh</option>
+                            <option value="9">Belarus</option>
+                            <option value="39">Belgium</option>
+                            <option value="36">Brazil</option>
+                            <option value="60">Bulgaria</option>
+                            <option value="80">Burkina Faso</option>
+                            <option value="21">China</option>
+                            <option value="75">Colombia</option>
+                            <option value="73">Croatia</option>
+                            <option value="28">Czech Republic</option>
+                            <option value="40">Denmark</option>
+                            <option value="50">Egypt</option>
+                            <option value="53">Estonia</option>
+                            <option value="43">Finland</option>
+                            <option value="52">France</option>
+                            <option value="14">Georgia</option>
+                            <option value="19">Germany</option>
+                            <option value="44">Ghana</option>
+                            <option value="59">Greece</option>
+                            <option value="62">Guatemala</option>
+                            <option value="49">Hong Kong</option>
+                            <option value="54">Hungary</option>
+                            <option value="37">India</option>
+                            <option value="12">Indonesia</option>
+                            <option value="34">Iran</option>
+                            <option value="72">Iraq</option>
+                            <option value="48">Ireland</option>
+                            <option value="11">Israel</option>
+                            <option value="27">Italy</option>
+                            <option value="46">Ivory Coast</option>
+                            <option value="35">Japan</option>
+                            <option value="7">Kazakhstan</option>
+                            <option value="71">Kenya</option>
+                            <option value="16">Kyrgyzstan</option>
+                            <option value="77">Laos</option>
+                            <option value="10">Latvia</option>
+                            <option value="64">Libya</option>
+                            <option value="81">Luxembourg</option>
+                            <option value="74">Malaysia</option>
+                            <option value="70">Mongolia</option>
+                            <option value="58">Montenegro</option>
+                            <option value="22">Morocco</option>
+                            <option value="67">Nepal</option>
+                            <option value="56">Netherlands</option>
+                            <option value="65">Nigeria</option>
+                            <option value="78">Norway</option>
+                            <option value="41">Pakistan</option>
+                            <option value="57">Philippines</option>
+                            <option value="25">Poland</option>
+                            <option value="79">Portugal</option>
+                            <option value="31">Republic of Korea</option>
+                            <option value="29">Republic of Lithuania</option>
+                            <option value="15">Republic of Moldova</option>
+                            <option value="66">Republic of the Congo</option>
+                            <option value="68">Romania</option>
+                            <option value="5">Russia</option>
+                            <option value="33">Serbia</option>
+                            <option value="61">Slovakia</option>
+                            <option value="51">South Africa</option>
+                            <option value="23">Spain</option>
+                            <option value="30">Sudan</option>
+                            <option value="63">Sweden</option>
+                            <option value="18">Tajikistan</option>
+                            <option value="26">Turkey</option>
+                            <option value="13">Turkmenistan</option>
+                            <option value="8">Ukraine</option>
+                            <option value="38">United Arab Emirates</option>
+                            <option value="32">United Kingdom</option>
+                            <option value="4">United States</option>
+                            <option value="6">Uzbekistan</option>
+                            <option value="45">Vietnam</option>
+                        </select>
+            </div>
+    
+    
+    <div class="col-md-3 form-group mb-xlg">
+
+            <select data-plugin-selectTwo class="form-control populate" id="customFilter_day_Landings">
+            <option value="all">Все лендинги</option>
+
+                            <option value="4">Video Tube - C:RU - О:Билайн</option>
+                            <option value="6">Файлы - C:RU - О:Билайн</option>
+                            <option value="7">Кино Online - C:RU - О:Билайн</option>
+                            <option value="8">You Sex Tube - C:RU - О:Билайн</option>
+                            <option value="9">Video XXX Club - C:RU - О:Билайн</option>
+                            <option value="10">Video Tube - C:RU - О:Билайн</option>
+                            <option value="11">Музыкальный архив (.MP3) - C:RU - О:Билайн</option>
+                            <option value="12">Гороскоп - C:RU - О:Билайн</option>
+                            <option value="13">Сонник - C:RU - О:Билайн</option>
+                            <option value="14">Диеты - C:RU - О:Билайн</option>
+                            <option value="15">Сонник2 - C:RU - О:Билайн</option>
+                            <option value="16">Музыка - C:RU - О:Билайн</option>
+                            <option value="21">Video XXX Tube - C:RU - О:Билайн</option>
+                            <option value="83">HOT VIDEOS - C:RU - О:Билайн</option>
+                            <option value="84">VideoHub - C:RU - О:Билайн</option>
+                            <option value="85">MyTube - C:RU - О:Билайн</option>
+                            <option value="86">Горячие срочные новости - C:RU - О:Билайн</option>
+                            <option value="87">Авторизация VK - C:RU - О:Билайн</option>
+                            <option value="26">ТЕЛЕ2 RU Жаркое - C:RU - О:ТЕЛЕ2</option>
+                            <option value="69">Авторизация - C:RU - О:ТЕЛЕ2</option>
+                            <option value="70">Новости - C:RU - О:ТЕЛЕ2</option>
+                            <option value="71">Видео - C:RU - О:ТЕЛЕ2</option>
+                            <option value="72">Youtube Adult - C:RU - О:ТЕЛЕ2</option>
+                            <option value="27">Авторизация OK - C:RU - О:Мегафон</option>
+                            <option value="28">Музыка: прослушивание/загрузка - C:RU - О:Мегафон</option>
+                            <option value="29">Кино ИК 50 - C:RU - О:Мегафон</option>
+                            <option value="30">Кино ИК 100 - C:RU - О:Мегафон</option>
+                            <option value="31">Кино ИК 150 - C:RU - О:Мегафон</option>
+                            <option value="32">Кино ИК 200 - C:RU - О:Мегафон</option>
+                            <option value="33">Кино ИК 250 - C:RU - О:Мегафон</option>
+                            <option value="34">Кино ИК 300 - C:RU - О:Мегафон</option>
+                            <option value="35">Кино ИК 350 - C:RU - О:Мегафон</option>
+                            <option value="36">Кино ИК 400 - C:RU - О:Мегафон</option>
+                            <option value="37">Кино ИК 450 - C:RU - О:Мегафон</option>
+                            <option value="38">Кино ИК 500 - C:RU - О:Мегафон</option>
+                            <option value="39">Видео ИК 50 - C:RU - О:Мегафон</option>
+                            <option value="40">Видео ИК 100 - C:RU - О:Мегафон</option>
+                            <option value="41">Видео ИК 150 - C:RU - О:Мегафон</option>
+                            <option value="42">Видео ИК 200 - C:RU - О:Мегафон</option>
+                            <option value="43">Видео ИК 250 - C:RU - О:Мегафон</option>
+                            <option value="44">Видео ИК 300 - C:RU - О:Мегафон</option>
+                            <option value="45">Видео ИК 500 - C:RU - О:Мегафон</option>
+                            <option value="46">Видео ИК 350 - C:RU - О:Мегафон</option>
+                            <option value="47">Видео ИК 400 - C:RU - О:Мегафон</option>
+                            <option value="48">Видео ИК 450 - C:RU - О:Мегафон</option>
+                            <option value="49">Музыка ИК 50 - C:RU - О:Мегафон</option>
+                            <option value="50">Музыка ИК 100 - C:RU - О:Мегафон</option>
+                            <option value="51">Музыка ИК 150 - C:RU - О:Мегафон</option>
+                            <option value="52">Музыка ИК 200 - C:RU - О:Мегафон</option>
+                            <option value="53">Музыка ИК 250 - C:RU - О:Мегафон</option>
+                            <option value="54">Музыка ИК 300 - C:RU - О:Мегафон</option>
+                            <option value="55">Музыка ИК 350 - C:RU - О:Мегафон</option>
+                            <option value="56">Музыка ИК 400 - C:RU - О:Мегафон</option>
+                            <option value="57">Музыка ИК 450 - C:RU - О:Мегафон</option>
+                            <option value="58">Музыка ИК 500 - C:RU - О:Мегафон</option>
+                            <option value="59">Софт 50 - C:RU - О:Мегафон</option>
+                            <option value="60">Софт 100 - C:RU - О:Мегафон</option>
+                            <option value="61">Софт 150 - C:RU - О:Мегафон</option>
+                            <option value="62">Софт 200 - C:RU - О:Мегафон</option>
+                            <option value="63">Софт 250 - C:RU - О:Мегафон</option>
+                            <option value="64">Софт 300 - C:RU - О:Мегафон</option>
+                            <option value="65">Софт 350 - C:RU - О:Мегафон</option>
+                            <option value="66">Софт 400 - C:RU - О:Мегафон</option>
+                            <option value="67">Софт 450 - C:RU - О:Мегафон</option>
+                            <option value="68">Софт 500 - C:RU - О:Мегафон</option>
+                            <option value="88">Kino Tube - C:RU - О:Мегафон</option>
+                            <option value="89">Bit Cloud - C:RU - О:Мегафон</option>
+                            <option value="90">rOOster - C:RU - О:Мегафон</option>
+                            <option value="91">Авторизация ОК - C:RU - О:Мегафон</option>
+                            <option value="92">Sound Box - C:RU - О:Мегафон</option>
+                            <option value="93">Mens Club - C:RU - О:Мегафон</option>
+                            <option value="94">Kino Player - C:RU - О:Мегафон</option>
+                            <option value="95">Mobile Tube - C:RU - О:Мегафон</option>
+                            <option value="77">VideoHub - C:RU - О:МТС</option>
+                            <option value="78">HOT VIDEOS - C:RU - О:МТС</option>
+                            <option value="79">TurboStorage - C:RU - О:МТС</option>
+                            <option value="80">Video Online - C:RU - О:МТС</option>
+                            <option value="81">MP3 Архив - C:RU - О:МТС</option>
+                            <option value="82">R-News - C:RU - О:МТС</option>
+                            <option value="113">Hot Tube - C:RU - О:МТС</option>
+                            <option value="114">Sexy Kiski - C:RU - О:МТС</option>
+                            <option value="115">TurboBox - C:RU - О:МТС</option>
+                            <option value="116">Музыкальный .MP3 Архив - C:RU - О:МТС</option>
+                            <option value="96">R Video - C:AZ - О:Baksell</option>
+                            <option value="99">Hub Player - C:AZ - О:Baksell</option>
+                            <option value="101">Xvideos - C:AZ - О:Baksell</option>
+                            <option value="103">XXX Player - C:AZ - О:Baksell</option>
+                            <option value="105">Films 2015 - C:AZ - О:Baksell</option>
+                            <option value="107">Видео - C:AZ - О:Baksell</option>
+                            <option value="109">Музыка - C:AZ - О:Baksell</option>
+                            <option value="111">Скачать Файл - C:AZ - О:Baksell</option>
+                            <option value="98">R Video - C:AZ - О:Nar Mobile</option>
+                            <option value="100">Hub Player - C:AZ - О:Nar Mobile</option>
+                            <option value="102">Xvideos - C:AZ - О:Nar Mobile</option>
+                            <option value="104">XXX Player - C:AZ - О:Nar Mobile</option>
+                            <option value="106">Films 2015 - C:AZ - О:Nar Mobile</option>
+                            <option value="108">Видео - C:AZ - О:Nar Mobile</option>
+                            <option value="110">Музыка - C:AZ - О:Nar Mobile</option>
+                            <option value="112">Скачать Файл - C:AZ - О:Nar Mobile</option>
+                        </select>
+            </div>
+            </div>
+            <div class="text-center mb-xlg">
+                <button onclick="return get_stats_group_by_param(this);" customwhereparams="1" type="button" class="mb-xs mt-xs mr-xs btn btn-primary" id="load_statistic_data" name_stats="day" style="margin-top:0px !important;">Выгрузить</button>
+            </div>
+
+                                <div class="table-responsive">
+                    <table class="table table-striped mb-none">
+                        <thead>
+                            <tr class="info-inverse">
+                                <th>Название</th>
+                                <th>Хитов</th>
+                                <th>ТБ</th>
+                                <th>Подписок всего</th>
+                                <th>Подписок выкуплено</th>                                
+                                <th>Отписок</th>
+                                <th title="Без учёта кандидатов на выкуп">Активные&nbsp;подписки</th>
+                                <th title="Ратио = Подписок всего / Хиты">Ратио</th>
+                                <th>Ребиллов</th>
+                                <th>ИК</th>
+                                <th title="Без учёта отложенных ребиллов">Заработок</th>
+                                <th title="Начислено пользователю">Плата за выкуп</th>
+                                <th title="Начислено пользователю">Плата за кредит</th>
+                                <th title="Выручка = Заработок + Плата за выкуп + Плата за кредит">Выручка</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stats_content_day">
+                            <tr>
+                                <td>Название</td>
+                                <td>Хитов</td>
+                                <td>ТБ</td>
+                                <td>Подписок всего</td>
+                                <td>Подписок выкуплено</td>                                
+                                <td>Отписок</td>
+                                <td>Активные&nbsp;подписки</td>
+                                <td>Ратио</td>
+                                <td>Ребиллов</td>
+                                <td>ИК</td>
+                                <td>Заработок</td>
+                                <td>Плата за выкуп</td>
+                                <td>Плата за кредит</td>
+                                <td>Выручка</td>
+                            </tr>
+                            <tr>
+                                <td>Название</td>
+                                <td>Хитов</td>
+                                <td>ТБ</td>
+                                <td>Подписок всего</td>
+                                <td>Подписок выкуплено</td>                                
+                                <td>Отписок</td>
+                                <td>Активные&nbsp;подписки</td>
+                                <td>Ратио</td>
+                                <td>Ребиллов</td>
+                                <td>ИК</td>
+                                <td>Заработок</td>
+                                <td>Плата за выкуп</td>
+                                <td>Плата за кредит</td>
+                                <td>Выручка</td>
+                            </tr>
+                            <tr>
+                                <td>Название</td>
+                                <td>Хитов</td>
+                                <td>ТБ</td>
+                                <td>Подписок всего</td>
+                                <td>Подписок выкуплено</td>                                
+                                <td>Отписок</td>
+                                <td>Активные&nbsp;подписки</td>
+                                <td>Ратио</td>
+                                <td>Ребиллов</td>
+                                <td>ИК</td>
+                                <td>Заработок</td>
+                                <td>Плата за выкуп</td>
+                                <td>Плата за кредит</td>
+                                <td>Выручка</td>
+                            </tr>
+                            <tr>
+                                <td>Название</td>
+                                <td>Хитов</td>
+                                <td>ТБ</td>
+                                <td>Подписок всего</td>
+                                <td>Подписок выкуплено</td>                                
+                                <td>Отписок</td>
+                                <td>Активные&nbsp;подписки</td>
+                                <td>Ратио</td>
+                                <td>Ребиллов</td>
+                                <td>ИК</td>
+                                <td>Заработок</td>
+                                <td>Плата за выкуп</td>
+                                <td>Плата за кредит</td>
+                                <td>Выручка</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="primary-inverse">
+                                <td>Название</td>
+                                <td>Хитов</td>
+                                <td>ТБ</td>
+                                <td>Подписок всего</td>
+                                <td>Подписок выкуплено</td>                                
+                                <td>Отписок</td>
+                                <td>Активные&nbsp;подписки</td>
+                                <td>Ратио</td>
+                                <td>Ребиллов</td>
+                                <td>ИК</td>
+                                <td>Заработок</td>
+                                <td>Плата за выкуп</td>
+                                <td>Плата за кредит</td>
+                                <td>Выручка</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+                <footer class="panel-footer">
+                </footer>
+            </section>
+            <!-- end: page -->
+        </section>
+    </div>
+    <!-- {{Правый сайдбар, пока тупо для совместимости}} -->
+    @@include('template/sidebar-right.html')
+</section>
+
+
+<!-- {{Блок под алерты}} -->
+<!-- <div id="alert_message">{{$alert_message}}</div> -->
+@@include('template/foot.html')
+
+<!-- Specific Page Vendor -->
+<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+<script src="assets/vendor/select2/select2.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="assets/javascripts/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="assets/javascripts/theme.custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="assets/javascripts/theme.init.js"></script>
+
+<!-- Examples -->
+<script src="assets/javascripts/ui-elements/examples.modals.js"></script>
+</body>
+</html>

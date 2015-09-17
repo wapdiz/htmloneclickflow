@@ -51,7 +51,6 @@
                     <div class="panel-actions">
                         <a href="#" class="fa fa-caret-down"></a>
                     </div>
-
                     <h2 class="panel-title">2 Сплит <span class="text-muted">( поток «Телетекст 2»)</span></h2>
                 </header>
                 <div class="panel-body">
@@ -120,19 +119,19 @@
                                 <label class="control-label">OS</label>
                                 <div>
                                     <div class="radio">
-                                        <label>
+                                        <label href="#osModal" class="modal-with-move-anim">
                                             <input type="radio" name="OS" id="OS1" value="option1" checked>
                                             Все
                                         </label>
                                     </div>
                                     <div class="radio">
-                                        <label>
+                                        <label href="#osModal" class="modal-with-move-anim">
                                             <input type="radio" name="OS" id="OS2" value="option2">
                                             Совпадает
                                         </label>
                                     </div>
                                     <div class="radio">
-                                        <label>
+                                        <label href="#osModal" class="modal-with-move-anim">
                                             <input type="radio" name="OS" id="OS3" value="option3">
                                             Исключает
                                         </label>
@@ -143,19 +142,19 @@
                                 <label class="control-label">Браузер</label>
                                 <div>
                                     <div class="radio">
-                                        <label>
+                                        <label href="#browserModal" class="modal-with-move-anim">
                                             <input type="radio" name="Browser" id="Browser1" value="option1" checked>
                                             Все
                                         </label>
                                     </div>
                                     <div class="radio">
-                                        <label>
+                                        <label href="#browserModal" class="modal-with-move-anim">
                                             <input type="radio" name="Browser" id="Browser2" value="option2">
                                             Совпадает
                                         </label>
                                     </div>
                                     <div class="radio">
-                                        <label>
+                                        <label href="#browserModal" class="modal-with-move-anim">
                                             <input type="radio" name="Browser" id="Browser3" value="option3">
                                             Исключает
                                         </label>
@@ -222,14 +221,14 @@
                     </form>
                     <!-- Modal LP -->
                     <div id="modalLP" class="lp-modal zoom-anim-dialog modal-block modal-block-primary mfp-hide">
-                        <section class="panel">
-                            <header class="panel-heading">
-                                <h2 class="panel-title">Выбор лендингов</h2>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title">Выбор лендингов</h2>
                                 <a class="modal-dismiss">
                                     <i class="fa fa fa-times"></i>
                                 </a>
-                            </header>
-                            <div class="panel-body">
+                            </div>
+                            <div class="modal-body">
                                 <div class="form-group mb-none">
                                     <label class="col-md-2 control-label text-md">Сортировать</label>
                                     <div class="col-sm-8">
@@ -905,14 +904,373 @@
                                     </ul>
                                 </div>
                             </div>
-                            <footer class="panel-footer">
+                            <div class="modal-footer">
                                 <div class="row">
                                     <div class="col-md-12 text-center">
                                         <button class="btn btn-primary modal-confirm text-uppercase">Сохранить</button>
                                     </div>
                                 </div>
-                            </footer>
-                        </section>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal OS  -->
+                    <div class="zoom-anim-dialog modal-block modal-block-primary mfp-hide" id="osModal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="osModalLabel">Выбор ОС</h4>
+                                <a class="modal-dismiss">
+                                    <i class="fa fa fa-times"></i>
+                                </a>
+                            </div>
+                            <div id="osContent" class="modal-body">
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="1"> Android
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="3"> Windows Phone
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="4"> Ubuntu
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="5"> Mac OS
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="6"> iOS
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="7"> MeeGo
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="8"> GNU/Linux
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="9"> Windows
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="10"> Symbian OS Series 60
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="11"> Symbian^3
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="12"> Symbian
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="13"> Symbian OS Series 40
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="14"> MocorDroid
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="15"> Bada
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="16"> Symbian OS
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="17"> PlayStation
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="18"> Windows CE
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="19"> Mac
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="20"> CyanogenMod
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="21"> Windows RT
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="22"> BlackBerry OS
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="23"> Windows Mobile
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="24"> PlayStation Portable
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="osCheckbox" name="osCheckbox" value="25"> Unknown OS
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="modal-footer">
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary modal-confirm" id="osModalSave">Сохранить</button>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <!-- Modal Browser  -->
+                    <div class="zoom-anim-dialog modal-block modal-block-primary mfp-hide" id="browserModal" style="z-index:9002;" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="browserModalLabel">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="modal-title" id="browseModalLabel">Выбор браузеров</h4>
+                            <a class="modal-dismiss">
+                                <i class="fa fa fa-times"></i>
+                            </a>
+                          </div>
+                          <div id="browserContent" class="modal-body">
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="1"> Chrome
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="2"> Opera
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="3"> Firefox
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="5"> Chromium
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="9"> IE Mobile
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="10"> Mobile Safari
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="11"> BlackBerry Browser
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="12"> Nokia Browser
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="13"> Kindle Browser
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="14"> Chrome Mobile
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="15"> Android Browser
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="16"> UC Browser
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="17"> Opera Mobile
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="18"> Opera Mini
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="19"> Nokia Ovi Browser
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="20"> Yandex Browser
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="21"> Nokia OSS Browser
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="22"> Internet Explorer
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="23"> Dolphin
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="24"> NexPlayer
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="25"> Amigo
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="26"> Safari
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="27"> Chrome Mobile iOS
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="28"> NetFront
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="29"> Midori
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="30"> Maxthon
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="31"> CoolNovo
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="32"> IBrowse
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="33"> Opera Next
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="34"> MIUI Browser
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="35"> Mercury
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="36"> Mobile Silk
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="37"> CometBird
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="38"> Puffin
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="39"> WeChat
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="40"> Obigo
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox" class="browserCheckbox" name="browserCheckbox" value="41"> Jasmine
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-primary modal-confirm" id="browserModalSave">Сохранить</button>
+                                </div>
+                            </div>
+                      </div>
                     </div>
                 </div>
             </section>

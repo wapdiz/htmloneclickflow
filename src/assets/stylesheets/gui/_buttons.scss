@@ -9,10 +9,12 @@ body {
 	}
 
 	.btn {
+		color: #fff;
 		white-space: normal;
 		border: 0;
 		padding: 10px 20px;
 		font-weight: $font-weight-bold;
+		text-transform: uppercase;
 		&.btn-sm{
 			@include font-size(14); 
 			padding: 6px 10px;
@@ -137,7 +139,7 @@ body {
 			border-color: #{nth($state,2)};
 			background-color: #{nth($state,2)};
 			border-color: #{nth($state,2)} #{nth($state,2)} darken(nth($state,2), 10%);
-			color: #{nth($state,3)};
+			color: #fff;
 			text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 
 			&:hover {

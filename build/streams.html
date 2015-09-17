@@ -377,20 +377,12 @@
                             <span>Рефералы</span>
                         </a>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'user_statistic_grupped')}}">
-                        <a href="/statistic_grupped">
+                    <li class="@@nav_expanded.statistic @@nav_active.statistic">
+                        <a href="statistic.html">
                             <i class="fa fa-table" aria-hidden="true"></i>
                             <span>Статистика</span>
                         </a>
                     </li>
-                    <!--
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'statistic')}}">
-                        <a href="/statistic">
-                            <i class="fa fa-table" aria-hidden="true"></i>
-                            <span>Статистика</span>
-                        </a>
-                    </li>
-                    -->
                     <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'news')}}">
                         <a href="/news">
                             <i class="fa fa-bullhorn" aria-hidden="true"></i>
@@ -422,7 +414,7 @@
                         </a>
                         <ul class="nav nav-children">
                             <li class="nav-active_1">
-                                <a href="/streams/create">Добавить</a>
+                                <a href="streams-create.html">Добавить</a>
                             </li>
                             <li class="nav-active">
                                 <a href="streams.html">Просмотр</a>
@@ -487,13 +479,10 @@
             <div class="timeline timeline-stream">
                 <div class="tm-body">
                     <div class="tm-title tm-title-top">
-                        <a href="#" class="btn btn-success btn-block"><i class="fa fa-plus mr-xs"></i> Новый поток</a>
+                        <a href="streams-create.html" class="btn btn-success btn-block"><i class="fa fa-plus mr-xs"></i> Новый поток</a>
                     </div>
                     <ol class="tm-items" id="accordionStream">
                         <li>
-                            <div class="tm-info">
-                                <div class="tm-icon">1</div>
-                            </div>
                             <div class="tm-box panel panel-accordion panel-accordion-primary" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
                                 <div class="panel-heading">
                                     <div class="panel-actions">
@@ -505,10 +494,10 @@
                                                 <label for="stream-switch-1">Активный</label>
                                             </div>
                                             <div class="col-sm-5">
-                                                <a href="#"><span class="badge"><i class="fa fa-pencil"></i></span> Редактирование</a>
+                                                <a href="streams-edit.html"><span class="badge"><i class="fa fa-pencil"></i></span> Редактирование</a>
                                             </div>
                                             <div class="col-sm-3">
-                                                <a href="#"><span class="badge"><i class="fa fa-link"></i></span> Ссылки</a>
+                                                <a href="#streamLinksModal" class="modal-with-move-anim"><span class="badge"><i class="fa fa-link"></i></span> Ссылки</a>
                                             </div>
                                         </div>
                                         <a class="fa panel-actions-toggle fa-chevron-down accordion-toggle" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-1"></a>
@@ -552,13 +541,13 @@
                                         
                                         <div class="row mb-sm">
                                             <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="row ml-none">
+                                                <div class="row">
                                                     <div class="col-xs-6 pr-none">
                                                         <a href="#" class="btn btn-success btn-block text-uppercase text-overflow">
                                                             <i class="fa fa-plus mr-xs"></i> Добавить сплит
                                                         </a>
                                                     </div>
-                                                    <div class="col-xs-6 pl-none">
+                                                    <div class="col-xs-6">
                                                         <a href="#" class="btn btn-danger btn-block text-uppercase text-overflow">
                                                             <i class="fa fa-times mr-xs"></i>Удалить сплит
                                                         </a>
@@ -571,9 +560,6 @@
                             </div>
                         </li>
                         <li>
-                            <div class="tm-info">
-                                <div class="tm-icon">114</div>
-                            </div>
                             <div class="tm-box panel panel-accordion panel-accordion-primary" data-appear-animation="fadeInRight"data-appear-animation-delay="200">
                                 <div class="panel-heading">
                                     <div class="panel-actions">
@@ -585,10 +571,10 @@
                                                 <label for="stream-switch-114">Выключен</label>
                                             </div>
                                             <div class="col-sm-5">
-                                                <a href="#"><span class="badge"><i class="fa fa-pencil"></i></span> Редактирование</a>
+                                                <a href="streams-edit.html"><span class="badge"><i class="fa fa-pencil"></i></span> Редактирование</a>
                                             </div>
                                             <div class="col-sm-3">
-                                                <a href="#"><span class="badge"><i class="fa fa-link"></i></span> Ссылки</a>
+                                                <a href="#streamLinksModal" class="modal-with-move-anim"><span class="badge"><i class="fa fa-link"></i></span> Ссылки</a>
                                             </div>
                                         </div>
                                         <a class="fa panel-actions-toggle fa-chevron-down accordion-toggle" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-2"></a>
@@ -632,13 +618,13 @@
                                         
                                         <div class="row mb-sm">
                                             <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="row ml-none">
+                                                <div class="row">
                                                     <div class="col-xs-6 pr-none">
                                                         <a href="#" class="btn btn-success btn-block text-uppercase text-overflow">
                                                             <i class="fa fa-plus mr-xs"></i> Добавить сплит
                                                         </a>
                                                     </div>
-                                                    <div class="col-xs-6 pl-none">
+                                                    <div class="col-xs-6">
                                                         <a href="#" class="btn btn-danger btn-block text-uppercase text-overflow">
                                                             <i class="fa fa-times mr-xs"></i>Удалить сплит
                                                         </a>
@@ -651,9 +637,6 @@
                             </div>
                         </li>
                         <li>
-                            <div class="tm-info">
-                                <div class="tm-icon">3002</div>
-                            </div>
                             <div class="tm-box panel panel-accordion panel-accordion-primary" data-appear-animation="fadeInRight"data-appear-animation-delay="300">
                                 <div class="panel-heading">
                                     <div class="panel-actions">
@@ -665,10 +648,10 @@
                                                 <label for="stream-switch-3002">Модерация</label>
                                             </div>
                                             <div class="col-sm-5">
-                                                <a href="#"><span class="badge"><i class="fa fa-pencil"></i></span> Редактирование</a>
+                                                <a href="streams-edit.html"><span class="badge"><i class="fa fa-pencil"></i></span> Редактирование</a>
                                             </div>
                                             <div class="col-sm-3">
-                                                <a href="#"><span class="badge"><i class="fa fa-link"></i></span> Ссылки</a>
+                                                <a href="#streamLinksModal" class="modal-with-move-anim"><span class="badge"><i class="fa fa-link"></i></span> Ссылки</a>
                                             </div>
                                         </div>
                                         <a class="fa panel-actions-toggle fa-chevron-down accordion-toggle" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-3"></a>
@@ -712,13 +695,13 @@
                                         
                                         <div class="row mb-sm">
                                             <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="row ml-none">
+                                                <div class="row">
                                                     <div class="col-xs-6 pr-none">
                                                         <a href="#" class="btn btn-success btn-block text-uppercase text-overflow">
                                                             <i class="fa fa-plus mr-xs"></i> Добавить сплит
                                                         </a>
                                                     </div>
-                                                    <div class="col-xs-6 pl-none">
+                                                    <div class="col-xs-6">
                                                         <a href="#" class="btn btn-danger btn-block text-uppercase text-overflow">
                                                             <i class="fa fa-times mr-xs"></i>Удалить сплит
                                                         </a>
@@ -731,9 +714,6 @@
                             </div>
                         </li>
                         <li>
-                            <div class="tm-info">
-                                <div class="tm-icon">99999</div>
-                            </div>
                             <div class="tm-box panel panel-accordion panel-accordion-primary" data-appear-animation="fadeInRight"data-appear-animation-delay="400">
                                 <div class="panel-heading">
                                     <div class="panel-actions">
@@ -745,10 +725,10 @@
                                                 <label for="stream-switch-99999">Модерация</label>
                                             </div>
                                             <div class="col-sm-5">
-                                                <a href="#"><span class="badge"><i class="fa fa-pencil"></i></span> Редактирование</a>
+                                                <a href="streams-edit.html"><span class="badge"><i class="fa fa-pencil"></i></span> Редактирование</a>
                                             </div>
                                             <div class="col-sm-3">
-                                                <a href="#"><span class="badge"><i class="fa fa-link"></i></span> Ссылки</a>
+                                                <a href="#streamLinksModal" class="modal-with-move-anim"><span class="badge"><i class="fa fa-link"></i></span> Ссылки</a>
                                             </div>
                                         </div>
                                         <a class="fa panel-actions-toggle fa-chevron-down accordion-toggle" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-4"></a>
@@ -792,13 +772,13 @@
                                         
                                         <div class="row mb-sm">
                                             <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="row ml-none">
+                                                <div class="row">
                                                     <div class="col-xs-6 pr-none">
                                                         <a href="#" class="btn btn-success btn-block text-uppercase text-overflow">
                                                             <i class="fa fa-plus mr-xs"></i> Добавить сплит
                                                         </a>
                                                     </div>
-                                                    <div class="col-xs-6 pl-none">
+                                                    <div class="col-xs-6">
                                                         <a href="#" class="btn btn-danger btn-block text-uppercase text-overflow">
                                                             <i class="fa fa-times mr-xs"></i>Удалить сплит
                                                         </a>
@@ -812,9 +792,130 @@
                         </li>
                     </ol>
                     <div class="tm-title tm-title-bottom">
-                        <a href="#" class="btn btn-success btn-block"><i class="fa fa-plus mr-xs"></i> Новый поток</a>
+                        <a href="streams-create.html" class="btn btn-success btn-block"><i class="fa fa-plus mr-xs"></i> Новый поток</a>
                     </div>
                 </div>
+            </div>
+
+            <!-- Modal StreamLinks  -->
+            <div class="zoom-anim-dialog modal-block modal-block-lg modal-block-primary mfp-hide" id="streamLinksModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="streamLinksModalLabel">Выбор ОС</h4>
+                        <a class="modal-dismiss">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                    <div id="streamLinksModalContent" class="modal-body">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="url">Домен</label>
+                            <div class="col-md-8">
+                                <select class="form-control" name="category" id="url">
+                                    <option value="1" selected="">Yandex.Ru</option>
+                                    <option value="2">Google.Ru</option>
+                                    <option value="3">Yahoo.com</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="safejs">Безопасный JavaScript</label>
+                            <div class="col-md-8">
+                                <ol>
+                                    <li><a href="#">Скачиваете</a> PHP файл и загружаете его в корень сайта</li>
+                                    <li>Устанавливаете нижеприведенный JavaScript у себя на сайте</li>
+                                </ol>
+                                <textarea class="form-control mb-sm" rows="3" id="safejs">&lt;script>&lt;/script></textarea>
+                                <div class="alert alert-info">
+                                    Внимание: Данный JS скрипт не принимает принудительно:
+                                    <ul class="list-unstyled">
+                                        <li>1) Модемы и ПК</li>
+                                        <li>2) Яндекс Браузер</li>
+                                    </ul>
+                                    Сделано  для защиты от фильтров поисковых систем.
+                                    Если Вы хотите принимать Модемы и ПК - поставьте Безопасный PHP-модуль
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="js">JavaScript</label>
+                            <div class="col-md-8">
+                                <textarea class="form-control" rows="3" id="js">&lt;script>&lt;/script></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Безопасный модуль</label>
+                            <div class="col-md-8">
+                                <ul class="list-inline mb-sm">
+                                    <li class="mr-md"><a href="#">PHP-модуль</a></li>
+                                    <li>Ключ субаккаунта <span class="highlight info">45ec6363473737</span></li>
+                                </ul>
+                                <div class="alert alert-info">
+                                    Для скрытия от Яндекса в настройках КОДа выключите прием Яндекс браузера, и дождитесь обновления. В данном модуле возможно принимать Модемы и ПК.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="directlink">Прямая ссылка</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="directlink" name="directlink" value="http://link">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="directlink">Список IP-адресов</label>
+                            <div class="col-md-8">
+                                <div class="mb-sm">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="option1"> Мегафон
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="option2"> Билайн
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="option3"> МТС
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="option4"> Теле2
+                                    </label>
+                                </div>
+                                <textarea class="form-control mb-sm" rows="5" id="js">192.168.1.1</textarea>
+                                <div>
+                                    <label class="pl-none checkbox-inline">
+                                        <input name="radio1" type="radio" value="option1"> x.x.x.x/y
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input name="radio1" type="radio" value="option2"> x.x.x.x - z.z.z.z
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary modal-confirm" id="streamLinksModalSave">Сохранить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal StreamEdit  -->
+            <div class="zoom-anim-dialog modal-block modal-block-primary mfp-hide" id="streamEditModal">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="streamEditModalLabel">Выбор ОС</h4>
+                        <a class="modal-dismiss">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                    <div id="streamEditModalContent" class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary modal-confirm" id="streamEditModalSave">Сохранить</button>
+                        </div>
+                    </div>
+                </div>
+              </div>
             </div>
             <!-- end: page -->
         </section>
@@ -918,5 +1019,6 @@
 
 <!-- Examples -->
 <script src="assets/javascripts/pages/examples.timeline.js"></script>
+<script src="assets/javascripts/ui-elements/examples.modals.js"></script>
 </body>
 </html>

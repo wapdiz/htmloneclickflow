@@ -1,0 +1,105 @@
+// TIMEBUTTONS
+// -----------------------------------------------------------------------------
+.timebuttons{
+	margin: 40px 10px;
+	background: #f1f4f9;
+	height: 20px;
+	@include box-shadow(0 1px 0 rgba(#000,.1) inset);  
+	@include clearfix();
+	.timebuttons-wrap{
+		margin-right: -80px;
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			width: (100/3)+%;  
+			height: 20px; 
+			float: left;   
+			position: relative;     
+			li{ 
+				height: 20px; 
+				position: relative;
+				margin-right: 80px;
+				background: lighten($color-info-inverse,5%);
+				@include box-shadow(0 1px 0 rgba(#000,.1) inset); 
+				button{ 
+					width: 26px;
+					height: 26px;
+					border: 0;
+					background: lighten($color-info-inverse,5%);
+					position: relative;
+					position: absolute;
+					top: -3px;
+					outline: none;
+					@include border-radius(50%);
+					@include transition(all .3s);
+					@include box-shadow(0 1px 0 rgba(#000,.1) inset);
+					&:after{
+						content: '';
+						width: 14px;
+						height: 14px;
+						background: #fff;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						margin-top: -(14px/2);
+						margin-left: -(14px/2); 
+						@include border-radius(50%);
+					}
+				}   
+				label{
+					color: $color-info;
+					position: absolute;
+					display: inline-block;
+					cursor: pointer;
+					@include transition(all .3s);
+					&:hover{
+						color: lighten($color-info,10%);
+					}
+					&:after{
+						content: '';
+						width: 1px;
+						height: 15px;
+						background: lighten($color-info-inverse,5%);
+						position: absolute;
+						@include border-radius(50%);
+					}
+				}
+				.timebuttons-pos-active{
+					label{
+						color: $color-black;
+					}
+					button{
+						background: $color-success;
+					}
+				}
+				.timebuttons-pos-start{
+					button{
+						left: -15px;
+					}
+					label{
+						top: -38px;
+						left: -13px; 
+						&:after{
+							top: 20px;
+							left: 10px;   
+						}
+					}
+				}
+				.timebuttons-pos-end{
+					button{
+						right: -15px;
+					}
+					label{
+						bottom: -43px;
+						right: -13px;
+						&:after{
+							bottom: 20px;
+							right: 10px;   
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -320,7 +320,51 @@ $timeline-simple-line-left: 30px;
 					margin: 20px 0;
 					padding: 0 0 0 ($timeline-line-left + 40);
 					min-height: 20px;
+					.tm-icon{
+						top: 0;
+						border: 3px solid $color-info;
+						font-weight: $font-weight-bold;
+						font-family: $font-primary;
+						background-color: #fff;
+						text-align: center;
+						font-size: 10px;
+						padding: 0;
+						line-height: 34px;
+						width: 42px;
+						height: 42px;
+						margin-top: 0;
+						margin-left: -21px;
+						@include border-radius(30px);
+					}
 					.tm-box{
+						&:after {
+							right: 100%;
+							border: solid transparent;
+							content: ' ';
+							height: 0;
+							width: 0;
+							position: absolute;
+							pointer-events: none;
+							border-right-color: #fff;
+							border-width: 6px;
+							top: 0;
+							margin-top: 14px;
+							z-index: 2;
+						}
+						&:before {
+							content: '';
+							top: 0;
+							position: absolute;
+							left: -49px;
+							border: 3px solid $color-info;
+							font-weight: $font-weight-bold;
+							font-family: $font-primary;
+							background-color: #fff;
+							width: 16px;
+							height: 16px;
+							margin-top: 12px;
+							@include border-radius(50%);
+						}
 						&.panel{
 							min-height: 20px;
 							border: 0;
@@ -406,36 +450,6 @@ $timeline-simple-line-left: 30px;
 								@include border-radius(0);
 							}
 						}
-						&:after {
-							right: 100%;
-							border: solid transparent;
-							content: ' ';
-							height: 0;
-							width: 0;
-							position: absolute;
-							pointer-events: none;
-							border-right-color: #fff;
-							border-width: 6px;
-							top: 0;
-							margin-top: 14px;
-							z-index: 2;
-						}
-					}
-					.tm-icon{
-						top: 0;
-						border: 3px solid $color-info;
-						font-weight: $font-weight-bold;
-						font-family: $font-primary;
-						background-color: #fff;
-						text-align: center;
-						font-size: 10px;
-						padding: 0;
-						line-height: 34px;
-						width: 42px;
-						height: 42px;
-						margin-top: 0;
-						margin-left: -21px;
-						@include border-radius(30px);
 					}
 				}
 			}

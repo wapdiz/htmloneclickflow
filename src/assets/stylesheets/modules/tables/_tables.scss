@@ -3,6 +3,8 @@
 /* Tables - Basic */
 .table {
 	width: 100%;
+	color: $color-black;
+	 // @include font-size(16);
 	&.spacing{
 		margin-left: -5px;
 		border-spacing: 5px;
@@ -16,10 +18,36 @@
 			@include border-radius(4px);
 		}
 	}
+	thead{
+		>tr{
+			>th{
+				border-bottom: 0; 
+			}
+		}
+	}
+	tbody{
+		>tr{
+			>td{
+				border-top: 0; 
+				border-bottom: 1px solid #dddddd; 
+			}
+		}
+	}
+	tfoot{
+		>tr{
+			>td{
+				font-weight:  $font-weight-bold;
+			}
+		}
+	}
 
 	.table {
 		background: transparent;
 	}
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 10px;
 }
 
 /* Bootstrap uses important, we need to force it here */
@@ -206,6 +234,42 @@ html.dark {
 		color: #FFF;
 		background-color: nth($state,2);
 	}
+}
+
+@each $state in $states-inverse {
+
+	.table > thead > tr > td.#{nth($state,1)},
+	.table > tbody > tr > td.#{nth($state,1)},
+	.table > tfoot > tr > td.#{nth($state,1)},
+	.table > thead > tr > th.#{nth($state,1)},
+	.table > tbody > tr > th.#{nth($state,1)},
+	.table > tfoot > tr > th.#{nth($state,1)},
+	.table > thead > tr.#{nth($state,1)} > td,
+	.table > tbody > tr.#{nth($state,1)} > td,
+	.table > tfoot > tr.#{nth($state,1)} > td,
+	.table > thead > tr.#{nth($state,1)} > th,
+	.table > tbody > tr.#{nth($state,1)} > th,
+	.table > tfoot > tr.#{nth($state,1)} > th {
+		color: $color-black;
+		background-color: nth($state,2);
+	}
+}
+
+.table > thead > tr > td.info-inverse,
+.table > tbody > tr > td.info-inverse,
+.table > tfoot > tr > td.info-inverse,
+.table > thead > tr > th.info-inverse,
+.table > tbody > tr > th.info-inverse,
+.table > tfoot > tr > th.info-inverse,
+.table > thead > tr.info-inverse > td,
+.table > tbody > tr.info-inverse > td,
+.table > tfoot > tr.info-inverse > td,
+.table > thead > tr.info-inverse > th,
+.table > tbody > tr.info-inverse > th,
+.table > tfoot > tr.info-inverse > th {
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(#000,.2);
+	background-color: darken($color-info-inverse, 10%); 
 }
 
 .table > thead > tr > td.dark,

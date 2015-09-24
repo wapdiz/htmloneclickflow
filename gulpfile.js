@@ -10,10 +10,8 @@ var gulp = require('gulp'),
     cssmin = require('gulp-minify-css'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
-    rimraf = require('rimraf'),
     fileinclude = require('gulp-file-include'),
     browserSync = require("browser-sync"),
-    stylus = require('gulp-stylus'),
     spritesmith = require('gulp.spritesmith'),
     reload = browserSync.reload;
 

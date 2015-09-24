@@ -5,7 +5,7 @@
     <!-- Basic -->
 <meta charset="UTF-8">
 
-<title>Создание потока</title>
+<title>Новости</title>
 
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -384,7 +384,7 @@
                             <span>Статистика</span>
                         </a>
                     </li>
-                    <li class="@@nav_expanded.news @@nav_active.news">
+                    <li class="@@nav_expanded.news nav-active">
                         <a href="news.html">
                             <i class="fa fa-bullhorn" aria-hidden="true"></i>
                             <span>Новости</span>
@@ -439,16 +439,16 @@
                     </li>
 
 
-                    <li class="nav-parent nav-expanded nav-active">
+                    <li class="nav-parent @@nav_expanded.streams @@nav_active.streams">
                         <a>
                             <i class="fa fa-sitemap" aria-hidden="true"></i>
                             <span>Потоки</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="nav-active">
+                            <li class="@@nav_active.streams_1">
                                 <a href="streams-create.html">Добавить</a>
                             </li>
-                            <li class="nav-active_2">
+                            <li class="@@nav_active.streams_2">
                                 <a href="streams.html">Просмотр</a>
                             </li>
                         </ul>
@@ -493,196 +493,168 @@
             <!-- {{Хедер над секцией контента и дополнительной менюшкой}} -->
             <header class="page-header">
                 <ol class="breadcrumbs">
-                    <li><a href="streams.html">Потоки <b class="separator"></b></a></li>
-                    <li><span>Создание потока <b class="separator"></b></span></li>
+                    <li><span>Новости <b class="separator"></b></span></li>
                 </ol>
             </header>
 
             <!-- start: page -->
-
-            <section class="panel">
-                <header class="panel-heading">
-                    <h2 class="panel-title">Создание потока</h2>
-                </header>
-                <div class="panel-body">
-
-                    
-                    <input type="hidden" name="_token" value="Yj4pUsDuO5yNVhASDuGKUprSqLE34549PHEfV7tI">
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="name">Название <span style="color:#ff0000">*</span></label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="name" name="name">
-                        </div>
+            <div class="timeline">
+                <div class="tm-body">
+                    <div class="tm-title tm-title-top">
+                        <span class="btn btn-info-light btn-block">Сентябрь</span>
                     </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="category">Категория <span style="color:#ff0000">*</span></label>
-                        <div class="col-md-6">
-                            <select data-plugin-selectTwo class="form-control" name="category" id="category">
-                                <option value="1">Музыка</option>
-                                <option value="2">Кино</option>
-                                <option value="3">Софт</option>
-                                <option value="4">Адалт</option>
-                                <option value="5">Авто</option>
-                                <option value="7">Игры</option>
-                                <option value="8">Видео</option>
-                                <option value="9">Гороскопы</option>
-                                <option value="10">Сонники</option>
-                                <option value="11">Диеты</option>
-                                <option value="12">Авторизация</option>
-                                <option value="13">Новости</option>
-                        </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="tb_url">Trafficback URL <span style="color:#ff0000">*</span></label>
-                        <div class="col-md-6">
-                            <input type="url" class="form-control" id="tb_url" name="tb_url" placeholder="http://example.com/">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="time_cookie">Время жизни куки<span style="color:#ff0000">*</span><br>(в минутах, 0 - бесконечно)</label>
-                        <div class="col-md-6">
-                            <div data-plugin-spinner data-plugin-options='{ "max": 99999 }'>
-                                <div class="input-group input-small">
-                                    <input type="text" class="spinner-input form-control" id="time_cookie" name="time_cookie" value="13123">
-                                    <div class="spinner-buttons input-group-btn btn-group-vertical">
-                                        <button type="button" class="btn spinner-up btn-xs btn-default">
-                                            <i class="fa fa-angle-up"></i>
-                                        </button>
-                                        <button type="button" class="btn spinner-down btn-xs btn-default">
-                                            <i class="fa fa-angle-down"></i>
-                                        </button>
-                                    </div>
+                    <ol class="tm-items" id="timelineNews-2015-09">
+                        <li class="tm-box panel" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                            <div class="tm-info">
+                                <div class="tm-icon text-primary" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-info"></i></div>
+                            </div>
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
                                 </div>
+                                <h4 class="panel-title text-primary text-bold h4">
+                                    Новые лендинги МТС
+                                </h4>
+                                2015-08-11 18:49:45
                             </div>
-                        </div>
+                            <div class="panel-body">
+                                Добавлены новые LP:<br>
+                                1) Hot Tube - 20 рублей в сутки, адалт;<br>
+                                2) Sexy Kiski - 35 рублей раз в 2 дня, адалт;<br>
+                                3) TurboBox - 20 рублей в сутки, файлы.<br>
+                            </div>
+                        </li>
+                        <li class="tm-box panel" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                            <div class="tm-info">
+                                <div class="tm-icon text-success" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-usd"></i></div>
+                            </div>
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
+                                </div>
+                                <h4 class="panel-title text-success text-bold h4">
+                                    Еженедельные выплаты
+                                </h4>
+                                2015-09-19 15:24:44
+                            </div>
+                            <div class="panel-body">
+                                Выплаты за период с 12.09.2015 по 19.09.2015 произведены! <br>
+                                Удачной работы :)
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="tm-title">
+                        <span class="btn btn-info-light btn-block">Август</span>
                     </div>
-
-                    <div class="form-group" id="type_traffic">
-                        <label class="col-md-3 control-label">Тип трафика</label>
-                        <div class="col-md-6">
-                            <div class="radio-custom">
-                                <input type="radio" name="type_traffic" id="type_traffic_your" value="1" checked="">
-                                <label for="type_traffic_your">Свой</label>
+                    <ol class="tm-items" id="timelineNews-2015-08">
+                        <li class="tm-box panel" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                            <div class="tm-info">
+                                <div class="tm-icon text-info" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-paper-plane"></i></div>
                             </div>
-                            <div class="radio-custom">
-                                <input type="radio" name="type_traffic" id="type_traffic_purchase" value="2">
-                                <label for="type_traffic_purchase">Покупной</label>
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
+                                </div>
+                                <h4 class="panel-title text-info text-bold h4">
+                                    Обновления 1clickflow
+                                </h4>
+                                2015-08-05 14:05:54
                             </div>
-                        </div>
+                            <div class="panel-body">
+                                Добавлены новые LP:<br>
+                                1) Hot Tube - 20 рублей в сутки, адалт;<br>
+                                2) Sexy Kiski - 35 рублей раз в 2 дня, адалт;<br>
+                                3) TurboBox - 20 рублей в сутки, файлы.<br>
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="tm-title">
+                        <span class="btn btn-info-light btn-block">Июль</span>
                     </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="domen_park">URL домена для парковки</label>
-                        <div class="col-md-6">
-                            <input type="url" class="form-control" id="domen_park" name="domen_park">
-                        </div>
+                    <ol class="tm-items" id="timelineNews-2015-07">
+                        <li class="tm-box panel" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                            <div class="tm-info">
+                                <div class="tm-icon text-warning" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-warning"></i></div>
+                            </div>
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
+                                </div>
+                                <h4 class="panel-title text-warning text-bold h4">
+                                    Изменения в правилах операторов
+                                </h4>
+                                2015-08-05 14:05:54
+                            </div>
+                            <div class="panel-body">
+                                Добавлены новые LP:<br>
+                                1) Hot Tube - 20 рублей в сутки, адалт;<br>
+                                2) Sexy Kiski - 35 рублей раз в 2 дня, адалт;<br>
+                                3) TurboBox - 20 рублей в сутки, файлы.<br>
+                            </div>
+                        </li>
+                        <li class="tm-box panel" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                            <div class="tm-info">
+                                <div class="tm-icon text-primary" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-info"></i></div>
+                            </div>
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
+                                </div>
+                                <h4 class="panel-title text-primary text-bold h4">
+                                    Новые лендинги МТС
+                                </h4>
+                                2015-08-11 18:49:45
+                            </div>
+                            <div class="panel-body">
+                                Добавлены новые LP:<br>
+                                1) Hot Tube - 20 рублей в сутки, адалт;<br>
+                                2) Sexy Kiski - 35 рублей раз в 2 дня, адалт;<br>
+                                3) TurboBox - 20 рублей в сутки, файлы.<br>
+                            </div>
+                        </li>
+                        <li class="tm-box panel" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                            <div class="tm-info">
+                                <div class="tm-icon text-success" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-usd"></i></div>
+                            </div>
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
+                                </div>
+                                <h4 class="panel-title text-success text-bold h4">
+                                    Еженедельные выплаты
+                                </h4>
+                                2015-09-19 15:24:44
+                            </div>
+                            <div class="panel-body">
+                                Выплаты за период с 12.09.2015 по 19.09.2015 произведены! <br>
+                                Удачной работы :)
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="tm-title">
+                        <span class="btn btn-info-light btn-block">Июнь</span>
                     </div>
-
-                    <div class="form-group" id="type_redirect">
-                        <label class="col-md-3 control-label">Тип редиректа</label>
-                        <div class="col-md-6">
-                            <div class="radio-custom">
-                                <input type="radio" name="type_redirect" id="type_redirect_direct" value="1" checked="">
-                                <label for="type_redirect_direct">Прямой</label>
+                    <ol class="tm-items" id="timelineNews-2015-06">
+                        <li class="tm-box panel" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                            <div class="tm-info">
+                                <div class="tm-icon text-danger" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-flash"></i></div>
                             </div>
-                            <div class="radio-custom">
-                                <input type="radio" name="type_redirect" id="type_redirect_clickander" value="2">
-                                <label for="type_redirect_clickander">Кликандер</label>
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
+                                </div>
+                                <h4 class="panel-title text-danger text-bold h4">
+                                    Тысяча чертей!!!
+                                </h4>
+                                2015-08-05 14:05:54
                             </div>
-                            <div class="radio-custom">
-                                <input type="radio" name="type_redirect" id="type_redirect_blind" value="3">
-                                <label for="type_redirect_blind">Блайнд</label>
+                            <div class="panel-body">
+                                Свистать всех наверх!
                             </div>
-                            <div class="radio-custom">
-                                <input type="radio" name="type_redirect" id="type_redirect_banner" value="4">
-                                <label for="type_redirect_banner">Баннер</label>
-                            </div>
-                        </div>
-                    </div>
-
-                                                                                                                                                                        
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">
-                        </label>
-                        <div class="col-md-6">
-                            <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="auto_buyout" id="auto_buyout">
-                                <label for="auto_buyout">Включить автовыкуп подписок</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">
-                        </label>
-                        <div class="col-md-6">
-                            <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback" id="postback">
-                                <label for="postback">Включить POSTBACK</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="postback_url">PostBack URL</label>
-                        <div class="col-md-6">
-                            <input type="url" class="form-control" id="postback_url" name="postback_url" placeholder="http://example.com/?">
-                        </div>
-                    </div>
-
-                    <div class="form-group" id="postback_method">
-                        <label class="col-md-3 control-label">Метод отправки POSTBACK</label>
-                        <div class="col-md-6">
-                            <div class="radio-custom">
-                                <input type="radio" name="postback_method" id="postback_method_get" value="get">
-                                <label for="postback_method_get">GET</label>
-                            </div>
-                            <div class="radio-custom">
-                                <input type="radio" name="postback_method" id="postback_method_post" value="post">
-                                <label for="postback_method_post">POST</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">
-                            События, на которые отправлять
-                        </label>
-                        <div class="col-md-6">
-                            <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="subscribe">
-                                <label for="postback_event">Подписка</label>
-                            </div>
-                            <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="unsubscribe">
-                                <label for="postback_event">Отписка</label>
-                            </div>
-                            <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="rebill">
-                                <label for="postback_event">Ребилл</label>
-                            </div>
-                            <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="sell">
-                                <label for="postback_event">Продажа</label>
-                            </div>
-                            <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="autobuyout">
-                                <label for="postback_event">Выкуп подписки</label>
-                            </div>
-                        </div>
-                    </div>
-
+                        </li>
+                    </ol>
                 </div>
-                <footer class="panel-footer">
-                    <button class="btn btn-primary">Создать поток</button>
-                </footer>
-            </section>
+            </div>
             <!-- end: page -->
         </section>
     </div>
@@ -771,7 +743,6 @@
 
 <!-- Specific Page Vendor -->
 <script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
-<script src="assets/vendor/fuelux/js/spinner.js"></script>
 
 <!-- Theme Base, Components and Settings -->
 <script src="assets/javascripts/theme.js"></script>
@@ -783,7 +754,6 @@
 <script src="assets/javascripts/theme.init.js"></script>
 
 <!-- Examples -->
-<script src="assets/javascripts/ui-elements/examples.modals.js"></script>
-
+<script src="assets/javascripts/pages/examples.timeline.js"></script>
 </body>
 </html>

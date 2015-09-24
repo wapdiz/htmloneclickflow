@@ -118,13 +118,13 @@ html.boxed {
 		text-decoration: none;
 
 		&:hover {
-			background: #21262d;
+			background: lighten(#2c2e31,3%);
 			color: #abb4be;
 			text-decoration: none;
 		}
 
 		&.active {
-			background: #282d36;
+			background: #3c3f42;
 		}
 
 		.label {

@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css" />
 <link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css" />
 <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+<link rel="stylesheet" href="assets/vendor/select2/select2.css" />
 
 <!-- Theme CSS -->
 <link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -371,8 +372,8 @@
                             <span>Главная</span>
                         </a>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'referrals')}}">
-                        <a href="/myinfo/referrals">
+                    <li class="@@nav_expanded.referals @@nav_active.referals">
+                        <a href="referals.html">
                             <i class="fa fa-users" aria-hidden="true"></i>
                             <span>Рефералы</span>
                         </a>
@@ -383,29 +384,60 @@
                             <span>Статистика</span>
                         </a>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'news')}}">
-                        <a href="/news">
+                    <li class="@@nav_expanded.news @@nav_active.news">
+                        <a href="news.html">
                             <i class="fa fa-bullhorn" aria-hidden="true"></i>
                             <span>Новости</span>
                         </a>
                     </li>
 
-                    <li class="nav-parent
-                        {{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'tickets_group')}}
-                    ">
+                    <li class="nav-parent @@nav_expanded.tickets">
                         <a>
                             <i class="fa fa-comment" aria-hidden="true"></i>
                             <span>Тикеты</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'tickets_create')}}">
-                                <a href="/tickets/create">Создать</a>
+                            <li class="@@nav_active.tickets_1">
+                                <a href="tickets-create.html">Создать</a>
                             </li>
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'tickets')}}">
-                                <a href="/tickets">Просмотр</a>
+                            <li class="nav-parent @@nav_active.tickets_2 @@nav_expanded.tickets.children">
+                                <a>Просмотр</a>
+                                <ul class="nav nav-children">
+                                    <li class="@@nav_active.tickets_2_1">
+                                        <a href="tickets.html#1">
+                                            <span><i class="color-label" style="border-color: #0000FF"></i> Общий</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_2">
+                                        <a href="tickets.html#2">
+                                            <span><i class="color-label" style="border-color: rgb(0, 255, 0);"></i> Технический</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_3">
+                                        <a href="tickets.html#3">
+                                            <span><i class="color-label" style="border-color: #FF0000"></i> Финансовый</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_4">
+                                        <a href="tickets.html#4">
+                                            <span><i class="color-label" style="border-color: #FFFF00"></i> Жалобы</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_5">
+                                        <a href="tickets.html#5">
+                                            <span><i class="color-label" style="border-color: #00FFFF"></i> Пожелания и предложения</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_6">
+                                        <a href="tickets.html#6">
+                                            <span> <i class="color-label" style="border-color: #FFA500"></i>Улучшение системы</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
+
 
                     <li class="nav-parent nav-expanded nav-active">
                         <a>
@@ -422,37 +454,28 @@
                         </ul>
                     </li>
 
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'splits_settings')}}">
-                        <a href="/splits_settings">
-                            <i class="fa fa-list-ol" aria-hidden="true"></i>
-                            <span>Сплиты</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-parent
-                        {{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'payment_group')}}
-                    ">
+                    <li class="nav-parent @@nav_expanded.payment @@nav_active.payment">
                         <a>
                             <i class="fa fa-credit-card" aria-hidden="true"></i>
                             <span>Выплаты</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="">
-                                <a href="/payment/last">Просмотр</a>
+                            <li class="@@nav_active.payment_1">
+                                <a href="payment.html">Просмотр</a>
                             </li>
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'payment_request')}}">
-                                <a href="/payment/request">Запросить</a>
+                            <li class="@@nav_active.payment_2">
+                                <a href="payment-request.html">Запросить</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'faq')}}">
-                        <a href="/faq">
+                    <li class="@@nav_active.faq">
+                        <a href="faq.html">
                             <i class="fa fa-home" aria-hidden="true"></i>
                             <span>FAQ</span>
                         </a>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'credits')}}">
-                        <a href="/credits">
+                    <li class="@@nav_active.credits">
+                        <a href="credits.html">
                             <i class="fa fa-bank" aria-hidden="true"></i>
                             <span>Кредитование</span>
                         </a>
@@ -495,7 +518,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="category">Категория <span style="color:#ff0000">*</span></label>
                         <div class="col-md-6">
-                            <select class="form-control" name="category" id="category">
+                            <select data-plugin-selectTwo class="form-control" name="category" id="category">
                                     <option value="1" selected="">Музыка</option>
                                     <option value="2">Кино</option>
                                     <option value="3">Софт</option>
@@ -522,51 +545,33 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="time_cookie">Время жизни куки<span style="color:#ff0000">*</span><br>(в минутах, 0 - бесконечно)</label>
                         <div class="col-md-6">
-                            <input type="number" class="form-control" id="time_cookie" name="time_cookie" value="13123">
-                        </div>
-                    </div>
-
-                    <!--
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="split_size">Размер сплита<span style="color:#ff0000">*</span></label>
-                        <div class="col-md-6">
-                            <input type="number" class="form-control" id="split_size" name="split_size" min="1" max="5" value="">
-                        </div>
-                    </div>
-
-                    <div class="form-group" id="type_split">
-                        <label class="col-md-3 control-label">Тип сплита</label>
-                        <div class="col-md-6">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="type_split" id="optionsRadios1" value="1" >
-                                    Админ
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="type_split" id="optionsRadios2" value="2" >
-                                    Партнер
-                                </label>
+                            <div data-plugin-spinner data-plugin-options='{ "max": 99999 }'>
+                                <div class="input-group input-small">
+                                    <input type="text" class="spinner-input form-control" id="time_cookie" name="time_cookie" value="13123">
+                                    <div class="spinner-buttons input-group-btn btn-group-vertical">
+                                        <button type="button" class="btn spinner-up btn-xs btn-default">
+                                            <i class="fa fa-angle-up"></i>
+                                        </button>
+                                        <button type="button" class="btn spinner-down btn-xs btn-default">
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    -->
+
 
                     <div class="form-group" id="type_traffic">
                         <label class="col-md-3 control-label">Тип трафика</label>
                         <div class="col-md-6">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="type_traffic" id="optionsRadios1" value="1" checked="">
-                                    Свой
-                                </label>
+                            <div class="radio-custom">
+                                <input type="radio" name="type_traffic" id="type_traffic_your" value="1" checked="">
+                                <label for="type_traffic_your">Свой</label>
                             </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="type_traffic" id="optionsRadios2" value="2">
-                                    Покупной
-                                </label>
+                            <div class="radio-custom">
+                                <input type="radio" name="type_traffic" id="type_traffic_purchase" value="2">
+                                <label for="type_traffic_purchase">Покупной</label>
                             </div>
                         </div>
                     </div>
@@ -581,29 +586,21 @@
                     <div class="form-group" id="type_redirect">
                         <label class="col-md-3 control-label">Тип редиректа</label>
                         <div class="col-md-6">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="type_redirect" id="type_redirect" value="1" checked="">
-                                    Прямой
-                                </label>
+                            <div class="radio-custom">
+                                <input type="radio" name="type_redirect" id="type_redirect_direct" value="1" checked="">
+                                <label for="type_redirect_direct">Прямой</label>
                             </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="type_redirect" id="type_redirect" value="2">
-                                    Кликандер
-                                </label>
+                            <div class="radio-custom">
+                                <input type="radio" name="type_redirect" id="type_redirect_clickander" value="2">
+                                <label for="type_redirect_clickander">Кликандер</label>
                             </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="type_redirect" id="type_redirect" value="3">
-                                    Блайнд
-                                </label>
+                            <div class="radio-custom">
+                                <input type="radio" name="type_redirect" id="type_redirect_blind" value="3">
+                                <label for="type_redirect_blind">Блайнд</label>
                             </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="type_redirect" id="type_redirect" value="4">
-                                    Баннер
-                                </label>
+                            <div class="radio-custom">
+                                <input type="radio" name="type_redirect" id="type_redirect_banner" value="4">
+                                <label for="type_redirect_banner">Баннер</label>
                             </div>
                         </div>
                     </div>
@@ -647,17 +644,13 @@
                     <div class="form-group" id="postback_method">
                         <label class="col-md-3 control-label">Метод отправки POSTBACK</label>
                         <div class="col-md-6">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="postback_method" id="postback_method" value="get">
-                                    GET
-                                </label>
+                            <div class="radio-custom">
+                                <input type="radio" name="postback_method" id="postback_method_get" value="get">
+                                <label for="postback_method_get">GET</label>
                             </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="postback_method" id="postback_method" value="post">
-                                    POST
-                                </label>
+                            <div class="radio-custom">
+                                <input type="radio" name="postback_method" id="postback_method_post" value="post">
+                                <label for="postback_method_post">POST</label>
                             </div>
                         </div>
                     </div>
@@ -668,24 +661,24 @@
                         </label>
                         <div class="col-md-6">
                             <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="subscribe">
-                                <label for="postback_event">Подписка</label>
+                                <input type="checkbox" name="postback_event[]" id="postback_subscribe" value="subscribe">
+                                <label for="postback_subscribe">Подписка</label>
                             </div>
                             <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="unsubscribe">
-                                <label for="postback_event">Отписка</label>
+                                <input type="checkbox" name="postback_event[]" id="postback_unsubscribe" value="unsubscribe">
+                                <label for="postback_unsubscribe">Отписка</label>
                             </div>
                             <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="rebill">
-                                <label for="postback_event">Ребилл</label>
+                                <input type="checkbox" name="postback_event[]" id="postback_rebill" value="rebill">
+                                <label for="postback_rebill">Ребилл</label>
                             </div>
                             <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="sell">
-                                <label for="postback_event">Продажа</label>
+                                <input type="checkbox" name="postback_event[]" id="postback_sell" value="sell">
+                                <label for="postback_sell">Продажа</label>
                             </div>
                             <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="autobuyout">
-                                <label for="postback_event">Выкуп подписки</label>
+                                <input type="checkbox" name="postback_event[]" id="postback_autobuyout" value="autobuyout">
+                                <label for="postback_autobuyout">Выкуп подписки</label>
                             </div>
                         </div>
                     </div>
@@ -778,9 +771,11 @@
 <script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
 <script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+<script src="assets/vendor/select2/select2.js"></script>
 
 <!-- Specific Page Vendor -->
 <script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+<script src="assets/vendor/fuelux/js/spinner.js"></script>
 
 <!-- Theme Base, Components and Settings -->
 <script src="assets/javascripts/theme.js"></script>

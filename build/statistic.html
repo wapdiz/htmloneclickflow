@@ -2,7 +2,6 @@
 <html class="fixed" lang="ru" >
 
 <head>
-    <link rel="stylesheet" href="assets/vendor/select2/select2.css" />
     <!-- Basic -->
 <meta charset="UTF-8">
 
@@ -19,6 +18,7 @@
 <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css" />
 <link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css" />
 <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+<link rel="stylesheet" href="assets/vendor/select2/select2.css" />
 
 <!-- Theme CSS -->
 <link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -373,8 +373,8 @@
                             <span>Главная</span>
                         </a>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'referrals')}}">
-                        <a href="/myinfo/referrals">
+                    <li class="@@nav_expanded.referals @@nav_active.referals">
+                        <a href="referals.html">
                             <i class="fa fa-users" aria-hidden="true"></i>
                             <span>Рефералы</span>
                         </a>
@@ -385,29 +385,60 @@
                             <span>Статистика</span>
                         </a>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'news')}}">
-                        <a href="/news">
+                    <li class="@@nav_expanded.news @@nav_active.news">
+                        <a href="news.html">
                             <i class="fa fa-bullhorn" aria-hidden="true"></i>
                             <span>Новости</span>
                         </a>
                     </li>
 
-                    <li class="nav-parent
-                        {{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'tickets_group')}}
-                    ">
+                    <li class="nav-parent @@nav_expanded.tickets">
                         <a>
                             <i class="fa fa-comment" aria-hidden="true"></i>
                             <span>Тикеты</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'tickets_create')}}">
-                                <a href="/tickets/create">Создать</a>
+                            <li class="@@nav_active.tickets_1">
+                                <a href="tickets-create.html">Создать</a>
                             </li>
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'tickets')}}">
-                                <a href="/tickets">Просмотр</a>
+                            <li class="nav-parent @@nav_active.tickets_2 @@nav_expanded.tickets.children">
+                                <a>Просмотр</a>
+                                <ul class="nav nav-children">
+                                    <li class="@@nav_active.tickets_2_1">
+                                        <a href="tickets.html#1">
+                                            <span><i class="color-label" style="border-color: #0000FF"></i> Общий</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_2">
+                                        <a href="tickets.html#2">
+                                            <span><i class="color-label" style="border-color: rgb(0, 255, 0);"></i> Технический</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_3">
+                                        <a href="tickets.html#3">
+                                            <span><i class="color-label" style="border-color: #FF0000"></i> Финансовый</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_4">
+                                        <a href="tickets.html#4">
+                                            <span><i class="color-label" style="border-color: #FFFF00"></i> Жалобы</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_5">
+                                        <a href="tickets.html#5">
+                                            <span><i class="color-label" style="border-color: #00FFFF"></i> Пожелания и предложения</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_6">
+                                        <a href="tickets.html#6">
+                                            <span> <i class="color-label" style="border-color: #FFA500"></i>Улучшение системы</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
+
 
                     <li class="nav-parent @@nav_expanded.streams @@nav_active.streams">
                         <a>
@@ -424,37 +455,28 @@
                         </ul>
                     </li>
 
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'splits_settings')}}">
-                        <a href="/splits_settings">
-                            <i class="fa fa-list-ol" aria-hidden="true"></i>
-                            <span>Сплиты</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-parent
-                        {{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'payment_group')}}
-                    ">
+                    <li class="nav-parent @@nav_expanded.payment @@nav_active.payment">
                         <a>
                             <i class="fa fa-credit-card" aria-hidden="true"></i>
                             <span>Выплаты</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="">
-                                <a href="/payment/last">Просмотр</a>
+                            <li class="@@nav_active.payment_1">
+                                <a href="payment.html">Просмотр</a>
                             </li>
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'payment_request')}}">
-                                <a href="/payment/request">Запросить</a>
+                            <li class="@@nav_active.payment_2">
+                                <a href="payment-request.html">Запросить</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'faq')}}">
-                        <a href="/faq">
+                    <li class="@@nav_active.faq">
+                        <a href="faq.html">
                             <i class="fa fa-home" aria-hidden="true"></i>
                             <span>FAQ</span>
                         </a>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'credits')}}">
-                        <a href="/credits">
+                    <li class="@@nav_active.credits">
+                        <a href="credits.html">
                             <i class="fa fa-bank" aria-hidden="true"></i>
                             <span>Кредитование</span>
                         </a>
@@ -478,51 +500,67 @@
             </header>
 
             <!-- start: page -->
-            <section class="panel">
+            <section class="panel" id="filter-accordion">
                 <header class="panel-heading">
-                    <h2 class="panel-title">Статистика по дням</h2>
+                    <div class="panel-actions">
+                        <a class="panel-actions-collapse accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFilters"></a>
+                    </div>
+                    <h2 class="panel-title accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFilters">
+                        <span class="badge badge-circle">
+                            <i class="fa fa-wrench"></i>
+                        </span> 
+                        Фильтры
+                    </h2>
                 </header>
                 <div class="panel-body">
-                    <h3 class="text-info mt-none mb-sm">Фильтры</h3>
-                <div class="form-group mb-xlg">
-                    <div class="col-xlg-2 col-lg-3 col-md-4 pl-none mt-xlg">
-                        <div class="input-daterange input-group input-group-time" data-plugin-datepicker="">
-                            <input type="text" class="form-control btn btn-info-light hasDatepicker" name="start" value="08.09.2015" id="statistic_date_start_day">
-                            <span class="input-group-addon">до</span>
-                            <input type="text" class="form-control btn btn-info-light hasDatepicker" name="end" value="15.09.2015" id="statistic_date_end_day">
-                        </div>
-                        <script>
-                            datepickerCustom.init('day');                            
-                        </script>
-                    </div>
+                    <div id="collapseFilters" class="accordion-body collapse in">
+                    
+                        <h3 class="text-info mt-none mb-sm">Фильтры</h3>
+                            <div class="form-group">
+                                <div class="col-xl-3 col-lg-4 col-md-5 pl-none mt-xls mb-2xl">
+                                    <div class="input-daterange input-group input-group-time" data-plugin-datepicker="">
+                                        <label class="form-control btn btn-info-light hasDatepicker pt-xs">
+                                            <i class="fa fa-calendar text-info"></i>
+                                            <input type="text" class="input-inline" name="start" value="08.09.2015" id="statistic_date_start_day"> 
+                                        </label>
+                                        <span class="input-group-addon">до</span>
+                                        <label class="form-control btn btn-info-light hasDatepicker pt-xs">
+                                            <i class="fa fa-calendar text-info"></i>
+                                            <input type="text" class="input-inline" name="end" value="15.09.2015" id="statistic_date_end_day"> 
+                                        </label>
+                                    </div>
+                                    <script>
+                                        datepickerCustom.init('day');                            
+                                    </script>
+                                </div>
 
-                    <div class="col-xlg-6 col-lg-7 col-md-8">
-                        <div class="timebuttons" id="dpFastButtonsPanel_day">
-                            <div class="timebuttons-wrap">
-                                <ul>
-                                    <li>
-                                        <div class="timebuttons-pos-start timebuttons-pos-active"><button id="date_today" onclick="           $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;-0d&quot;);          $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;-0d&quot;);            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_today">Сегодня</label></div>
-                                        <div class="timebuttons-pos-end"><button id="date_yesterday" onclick="            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;-1d&quot;);          $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;-1d&quot;);            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_yesterday">Вчера</label></div>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <div class="timebuttons-pos-start"><button id="date_week" onclick="          $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;14.9.2015&quot;);            $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;-0d&quot;);            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_week">Неделя</label></div>
-                                        <div class="timebuttons-pos-end"><button id="date_lastweek" onclick="            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;07.9.2015&quot;);            $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;13.9.2015&quot;);          $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_lastweek">Прошлая неделя</label></div>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <div class="timebuttons-pos-start"><button id="date_month" onclick="         $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;01.9.2015&quot;);            $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;-0d&quot;);            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_month">Месяц</label></div>
-                                        <div class="timebuttons-pos-end"><button id="date_lastmonth" onclick="            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;01.8.2015&quot;);            $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;31.08.2015&quot;);         $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_lastmonth">Прошлый месяц</label></div>
-                                    </li>
-                                </ul>
+                                <div class="col-xl-4 col-lg-5 col-md-7 mb-2xl">
+                                    <div class="timebuttons" id="dpFastButtonsPanel_day">
+                                        <div class="timebuttons-wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="timebuttons-pos-start timebuttons-pos-active"><button id="date_today" onclick="           $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;-0d&quot;);          $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;-0d&quot;);            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_today">Сегодня</label></div>
+                                                    <div class="timebuttons-pos-end"><button id="date_yesterday" onclick="            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;-1d&quot;);          $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;-1d&quot;);            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_yesterday">Вчера</label></div>
+                                                </li>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <div class="timebuttons-pos-start"><button id="date_week" onclick="          $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;14.9.2015&quot;);            $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;-0d&quot;);            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_week">Неделя</label></div>
+                                                    <div class="timebuttons-pos-end"><button id="date_lastweek" onclick="            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;07.9.2015&quot;);            $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;13.9.2015&quot;);          $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_lastweek">Прошлая неделя</label></div>
+                                                </li>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <div class="timebuttons-pos-start"><button id="date_month" onclick="         $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;01.9.2015&quot;);            $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;-0d&quot;);            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_month">Месяц</label></div>
+                                                    <div class="timebuttons-pos-end"><button id="date_lastmonth" onclick="            $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;setDate&quot;, &quot;01.8.2015&quot;);            $(&quot;#statistic_date_end_day&quot;).datepicker(&quot;setDate&quot;, &quot;31.08.2015&quot;);         $(&quot;#statistic_date_start_day&quot;).datepicker(&quot;hide&quot;);"></button> <label for="date_lastmonth">Прошлый месяц</label></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                                    <div class="col-md-3 form-group mb-xlg">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-3 form-group mb-xlx">
             <select data-plugin-selectTwo class="form-control populate" id="customFilter_day_TDSStream">
             <option value="all">Все потоки</option>
 
@@ -531,7 +569,7 @@
             </div>
     
     
-    <div class="col-md-3 form-group mb-xlg">
+    <div class="col-sm-6 col-md-3 form-group mb-xlx">
 
  
 
@@ -547,7 +585,7 @@
     </div>
     
     
-    <div class="col-md-3 form-group mb-xlg">
+    <div class="col-sm-6 col-md-3 form-group mb-xlx">
 
             <select data-plugin-selectTwo class="form-control populate" id="customFilter_day_OSList">
             <option value="all">Все ОС</option>
@@ -580,7 +618,7 @@
             </div>
     
     
-    <div class="col-md-3 form-group mb-xlg">
+    <div class="col-sm-6 col-md-3 form-group mb-xlx">
 
             <select data-plugin-selectTwo class="form-control populate" id="customFilter_day_BrowserList">
             <option value="all">Все браузеры</option>
@@ -626,7 +664,7 @@
             </div>
     
     
-    <div class="col-md-3 form-group mb-xlg">
+    <div class="col-sm-6 col-md-3 form-group mb-xlx">
             <select data-plugin-selectTwo class="form-control populate" id="customFilter_day_DeviceModelList">
             <option value="all">Все устройства</option>
 
@@ -1402,7 +1440,7 @@
             </div>
     
     
-    <div class="col-md-3 form-group mb-xlg">
+    <div class="col-sm-6 col-md-3 form-group mb-xlx">
 
             <select data-plugin-selectTwo class="form-control populate" id="customFilter_day_Categories">
             <option value="all">Все категории</option>
@@ -1423,7 +1461,7 @@
             </div>
     
     
-    <div class="col-md-3 form-group mb-xlg">
+    <div class="col-sm-6 col-md-3 form-group mb-xlx">
             <select data-plugin-selectTwo class="form-control populate" id="customFilter_day_CountryList">
             <option value="all">Все страны</option>
 
@@ -1509,7 +1547,7 @@
             </div>
     
     
-    <div class="col-md-3 form-group mb-xlg">
+    <div class="col-sm-6 col-md-3 form-group mb-xlx">
 
             <select data-plugin-selectTwo class="form-control populate" id="customFilter_day_Landings">
             <option value="all">Все лендинги</option>
@@ -1616,8 +1654,9 @@
                         </select>
             </div>
             </div>
-            <div class="text-center mb-xlg">
+            <div class="text-center mb-3xl">
                 <button onclick="return get_stats_group_by_param(this);" customwhereparams="1" type="button" class="mb-xs mt-xs mr-xs btn btn-primary" id="load_statistic_data" name_stats="day" style="margin-top:0px !important;">Выгрузить</button>
+            </div>
             </div>
 
                                 <div class="table-responsive">
@@ -1727,8 +1766,6 @@
                     </table>
                 </div>
             </div>
-                <footer class="panel-footer">
-                </footer>
             </section>
             <!-- end: page -->
         </section>
@@ -1814,10 +1851,10 @@
 <script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
 <script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+<script src="assets/vendor/select2/select2.js"></script>
 
 <!-- Specific Page Vendor -->
 <script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
-<script src="assets/vendor/select2/select2.js"></script>
 
 <!-- Theme Base, Components and Settings -->
 <script src="assets/javascripts/theme.js"></script>

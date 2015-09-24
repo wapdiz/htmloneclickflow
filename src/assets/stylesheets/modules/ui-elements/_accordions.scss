@@ -34,6 +34,76 @@
 		}
 	}
 }
+.panel-heading{
+    .panel-actions{
+		right: 0;
+	    top: 0;
+	    z-index: 2;
+	    height: 100%;
+	    .panel-actions-collapse{
+	    	@include font-size(10);
+	    	color: $color-black;
+	    	position: absolute;
+	    	right: 15px;
+	    	top: 50%;
+	    	margin-top: -12px;
+	    	&.accordion-toggle{
+	    		display: inline-block;
+			  	font-family: FontAwesome;
+			  	font-style: normal;
+			  	font-weight: normal;
+			 	-webkit-font-smoothing: antialiased;
+			  	-moz-osx-font-smoothing: grayscale; 
+				&:before{
+	    			content: "\f078";
+	    		}
+	    		&.collapsed{
+			    	&:before{
+		    			 content: "\f077";
+		    		}
+			    }
+	    	}
+	    }
+	    .panel-actions-close{
+	    	@include font-size(12);
+	    	position: absolute;
+	    	right: -40px;
+	    	top: 50%;
+	    	margin-top: -12px;
+	    }
+	}
+	.panel-title{
+		&h1,
+		&.h1 {
+			@include font-size($h1-font-size, important);
+		}
+
+		&h2,
+		&.h2 {
+			@include font-size($h2-font-size, important);
+		}
+
+		&h3,
+		&.h3 {
+			@include font-size($h3-font-size, important);
+		}
+
+		&h4,
+		&.h4 {
+			@include font-size($h4-font-size, important);
+		}
+
+		&h5,
+		&.h5 {
+			@include font-size($h5-font-size, important);
+		}
+
+		&h6,
+		&.h6 {
+			@include font-size($h6-font-size, important);
+		}
+	}
+}
 
 // STATES
 // -----------------------------------------------------------------------------

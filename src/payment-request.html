@@ -1,0 +1,142 @@
+<!doctype html>
+<html class="fixed" lang="ru" >
+
+<head>
+    <link rel="stylesheet" href="assets/vendor/select2/select2.css" />
+    @@include('template/head.html', {
+        "title": "Запросить выплату"
+    })
+    
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote.css" />
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote-bs3.css" />
+
+</head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+        <!-- {{Общий хедер, используется на всех страницах}} -->
+        <!-- @include('main-header') -->
+        @@include('template/main-header.html')
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+
+        <!-- start: sidebar -->
+        <!-- {{Выше - хрень, левый сайдбар один, меняется класс в <html>}} -->
+        @@include('template/sidebar-left-main.html', {
+            "nav_active": {
+                "payment": "nav-active",
+                "payment_2": "nav-active"
+            },
+            "nav_expanded": {
+                "payment": "nav-expanded"
+            }
+        })
+        
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <!-- {{Хедер над секцией контента и дополнительной менюшкой}} -->
+            <header class="page-header">
+                <ol class="breadcrumbs">
+                    <li><a href="payment.html">Выплаты <b class="separator"></b></a></li>
+                    <li><span>Запросить выплату <b class="separator"></b></span></li>
+                </ol>
+            </header>
+
+            <!-- start: page -->
+
+            <div class="container-fluid">
+        <form method="POST" action="/payment/store_request" id="operator-form" class="form-horizontal form-bordered">
+            <section class="panel">
+                <header class="panel-heading">
+                    <h2>Запросить выплату</h2>
+                </header>
+                <div class="panel-body">
+                                                                                <input type="hidden" name="_token" value="HlMtgvqxIywj42C5J8e4MdIFcLIBnSxXZZmwLv3J">
+                    <input type="hidden" name="user_id" value="30">
+
+                    
+                    <div>
+                        <p>Выплаты совершаются при балансе более 1000 рублей,
+                            30 USD, 30 EUR.
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Минимальная сумма выплаты - 15 рублей,
+                            1 USD, 0.7 EUR.
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Максимальная сумма выплаты - 90% от Вашего баланса
+                            (39534 рублей,
+                             0 USD,
+                             0 EUR)
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-warning">
+                            Запрошенная сумма вычтется из Вашего баланса до принятия решения о выплате.
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="value">Сумма <span style="color:#ff0000">*</span></label>
+                        <div class="col-md-6">
+                            <input type="number" class="form-control" id="value" name="value">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="theme">Валюта <span style="color:#ff0000">*</span></label>
+                        <div class="col-md-6">
+                            <select data-plugin-selectTwo class="form-control" name="currency" id="currency">
+                                    <option value="1">Российский рубль</option>
+                                    <option value="2">Американский доллар</option>
+                                    <option value="3">Евро</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <footer class="panel-footer">
+                    <button class="btn btn-primary">Запросить</button>
+                </footer>
+            </section>
+        </form>
+    </div>
+
+            <!-- end: page -->
+        </section>
+    </div>
+    <!-- {{Правый сайдбар, пока тупо для совместимости}} -->
+    @@include('template/sidebar-right.html')
+</section>
+
+
+<!-- {{Блок под алерты}} -->
+<!-- <div id="alert_message">{{$alert_message}}</div> -->
+@@include('template/foot.html')
+
+<!-- Specific Page Vendor -->
+<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+<script src="assets/vendor/select2/select2.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="assets/javascripts/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="assets/javascripts/theme.custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="assets/javascripts/theme.init.js"></script>
+
+<!-- Examples -->
+<script src="assets/javascripts/pages/examples.timeline.js"></script>
+<script src="assets/javascripts/ui-elements/examples.modals.js"></script>
+</body>
+</html>

@@ -27,7 +27,13 @@
 	    border: solid transparent;
 	}
 }
-
+.input-inline{
+	 width: 60%;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+	border: none transparent;
+}
 /* Datepicker - Base */
 .datepicker {
 	padding: 10px;

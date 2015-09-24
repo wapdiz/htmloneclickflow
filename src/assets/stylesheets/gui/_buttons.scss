@@ -34,6 +34,7 @@ body {
 			color: #fff;
 			text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 			background-color: darken($color-info-inverse,10%);
+			border-color: darken($color-info-inverse,10%);
 		}
 		&.btn-success-light{
 			color: #fff;
@@ -57,7 +58,39 @@ body {
 		}
 	}
 
-	
+	.btn-split{
+		padding: 0 !important;
+		display: block;
+		text-align: left;
+		text-transform: none;
+		font-weight: normal;
+		@include clearfix();
+		.btn-split-wrapper{
+			position: relative;
+			display: block;
+		}
+		.split-lnk{
+			display: block;
+			padding: 8px 18px;
+			.split-inf{
+				display: inline-block;
+				color: $color-black;
+				margin-left: 15px;
+			}
+		}
+        .split-stat{
+        	display: block;
+        	position: absolute;
+        	top: 0;
+        	right: 0;
+        	padding: 8px 18px;
+        	border-left:2px solid $color-info-inverse;
+        	.ico{
+        		position: relative;
+        		top: -2px;
+        	}
+        }
+	}
 
 	// SOCIAL BUTTONS
 	// -----------------------------------------------------------------------------

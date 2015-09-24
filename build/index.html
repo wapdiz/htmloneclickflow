@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css" />
 <link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css" />
 <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+<link rel="stylesheet" href="assets/vendor/select2/select2.css" />
 
 <!-- Theme CSS -->
 <link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -372,8 +373,8 @@
                             <span>Главная</span>
                         </a>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'referrals')}}">
-                        <a href="/myinfo/referrals">
+                    <li class="@@nav_expanded.referals @@nav_active.referals">
+                        <a href="referals.html">
                             <i class="fa fa-users" aria-hidden="true"></i>
                             <span>Рефералы</span>
                         </a>
@@ -384,29 +385,60 @@
                             <span>Статистика</span>
                         </a>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'news')}}">
-                        <a href="/news">
+                    <li class="@@nav_expanded.news @@nav_active.news">
+                        <a href="news.html">
                             <i class="fa fa-bullhorn" aria-hidden="true"></i>
                             <span>Новости</span>
                         </a>
                     </li>
 
-                    <li class="nav-parent
-                        {{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'tickets_group')}}
-                    ">
+                    <li class="nav-parent @@nav_expanded.tickets">
                         <a>
                             <i class="fa fa-comment" aria-hidden="true"></i>
                             <span>Тикеты</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'tickets_create')}}">
-                                <a href="/tickets/create">Создать</a>
+                            <li class="@@nav_active.tickets_1">
+                                <a href="tickets-create.html">Создать</a>
                             </li>
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'tickets')}}">
-                                <a href="/tickets">Просмотр</a>
+                            <li class="nav-parent @@nav_active.tickets_2 @@nav_expanded.tickets.children">
+                                <a>Просмотр</a>
+                                <ul class="nav nav-children">
+                                    <li class="@@nav_active.tickets_2_1">
+                                        <a href="tickets.html#1">
+                                            <span><i class="color-label" style="border-color: #0000FF"></i> Общий</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_2">
+                                        <a href="tickets.html#2">
+                                            <span><i class="color-label" style="border-color: rgb(0, 255, 0);"></i> Технический</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_3">
+                                        <a href="tickets.html#3">
+                                            <span><i class="color-label" style="border-color: #FF0000"></i> Финансовый</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_4">
+                                        <a href="tickets.html#4">
+                                            <span><i class="color-label" style="border-color: #FFFF00"></i> Жалобы</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_5">
+                                        <a href="tickets.html#5">
+                                            <span><i class="color-label" style="border-color: #00FFFF"></i> Пожелания и предложения</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_6">
+                                        <a href="tickets.html#6">
+                                            <span> <i class="color-label" style="border-color: #FFA500"></i>Улучшение системы</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
+
 
                     <li class="nav-parent @@nav_expanded.streams @@nav_active.streams">
                         <a>
@@ -423,37 +455,28 @@
                         </ul>
                     </li>
 
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'splits_settings')}}">
-                        <a href="/splits_settings">
-                            <i class="fa fa-list-ol" aria-hidden="true"></i>
-                            <span>Сплиты</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-parent
-                        {{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'payment_group')}}
-                    ">
+                    <li class="nav-parent @@nav_expanded.payment @@nav_active.payment">
                         <a>
                             <i class="fa fa-credit-card" aria-hidden="true"></i>
                             <span>Выплаты</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="">
-                                <a href="/payment/last">Просмотр</a>
+                            <li class="@@nav_active.payment_1">
+                                <a href="payment.html">Просмотр</a>
                             </li>
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'payment_request')}}">
-                                <a href="/payment/request">Запросить</a>
+                            <li class="@@nav_active.payment_2">
+                                <a href="payment-request.html">Запросить</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'faq')}}">
-                        <a href="/faq">
+                    <li class="@@nav_active.faq">
+                        <a href="faq.html">
                             <i class="fa fa-home" aria-hidden="true"></i>
                             <span>FAQ</span>
                         </a>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'credits')}}">
-                        <a href="/credits">
+                    <li class="@@nav_active.credits">
+                        <a href="credits.html">
                             <i class="fa fa-bank" aria-hidden="true"></i>
                             <span>Кредитование</span>
                         </a>
@@ -469,24 +492,12 @@
 
         <section role="main" class="content-body">
             <!-- {{Хедер над секцией контента и дополнительной менюшкой}} -->
-            <header class="page-header">
-                <ol class="breadcrumbs">
-                    <li>
-                        <a href="index.html">
-                            <i class="fa fa-home"></i>
-                            <b class="separator"></b>
-                        </a>
-                    </li>
-                    <li><span>Mailbox <b class="separator"></b></span></li>
-                    <li><span>Inbox <b class="separator"></b></span></li>
-                </ol>
-            </header>
 
             <!-- start: page -->
             <div class="row">
-                <div class="col-md-6 col-lg-12 col-xl-6">
+                <div class="col-lg-12 col-xl-6">
                     <div class="row">
-                        <div class="col-md-12 col-lg-6 col-xl-6">
+                        <div class="col-md-6">
                             <section class="panel panel-featured-left panel-featured-primary">
                                 <div class="panel-body">
                                     <div class="widget-summary">
@@ -507,7 +518,7 @@
                                 </div>
                             </section>
                         </div>
-                        <div class="col-md-12 col-lg-6 col-xl-6">
+                        <div class="col-md-6">
                             <section class="panel panel-featured-left panel-featured-tertiary">
                                 <div class="panel-body">
                                     <div class="widget-summary">
@@ -528,7 +539,7 @@
                                 </div>
                             </section>
                         </div>
-                        <div class="col-md-12 col-lg-6 col-xl-6">
+                        <div class="col-md-6">
                             <section class="panel panel-featured-left panel-featured-quartenary">
                                 <div class="panel-body">
                                     <div class="widget-summary">
@@ -541,9 +552,17 @@
                                             <div class="summary">
                                                 <h4 class="title">Заработано за день</h4>
                                                 <div class="info">
-                                                    <strong class="amount"><i class="fa fa-rub"></i> 0</strong><br>
-                                                    <strong class="amount"><i class="fa fa-usd"></i> 0</strong><br>
-                                                    <strong class="amount"><i class="fa fa-eur"></i> 0</strong>
+                                                    <strong class="amount"><i class="fa fa-rub"></i> 0</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                                <div class="row text-left">
+                                                    <div class="col-sm-6">
+                                                        <span class="text-muted"><i class="fa fa-usd"></i> 0</span>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <span class="text-muted"><i class="fa fa-eur"></i> 0</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -551,7 +570,7 @@
                                 </div>
                             </section>
                         </div>
-                        <div class="col-md-12 col-lg-6 col-xl-6">
+                        <div class="col-md-6">
                             <section class="panel panel-featured-left panel-featured-secondary">
                                 <div class="panel-body">
                                     <div class="widget-summary">
@@ -564,9 +583,17 @@
                                             <div class="summary">
                                                 <h4 class="title">Баланс</h4>
                                                 <div class="info">
-                                                    <strong class="amount"><i class="fa fa-rub"></i> 0</strong><br>
-                                                    <strong class="amount"><i class="fa fa-usd"></i> 0</strong><br>
-                                                    <strong class="amount"><i class="fa fa-eur"></i> 0</strong>
+                                                    <strong class="amount"><i class="fa fa-rub"></i> 0</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                                <div class="row text-left">
+                                                    <div class="col-sm-6">
+                                                        <span class="text-muted"><i class="fa fa-usd"></i> 0</span>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <span class="text-muted"><i class="fa fa-eur"></i> 0</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -576,7 +603,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-12 col-xl-6" id="plot_container">
+                <div class="col-lg-12 col-xl-6" id="plot_container">
                     <section class="panel">
                         <div class="panel-body">
                             <div class="row">
@@ -588,20 +615,149 @@
                         </div>
                     </section>
                 </div>
-                <div class="col-md-6">
-                        <section class="panel">
-                            <header class="panel-heading">
-
-                                <h2 class="panel-title">МТС: добавление LP</h2>
-                                <p class="panel-subtitle">2015-08-11 18:49:45</p>
-                            </header>
-                            <div class="panel-body">
-                                Добавлены новые LP:<div>1) Hot Tube - 20 рублей в сутки, адалт;</div><div>2) Sexy Kiski - 35 рублей раз в 2 дня, адалт;</div><div>3) TurboBox - 20 рублей в сутки, файлы.</div><div><br></div><div>Просьба обновить свои сплиты.</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="box">
+                        <div class="timeline tm-icon-small">
+                            <div class="tm-body">
+                                <div class="tm-title tm-title-top">
+                                    <span class="btn btn-info btn-block">Сентябрь</span>
+                                </div>
+                                <ol class="tm-items" id="timelineNews-2015-09">
+                                    <li class="tm-box panel border" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                                        <div class="tm-info">
+                                            <div class="tm-icon text-primary" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-info"></i></div>
+                                        </div>
+                                        <div class="panel-heading">
+                                            <div class="panel-actions">
+                                                <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
+                                            </div>
+                                            <h4 class="panel-title text-primary text-bold h4">
+                                                Новые лендинги МТС
+                                            </h4>
+                                            2015-08-11 18:49:45
+                                        </div>
+                                        <div class="panel-body">
+                                            Добавлены новые LP:<br>
+                                            1) Hot Tube - 20 рублей в сутки, адалт;<br>
+                                            2) Sexy Kiski - 35 рублей раз в 2 дня, адалт;<br>
+                                            3) TurboBox - 20 рублей в сутки, файлы.<br>
+                                        </div>
+                                    </li>
+                                </ol>
+                                <div class="tm-title tm-title-bottom">
+                                    <a href="news.html" class="btn btn-info-light btn-block">смотреть все</a>
+                                </div>
                             </div>
-                        </section>
+                        </div>
                     </div>
                 </div>
-            <!-- end: page -->
+                <div class="col-lg-6">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped mb-none">
+                                    <thead>
+                                        <tr class="info-inverse">
+                                            <th>#</th>
+                                            <th>Project</th>
+                                            <th>Status</th>
+                                            <th>Progress</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Porto - Responsive HTML5 Template</td>
+                                            <td><span class="label label-success">Success</span></td>
+                                            <td>
+                                                <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
+                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                                        100%
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Porto - Responsive Drupal 7 Theme</td>
+                                            <td><span class="label label-success">Success</span></td>
+                                            <td>
+                                                <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
+                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                                        100%
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Tucson - Responsive HTML5 Template</td>
+                                            <td><span class="label label-warning">Warning</span></td>
+                                            <td>
+                                                <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
+                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                                        60%
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Tucson - Responsive Business WordPress Theme</td>
+                                            <td><span class="label label-success">Success</span></td>
+                                            <td>
+                                                <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
+                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                                                        90%
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Porto - Responsive Admin HTML5 Template</td>
+                                            <td><span class="label label-warning">Warning</span></td>
+                                            <td>
+                                                <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
+                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
+                                                        45%
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Porto - Responsive HTML5 Template</td>
+                                            <td><span class="label label-danger">Danger</span></td>
+                                            <td>
+                                                <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
+                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+                                                        40%
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Porto - Responsive Drupal 7 Theme</td>
+                                            <td><span class="label label-success">Success</span></td>
+                                            <td>
+                                                <div class="progress progress-sm progress-half-rounded mt-xs light">
+                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
+                                                        95%
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </section>
     </div>
     <!-- {{Правый сайдбар, пока тупо для совместимости}} -->
@@ -686,6 +842,7 @@
 <script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
 <script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+<script src="assets/vendor/select2/select2.js"></script>
 
 <!-- Specific Page Vendor -->
 <script src="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>

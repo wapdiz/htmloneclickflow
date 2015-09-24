@@ -51,77 +51,98 @@
                     <div class="tm-title tm-title-top">
                         <a href="streams-create.html" class="btn btn-success btn-block"><i class="fa fa-plus mr-xs"></i> Новый поток</a>
                     </div>
-                    <ol class="tm-items" id="accordionStream">
-                        <li>
-                            <div class="tm-box panel panel-accordion panel-accordion-primary" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
-                                <div class="panel-heading">
-                                    <div class="panel-actions">
-                                        <div class="row">
+                    <ol class="tm-items accordion panel-group" id="accordionStream">
+                        <li class="tm-box panel" data-appear-animation="fadeInRight" data-appear-animation-delay="100">
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a class="panel-actions-collapse accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-1"></a>
+                                    <a href="#" class="fa panel-actions-close fa-times"></a>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-5 col-lg-7 col-xl-8">
+                                        <h3 class="panel-title accordion-toggle text-overflow" data-toggle="collapse" data-parent="#accordionStream" data-target="#collapseStream-1">
+                                            Телетекст 2
+                                        </h3>
+                                        <div class="xs-visible mb-md"></div>
+                                    </div>
+                                    <div class="col-sm-8 col-md-7 col-lg-5 col-xl-4">
+                                        <div class="panel-options row">
                                             <div class="col-sm-4">
-                                                <div class="switch switch-sm switch-success">
-                                                    <input id="stream-switch-1" type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                <div class="label-link">
+                                                    <div class="switch switch-sm switch-success left">
+                                                        <input id="stream-switch-1" type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                    </div>
+                                                    <label class="left ml-sm" for="stream-switch-1">Активный</label>
                                                 </div>
-                                                <label for="stream-switch-1">Активный</label>
                                             </div>
                                             <div class="col-sm-5">
-                                                <a href="streams-edit.html"><span class="badge"><i class="fa fa-pencil"></i></span> Редактирование</a>
+                                                <a class="label-link" href="streams-edit.html"><span class="badge badge-circle"><i class="fa fa-pencil"></i></span> Редактирование</a>
                                             </div>
                                             <div class="col-sm-3">
-                                                <a href="#streamLinksModal" class="modal-with-move-anim"><span class="badge"><i class="fa fa-link"></i></span> Ссылки</a>
+                                                <a class="label-link" href="#streamLinksModal" class="modal-with-move-anim"><span class="badge badge-circle"><i class="fa fa-link"></i></span> Ссылки</a>
                                             </div>
                                         </div>
-                                        <a class="fa panel-actions-toggle fa-chevron-down accordion-toggle" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-1"></a>
-                                        <a href="#" class="fa panel-actions-close fa-times"></a>
                                     </div>
-                                    <h3 class="panel-title accordion-toggle" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-1">
-                                        Телетекст 2
-                                    </h3>
                                 </div>
-                                <div id="collapseStream-1" class="accordion-body collapse">
-                                    <div class="panel-body">
-                                        <div class="row mb-xlg">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <a href="#" class="btn btn-primary text-uppercase btn-block">настроить все сплиты по умолчанию</a>
-                                            </div>
+                            </div>
+                            <div id="collapseStream-1" class="accordion-body collapse">
+                                <div class="panel-body">
+                                    <div class="row mb-xlx">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="#" class="btn btn-primary text-uppercase btn-block">настроить все сплиты по умолчанию</a>
                                         </div>
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="btn-group btn-group-justified btn-group-split">
-                                                    <a class="btn btn-default btn-num-left text-left text-normal" role="button" href="streams-split-settings.html#1">1</a>
-                                                    <a class="btn btn-default text-left text-normal" role="button" href="streams-split-settings.html#1">Сплит 1</a>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="streams-split-settings.html#1" class="btn btn-default btn-split">
+                                                <span class="btn-split-wrapper">
+                                                    <span class="split-lnk">Сплит #1 <span class="split-inf">JS-прямой редирект</span></span> 
+                                                    <span class="split-stat">
+                                                        <img class="ico" src="assets/images/icons/operator/mts.png" alt="mts"> 2 
+                                                        <img class="ico" src="assets/images/icons/operator/beeline.png" alt="beeline"> 2
+                                                    </span> 
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="streams-split-settings.html#2" class="btn btn-default btn-split">
+                                                <span class="btn-split-wrapper">
+                                                    <span class="split-lnk">Сплит #2 <span class="split-inf">JS-прямой редирект</span></span> 
+                                                    <span class="split-stat">
+                                                        0
+                                                    </span> 
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="streams-split-settings.html#3" class="btn btn-default btn-split">
+                                                <span class="btn-split-wrapper">
+                                                    <span class="split-lnk">Сплит #3 <span class="split-inf">JS-прямой редирект</span></span> 
+                                                    <span class="split-stat">
+                                                        <img class="ico" src="assets/images/icons/operator/megafon.png" alt="mts"> 2 
+                                                        <img class="ico" src="assets/images/icons/operator/beeline.png" alt="beeline"> 2
+                                                        <img class="ico" src="assets/images/icons/operator/tele2.png" alt="beeline"> 1
+                                                    </span> 
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <div class="row">
+                                                <div class="col-xs-6 pr-none">
+                                                    <a href="#" class="btn btn-success btn-block text-uppercase text-overflow">
+                                                        <i class="fa fa-plus mr-xs"></i> Добавить сплит
+                                                    </a>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="btn-group btn-group-justified btn-group-split">
-                                                    <a class="btn btn-default btn-num-left text-left text-normal" role="button" href="streams-split-settings.html#2">2</a>
-                                                    <a class="btn btn-default text-left text-normal" role="button" href="streams-split-settings.html#2">Сплит 2</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="btn-group btn-group-justified btn-group-split">
-                                                    <a class="btn btn-default btn-num-left text-left text-normal" role="button" href="streams-split-settings.html#3">3</a>
-                                                    <a class="btn btn-default text-left text-normal" role="button" href="streams-split-settings.html#3">Сплит 3</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="row">
-                                                    <div class="col-xs-6 pr-none">
-                                                        <a href="#" class="btn btn-success btn-block text-uppercase text-overflow">
-                                                            <i class="fa fa-plus mr-xs"></i> Добавить сплит
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-6">
-                                                        <a href="#" class="btn btn-danger btn-block text-uppercase text-overflow">
-                                                            <i class="fa fa-times mr-xs"></i>Удалить сплит
-                                                        </a>
-                                                    </div>
+                                                <div class="col-xs-6">
+                                                    <a href="#" class="btn btn-danger btn-block text-uppercase text-overflow">
+                                                        <i class="fa fa-times mr-xs"></i>Удалить сплит
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -129,76 +150,97 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="tm-box panel panel-accordion panel-accordion-primary" data-appear-animation="fadeInRight"data-appear-animation-delay="200">
-                                <div class="panel-heading">
-                                    <div class="panel-actions">
-                                        <div class="row">
+                        <li class="tm-box panel" data-appear-animation="fadeInRight" data-appear-animation-delay="100">
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a class="panel-actions-collapse accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-2"></a>
+                                    <a href="#" class="fa panel-actions-close fa-times"></a>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-5 col-lg-7 col-xl-8">
+                                        <h3 class="panel-title accordion-toggle text-overflow" data-toggle="collapse" data-parent="#accordionStream" data-target="#collapseStream-2">
+                                            Правильные новости
+                                        </h3>
+                                        <div class="xs-visible mb-md"></div>
+                                    </div>
+                                    <div class="col-sm-8 col-md-7 col-lg-5 col-xl-4">
+                                        <div class="panel-options row">
                                             <div class="col-sm-4">
-                                                <div class="switch switch-sm switch-success">
-                                                    <input id="stream-switch-114" type="checkbox" name="switch" data-plugin-ios-switch />
+                                                <div class="label-link">
+                                                    <div class="switch switch-sm switch-success left">
+                                                        <input id="stream-switch-114" type="checkbox" name="switch" data-plugin-ios-switch />
+                                                    </div>
+                                                    <label class="left ml-sm" for="stream-switch-114">Выключен</label>
                                                 </div>
-                                                <label for="stream-switch-114">Выключен</label>
                                             </div>
                                             <div class="col-sm-5">
-                                                <a href="streams-edit.html"><span class="badge"><i class="fa fa-pencil"></i></span> Редактирование</a>
+                                                <a class="label-link" href="streams-edit.html"><span class="badge badge-circle"><i class="fa fa-pencil"></i></span> Редактирование</a>
                                             </div>
                                             <div class="col-sm-3">
-                                                <a href="#streamLinksModal" class="modal-with-move-anim"><span class="badge"><i class="fa fa-link"></i></span> Ссылки</a>
+                                                <a class="label-link" href="#streamLinksModal" class="modal-with-move-anim"><span class="badge badge-circle"><i class="fa fa-link"></i></span> Ссылки</a>
                                             </div>
                                         </div>
-                                        <a class="fa panel-actions-toggle fa-chevron-down accordion-toggle" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-2"></a>
-                                        <a href="#" class="fa panel-actions-close fa-times"></a>
                                     </div>
-                                    <h3 class="panel-title accordion-toggle" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-2">
-                                        Правильные новости
-                                    </h3>
                                 </div>
-                                <div id="collapseStream-2" class="accordion-body collapse">
-                                    <div class="panel-body">
-                                        <div class="row mb-xlg">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <a href="#" class="btn btn-primary text-uppercase btn-block">настроить все сплиты по умолчанию</a>
-                                            </div>
+                            </div>
+                            <div id="collapseStream-2" class="accordion-body collapse">
+                                <div class="panel-body">
+                                    <div class="row mb-xlx">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="#" class="btn btn-primary text-uppercase btn-block">настроить все сплиты по умолчанию</a>
                                         </div>
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="btn-group btn-group-justified btn-group-split">
-                                                    <a class="btn btn-default btn-num-left text-left text-normal" role="button" href="streams-split-settings.html#1">1</a>
-                                                    <a class="btn btn-default text-left text-normal" role="button" href="streams-split-settings.html#1">Сплит 1</a>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="streams-split-settings.html#1" class="btn btn-default btn-split">
+                                                <span class="btn-split-wrapper">
+                                                    <span class="split-lnk">Сплит #1 <span class="split-inf">JS-прямой редирект</span></span> 
+                                                    <span class="split-stat">
+                                                        <img class="ico" src="assets/images/icons/operator/mts.png" alt="mts"> 2 
+                                                        <img class="ico" src="assets/images/icons/operator/beeline.png" alt="beeline"> 2
+                                                    </span> 
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="streams-split-settings.html#2" class="btn btn-default btn-split">
+                                                <span class="btn-split-wrapper">
+                                                    <span class="split-lnk">Сплит #2 <span class="split-inf">JS-прямой редирект</span></span> 
+                                                    <span class="split-stat">
+                                                        0
+                                                    </span> 
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="streams-split-settings.html#3" class="btn btn-default btn-split">
+                                                <span class="btn-split-wrapper">
+                                                    <span class="split-lnk">Сплит #3 <span class="split-inf">JS-прямой редирект</span></span> 
+                                                    <span class="split-stat">
+                                                        <img class="ico" src="assets/images/icons/operator/megafon.png" alt="mts"> 2 
+                                                        <img class="ico" src="assets/images/icons/operator/beeline.png" alt="beeline"> 2
+                                                        <img class="ico" src="assets/images/icons/operator/tele2.png" alt="beeline"> 1
+                                                    </span> 
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <div class="row">
+                                                <div class="col-xs-6 pr-none">
+                                                    <a href="#" class="btn btn-success btn-block text-uppercase text-overflow">
+                                                        <i class="fa fa-plus mr-xs"></i> Добавить сплит
+                                                    </a>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="btn-group btn-group-justified btn-group-split">
-                                                    <a class="btn btn-default btn-num-left text-left text-normal" role="button" href="streams-split-settings.html#2">2</a>
-                                                    <a class="btn btn-default text-left text-normal" role="button" href="streams-split-settings.html#2">Сплит 2</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="btn-group btn-group-justified btn-group-split">
-                                                    <a class="btn btn-default btn-num-left text-left text-normal" role="button" href="streams-split-settings.html#3">3</a>
-                                                    <a class="btn btn-default text-left text-normal" role="button" href="streams-split-settings.html#3">Сплит 3</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="row">
-                                                    <div class="col-xs-6 pr-none">
-                                                        <a href="#" class="btn btn-success btn-block text-uppercase text-overflow">
-                                                            <i class="fa fa-plus mr-xs"></i> Добавить сплит
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-6">
-                                                        <a href="#" class="btn btn-danger btn-block text-uppercase text-overflow">
-                                                            <i class="fa fa-times mr-xs"></i>Удалить сплит
-                                                        </a>
-                                                    </div>
+                                                <div class="col-xs-6">
+                                                    <a href="#" class="btn btn-danger btn-block text-uppercase text-overflow">
+                                                        <i class="fa fa-times mr-xs"></i>Удалить сплит
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -206,76 +248,97 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="tm-box panel panel-accordion panel-accordion-primary" data-appear-animation="fadeInRight"data-appear-animation-delay="300">
-                                <div class="panel-heading">
-                                    <div class="panel-actions">
-                                        <div class="row">
+                        <li class="tm-box panel" data-appear-animation="fadeInRight" data-appear-animation-delay="100">
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a class="panel-actions-collapse accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-3"></a>
+                                    <a href="#" class="fa panel-actions-close fa-times"></a>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-5 col-lg-7 col-xl-8">
+                                        <h3 class="panel-title accordion-toggle text-overflow" data-toggle="collapse" data-parent="#accordionStream" data-target="#collapseStream-3">
+                                            мтс 2015
+                                        </h3>
+                                        <div class="xs-visible mb-md"></div>
+                                    </div>
+                                    <div class="col-sm-8 col-md-7 col-lg-5 col-xl-4">
+                                        <div class="panel-options row">
                                             <div class="col-sm-4">
-                                                <div class="switch switch-sm switch-disabled">
-                                                    <input id="stream-switch-3002" type="checkbox" name="switch" data-plugin-ios-switch checked="checked" disabled/>
+                                                <div class="label-link">
+                                                    <div class="switch switch-sm switch-disabled left">
+                                                        <input id="stream-switch-3002" type="checkbox" name="switch" data-plugin-ios-switch checked="checked" disabled/>
+                                                    </div>
+                                                    <label class="left ml-sm" for="stream-switch-3002">Модерация</label>
                                                 </div>
-                                                <label for="stream-switch-3002">Модерация</label>
                                             </div>
                                             <div class="col-sm-5">
-                                                <a href="streams-edit.html"><span class="badge"><i class="fa fa-pencil"></i></span> Редактирование</a>
+                                                <a class="label-link" href="streams-edit.html"><span class="badge badge-circle"><i class="fa fa-pencil"></i></span> Редактирование</a>
                                             </div>
                                             <div class="col-sm-3">
-                                                <a href="#streamLinksModal" class="modal-with-move-anim"><span class="badge"><i class="fa fa-link"></i></span> Ссылки</a>
+                                                <a class="label-link" href="#streamLinksModal" class="modal-with-move-anim"><span class="badge badge-circle"><i class="fa fa-link"></i></span> Ссылки</a>
                                             </div>
                                         </div>
-                                        <a class="fa panel-actions-toggle fa-chevron-down accordion-toggle" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-3"></a>
-                                        <a href="#" class="fa panel-actions-close fa-times"></a>
                                     </div>
-                                    <h3 class="panel-title accordion-toggle" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-3">
-                                        мтс 2015
-                                    </h3>
                                 </div>
-                                <div id="collapseStream-3" class="accordion-body collapse">
-                                    <div class="panel-body">
-                                        <div class="row mb-xlg">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <a href="#" class="btn btn-primary text-uppercase btn-block">настроить все сплиты по умолчанию</a>
-                                            </div>
+                            </div>
+                            <div id="collapseStream-3" class="accordion-body collapse">
+                                <div class="panel-body">
+                                    <div class="row mb-xlx">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="#" class="btn btn-primary text-uppercase btn-block">настроить все сплиты по умолчанию</a>
                                         </div>
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="btn-group btn-group-justified btn-group-split">
-                                                    <a class="btn btn-default btn-num-left text-left text-normal" role="button" href="streams-split-settings.html#1">1</a>
-                                                    <a class="btn btn-default text-left text-normal" role="button" href="streams-split-settings.html#1">Сплит 1</a>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="streams-split-settings.html#1" class="btn btn-default btn-split">
+                                                <span class="btn-split-wrapper">
+                                                    <span class="split-lnk">Сплит #1 <span class="split-inf">JS-прямой редирект</span></span> 
+                                                    <span class="split-stat">
+                                                        <img class="ico" src="assets/images/icons/operator/mts.png" alt="mts"> 2 
+                                                        <img class="ico" src="assets/images/icons/operator/beeline.png" alt="beeline"> 2
+                                                    </span> 
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="streams-split-settings.html#2" class="btn btn-default btn-split">
+                                                <span class="btn-split-wrapper">
+                                                    <span class="split-lnk">Сплит #2 <span class="split-inf">JS-прямой редирект</span></span> 
+                                                    <span class="split-stat">
+                                                        0
+                                                    </span> 
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="streams-split-settings.html#3" class="btn btn-default btn-split">
+                                                <span class="btn-split-wrapper">
+                                                    <span class="split-lnk">Сплит #3 <span class="split-inf">JS-прямой редирект</span></span> 
+                                                    <span class="split-stat">
+                                                        <img class="ico" src="assets/images/icons/operator/megafon.png" alt="mts"> 2 
+                                                        <img class="ico" src="assets/images/icons/operator/beeline.png" alt="beeline"> 2
+                                                        <img class="ico" src="assets/images/icons/operator/tele2.png" alt="beeline"> 1
+                                                    </span> 
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <div class="row">
+                                                <div class="col-xs-6 pr-none">
+                                                    <a href="#" class="btn btn-success btn-block text-uppercase text-overflow">
+                                                        <i class="fa fa-plus mr-xs"></i> Добавить сплит
+                                                    </a>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="btn-group btn-group-justified btn-group-split">
-                                                    <a class="btn btn-default btn-num-left text-left text-normal" role="button" href="streams-split-settings.html#2">2</a>
-                                                    <a class="btn btn-default text-left text-normal" role="button" href="streams-split-settings.html#2">Сплит 2</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="btn-group btn-group-justified btn-group-split">
-                                                    <a class="btn btn-default btn-num-left text-left text-normal" role="button" href="streams-split-settings.html#3">3</a>
-                                                    <a class="btn btn-default text-left text-normal" role="button" href="streams-split-settings.html#3">Сплит 3</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="row">
-                                                    <div class="col-xs-6 pr-none">
-                                                        <a href="#" class="btn btn-success btn-block text-uppercase text-overflow">
-                                                            <i class="fa fa-plus mr-xs"></i> Добавить сплит
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-6">
-                                                        <a href="#" class="btn btn-danger btn-block text-uppercase text-overflow">
-                                                            <i class="fa fa-times mr-xs"></i>Удалить сплит
-                                                        </a>
-                                                    </div>
+                                                <div class="col-xs-6">
+                                                    <a href="#" class="btn btn-danger btn-block text-uppercase text-overflow">
+                                                        <i class="fa fa-times mr-xs"></i>Удалить сплит
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -283,76 +346,97 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="tm-box panel panel-accordion panel-accordion-primary" data-appear-animation="fadeInRight"data-appear-animation-delay="400">
-                                <div class="panel-heading">
-                                    <div class="panel-actions">
-                                        <div class="row">
+                        <li class="tm-box panel" data-appear-animation="fadeInRight" data-appear-animation-delay="100">
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a class="panel-actions-collapse accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-4"></a>
+                                    <a href="#" class="fa panel-actions-close fa-times"></a>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-5 col-lg-7 col-xl-8">
+                                        <h3 class="panel-title accordion-toggle text-overflow" data-toggle="collapse" data-parent="#accordionStream" data-target="#collapseStream-4">
+                                            Новости
+                                        </h3>
+                                        <div class="xs-visible mb-md"></div>
+                                    </div>
+                                    <div class="col-sm-8 col-md-7 col-lg-5 col-xl-4">
+                                        <div class="panel-options row">
                                             <div class="col-sm-4">
-                                                <div class="switch switch-sm switch-disabled">
-                                                    <input id="stream-switch-99999" type="checkbox" name="switch" data-plugin-ios-switch disabled/>
+                                                <div class="label-link">
+                                                    <div class="switch switch-sm switch-disabled left">
+                                                        <input id="stream-switch-99999" type="checkbox" name="switch" data-plugin-ios-switch disabled/>
+                                                    </div>
+                                                    <label class="left ml-sm" for="stream-switch-99999">Модерация</label>
                                                 </div>
-                                                <label for="stream-switch-99999">Модерация</label>
                                             </div>
                                             <div class="col-sm-5">
-                                                <a href="streams-edit.html"><span class="badge"><i class="fa fa-pencil"></i></span> Редактирование</a>
+                                                <a class="label-link" href="streams-edit.html"><span class="badge badge-circle"><i class="fa fa-pencil"></i></span> Редактирование</a>
                                             </div>
                                             <div class="col-sm-3">
-                                                <a href="#streamLinksModal" class="modal-with-move-anim"><span class="badge"><i class="fa fa-link"></i></span> Ссылки</a>
+                                                <a class="label-link" href="#streamLinksModal" class="modal-with-move-anim"><span class="badge badge-circle"><i class="fa fa-link"></i></span> Ссылки</a>
                                             </div>
                                         </div>
-                                        <a class="fa panel-actions-toggle fa-chevron-down accordion-toggle" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-4"></a>
-                                        <a href="#" class="fa panel-actions-close fa-times"></a>
                                     </div>
-                                    <h3 class="panel-title accordion-toggle" data-toggle="collapse" data-parent="#accordionStream" href="#collapseStream-4">
-                                        Новости
-                                    </h3>
                                 </div>
-                                <div id="collapseStream-4" class="accordion-body collapse">
-                                    <div class="panel-body">
-                                        <div class="row mb-xlg">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <a href="#" class="btn btn-primary text-uppercase btn-block">настроить все сплиты по умолчанию</a>
-                                            </div>
+                            </div>
+                            <div id="collapseStream-4" class="accordion-body collapse">
+                                <div class="panel-body">
+                                    <div class="row mb-xlx">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="#" class="btn btn-primary text-uppercase btn-block">настроить все сплиты по умолчанию</a>
                                         </div>
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="btn-group btn-group-justified btn-group-split">
-                                                    <a class="btn btn-default btn-num-left text-left text-normal" role="button" href="streams-split-settings.html#1">1</a>
-                                                    <a class="btn btn-default text-left text-normal" role="button" href="streams-split-settings.html#1">Сплит 1</a>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="streams-split-settings.html#1" class="btn btn-default btn-split">
+                                                <span class="btn-split-wrapper">
+                                                    <span class="split-lnk">Сплит #1 <span class="split-inf">JS-прямой редирект</span></span> 
+                                                    <span class="split-stat">
+                                                        <img class="ico" src="assets/images/icons/operator/mts.png" alt="mts"> 2 
+                                                        <img class="ico" src="assets/images/icons/operator/beeline.png" alt="beeline"> 2
+                                                    </span> 
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="streams-split-settings.html#2" class="btn btn-default btn-split">
+                                                <span class="btn-split-wrapper">
+                                                    <span class="split-lnk">Сплит #2 <span class="split-inf">JS-прямой редирект</span></span> 
+                                                    <span class="split-stat">
+                                                        0
+                                                    </span> 
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <a href="streams-split-settings.html#3" class="btn btn-default btn-split">
+                                                <span class="btn-split-wrapper">
+                                                    <span class="split-lnk">Сплит #3 <span class="split-inf">JS-прямой редирект</span></span> 
+                                                    <span class="split-stat">
+                                                        <img class="ico" src="assets/images/icons/operator/megafon.png" alt="mts"> 2 
+                                                        <img class="ico" src="assets/images/icons/operator/beeline.png" alt="beeline"> 2
+                                                        <img class="ico" src="assets/images/icons/operator/tele2.png" alt="beeline"> 1
+                                                    </span> 
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-sm">
+                                        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
+                                            <div class="row">
+                                                <div class="col-xs-6 pr-none">
+                                                    <a href="#" class="btn btn-success btn-block text-uppercase text-overflow">
+                                                        <i class="fa fa-plus mr-xs"></i> Добавить сплит
+                                                    </a>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="btn-group btn-group-justified btn-group-split">
-                                                    <a class="btn btn-default btn-num-left text-left text-normal" role="button" href="streams-split-settings.html#2">2</a>
-                                                    <a class="btn btn-default text-left text-normal" role="button" href="streams-split-settings.html#2">Сплит 2</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="btn-group btn-group-justified btn-group-split">
-                                                    <a class="btn btn-default btn-num-left text-left text-normal" role="button" href="streams-split-settings.html#3">3</a>
-                                                    <a class="btn btn-default text-left text-normal" role="button" href="streams-split-settings.html#3">Сплит 3</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="row mb-sm">
-                                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-                                                <div class="row">
-                                                    <div class="col-xs-6 pr-none">
-                                                        <a href="#" class="btn btn-success btn-block text-uppercase text-overflow">
-                                                            <i class="fa fa-plus mr-xs"></i> Добавить сплит
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-6">
-                                                        <a href="#" class="btn btn-danger btn-block text-uppercase text-overflow">
-                                                            <i class="fa fa-times mr-xs"></i>Удалить сплит
-                                                        </a>
-                                                    </div>
+                                                <div class="col-xs-6">
+                                                    <a href="#" class="btn btn-danger btn-block text-uppercase text-overflow">
+                                                        <i class="fa fa-times mr-xs"></i>Удалить сплит
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>

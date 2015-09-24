@@ -2,6 +2,9 @@
 // -----------------------------------------------------------------------------
 .fileupload {
 	.uneditable-input {
+		height: 41px;
+		text-align: left;
+		margin-left: 0 !important;
 		.fa {
 			position: absolute;
 			top: 12px;
@@ -14,6 +17,16 @@
 			padding: 0 0 0 17px;
 			text-overflow: ellipsis;
 			width: 100%;
+		}
+	}
+	.input-append{
+		.btn{
+			&:first-child{
+				@include border-left-radius(4px);
+			}
+			&:last-child{
+				@include border-right-radius(4px);
+			}
 		}
 	}
 

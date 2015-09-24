@@ -1,0 +1,106 @@
+<!doctype html>
+<html class="fixed" lang="ru" >
+
+<head>
+    @@include('template/head.html', {
+        "title": "FAQ"
+    })
+    
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote.css" />
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote-bs3.css" />
+
+</head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+        <!-- {{Общий хедер, используется на всех страницах}} -->
+        <!-- @include('main-header') -->
+        @@include('template/main-header.html')
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+
+        <!-- start: sidebar -->
+        <!-- {{Выше - хрень, левый сайдбар один, меняется класс в <html>}} -->
+        @@include('template/sidebar-left-main.html', {
+            "nav_active": {
+                "faq": "nav-active"
+            }
+        })
+        
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <!-- {{Хедер над секцией контента и дополнительной менюшкой}} -->
+            <header class="page-header">
+                <ol class="breadcrumbs">
+                    <li><span>FAQ <b class="separator"></b></span></li>
+                </ol>
+            </header>
+
+            <!-- start: page -->
+
+            <div class="container-fluid">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2>FAQ</h2>
+                    </header>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped mb-none">
+                                <thead>
+                                <tr class="info-inverse">
+                                    <th>Вопрос</th>
+                                    <th>Ответ</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Вопрос</td>
+                                        <td>Ответ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Вопрос</td>
+                                        <td>Ответ</td>
+                                    </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- end: page -->
+        </section>
+    </div>
+    <!-- {{Правый сайдбар, пока тупо для совместимости}} -->
+    @@include('template/sidebar-right.html')
+</section>
+
+
+<!-- {{Блок под алерты}} -->
+<!-- <div id="alert_message">{{$alert_message}}</div> -->
+@@include('template/foot.html')
+
+<!-- Specific Page Vendor -->
+<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="assets/vendor/gmaps/gmaps.js"></script>
+<script src="assets/vendor/ios7-switch/ios7-switch.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="assets/javascripts/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="assets/javascripts/theme.custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="assets/javascripts/theme.init.js"></script>
+
+<!-- Examples -->
+<script src="assets/javascripts/pages/examples.timeline.js"></script>
+<script src="assets/javascripts/ui-elements/examples.modals.js"></script>
+</body>
+</html>

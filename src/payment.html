@@ -1,0 +1,124 @@
+<!doctype html>
+<html class="fixed" lang="ru" >
+
+<head>
+    @@include('template/head.html', {
+        "title": "Последние выплаты"
+    })
+    
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote.css" />
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote-bs3.css" />
+
+</head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+        <!-- {{Общий хедер, используется на всех страницах}} -->
+        <!-- @include('main-header') -->
+        @@include('template/main-header.html')
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+
+        <!-- start: sidebar -->
+        <!-- {{Выше - хрень, левый сайдбар один, меняется класс в <html>}} -->
+        @@include('template/sidebar-left-main.html', {
+            "nav_active": {
+                "payment": "nav-active",
+                "payment_1": "nav-active"
+            },
+            "nav_expanded": {
+                "payment": "nav-expanded"
+            }
+        })
+        
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <!-- {{Хедер над секцией контента и дополнительной менюшкой}} -->
+            <header class="page-header">
+                <ol class="breadcrumbs">
+                    <li><span>Последние выплаты <b class="separator"></b></span></li>
+                </ol>
+            </header>
+
+            <!-- start: page -->
+            <div class="container-fluid">
+        <section class="panel">
+            <header class="panel-heading">
+                <h2>Последние выплаты</h2>
+            </header>
+
+            <div class="panel-body">
+                                <div class="table-responsive">
+                    <table class="table table-striped mb-none">
+                        <thead>
+                        <tr class="info-inverse">
+                            <th>#</th>
+                            <th>Когда</th>
+                            <th>Сумма</th>
+                            <th>Валюта</th>
+                            <th>Тип</th>
+                            <th>Статус</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                                                    <tr>
+                                <td>1</td>
+                                <td>2015-07-27 08:59:15</td>
+                                <td>1900</td>
+                                <td>
+                                                                            Рубли
+                                                                                                                                            </td>
+                                <td>
+                                                                            По запросу
+                                                                                                                                            </td>
+                                <td>
+                                                                            <span class="text-warning">
+                                            В обработке
+                                        </span>
+                                                                                                                                            </td>
+                            </tr>
+                                                </tbody>
+                    </table>
+                </div>
+                            </div>
+            <footer class="panel-footer">
+                                <a class="mb-xs mt-xs mr-xs btn btn-primary" href="payment-request.html">Запросить</a>
+            </footer>
+        </section>
+    </div>
+            <!-- end: page -->
+        </section>
+    </div>
+    <!-- {{Правый сайдбар, пока тупо для совместимости}} -->
+    @@include('template/sidebar-right.html')
+</section>
+
+
+<!-- {{Блок под алерты}} -->
+<!-- <div id="alert_message">{{$alert_message}}</div> -->
+@@include('template/foot.html')
+
+<!-- Specific Page Vendor -->
+<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="assets/vendor/gmaps/gmaps.js"></script>
+<script src="assets/vendor/ios7-switch/ios7-switch.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="assets/javascripts/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="assets/javascripts/theme.custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="assets/javascripts/theme.init.js"></script>
+
+<!-- Examples -->
+<script src="assets/javascripts/pages/examples.timeline.js"></script>
+<script src="assets/javascripts/ui-elements/examples.modals.js"></script>
+</body>
+</html>

@@ -6,151 +6,6 @@ $timeline-simple-line-left: 30px;
 .timeline {
 	font-family: $font-secundary;
 	position: relative;
-	&.noline{
-		&:before,&:after {
-			display: none;
-		}
-		.tm-body{
-			&:after {
-				display: none;
-			}
-		}
-	}
-	&.tm-icon-small{
-		&:before,&:after {
-			background: darken($body-color,10%);
-			left: 15px;
-			content: ' ';
-			height: 8px;
-			width: 8px;
-			position: absolute;
-			pointer-events: none;
-			top: 0; 
-			z-index: 2;
-			@include border-radius(50%);
-			box-shadow: 0 1px 0 rgba(#000,.2) inset;
-		}
-		&:before{
-			top: auto; 
-			bottom: 0;
-		}
-		.tm-title {
-			position: relative;
-			display: inline-block;
-			text-align: center;
-			min-width: 160px;
-			background-color: transparent;
-			padding: 0;
-			margin: 0 ($timeline-line-left + 30);
-			z-index: 1;  
-			@include border-radius(0);
-			&.tm-title-top{
-				margin-top: -20px;
-				top: -5px;
-				&:after{
-					display: none;
-				}
-			}
-			&.tm-title-bottom{
-				margin-bottom: -20px;
-				bottom: -9px;
-				&:after{
-					display: none;
-				}
-			}
-			.btn{
-				@include font-size(16); 
-				text-transform: uppercase;
-				&:after {
-					right: 100%;
-					border: solid transparent;
-					content: ' ';
-					height: 0;
-					width: 0;
-					position: absolute;
-					pointer-events: none;
-					border-right-color: inherit;
-					border-width: 8px;
-					top: 50%;
-					margin-top: -8px;
-					z-index: 2;
-				}
-			}
-			&:after {
-				background: darken($body-color,10%);
-				left: -($timeline-line-left+25);
-				content: ' ';
-				height: 8px;
-				width: 8px;
-				position: absolute;
-				pointer-events: none;
-				top: 50%; 
-				margin-top: -4px;
-				z-index: 2;
-				@include border-radius(50%);
-				box-shadow: 0 1px 0 rgba(#000,.2) inset;
-			}
-			&:before {
-				background: darken($body-color,20%);
-				content: '';
-				display: block;
-				height: 2px;
-				margin-top: -1px;
-				position: absolute;
-				top: 50%;
-				width: $timeline-line-left+5;
-				filter: alpha(opacity=35);
-				opacity: 0.35;
-				left: -($timeline-line-left+10);
-			}
-		}
-		.tm-body{
-			position: relative;
-			padding: 0;
-			margin: 50px 0;
-			&:after {
-				background: darken($body-color,20%);
-				content: '';
-				display: block;
-				height: 100%;
-				left: $timeline-line-left;
-				margin-left: -2px;
-				position: absolute;
-				top: 0;
-				width: 2px;
-				z-index: 0;
-				filter: alpha(opacity=35);
-				opacity: 0.35;
-			}
-			.tm-items{
-				.tm-box{
-					margin: 20px 0 20px ($timeline-line-left + 40);
-					&:after {
-						right: 100%;
-						border: solid transparent;
-						content: ' ';
-						height: 0;
-						width: 0;
-						position: absolute;
-						pointer-events: none;
-						border-right-color: #fff;
-						border-width: 6px;
-						top: 50%;
-						margin-top: -6px;
-						z-index: 2;
-					}
-					.tm-icon{
-						font-size: 16px;
-						line-height: 30px;
-						width: 36px;
-						height: 36px;
-						margin-top: (-34px)/2;
-						left: -($timeline-line-left+40);
-					}
-				}
-			}
-		}
-	}
 	&:before,&:after {
 		background: darken($body-color,10%);
 		left: 15px;
@@ -260,13 +115,41 @@ $timeline-simple-line-left: 30px;
 			list-style: none;
 			padding: 0;
 			margin: 0;
-				.tm-box{
-					margin: 20px 0 20px ($timeline-line-left + 60);
+			& > li {
+				margin: 20px 0;
+				padding: 0 0 0 ($timeline-line-left + 60);
+				min-height: 20px;
+				position: relative;
+				z-index: 1;
+				.tm-icon{
+					border: 3px solid;
+					font-weight: $font-weight-bold;
+					font-family: $font-primary;
+					background-color: #fff;
+					text-align: center;
+					font-size: 24px;
 					padding: 0;
+					line-height: 46px;
+					width: 52px;
+					height: 52px;
+					margin-top: (-52px)/2;
+					margin-left: (-52px)/2;
+					position: absolute;
+					color: inherit;
+					z-index: 2;
+					top: 50%;
+					left: $timeline-line-left;
+					@include border-radius(30px);
+					.fa-paper-plane{
+						position: relative;
+						left: -2px;
+					}
+				}
+				.tm-box{
 					position: relative;
-					z-index: 1;
 					background: #fff;
 					min-height: 40px;
+					padding: 0;
 					border: 0;
 					@include border-radius(6px);
 					&:after {
@@ -282,29 +165,6 @@ $timeline-simple-line-left: 30px;
 						top: 50%;
 						margin-top: -6px;
 						z-index: 2;
-					}
-					.tm-icon{
-						border: 3px solid;
-						font-weight: $font-weight-bold;
-						font-family: $font-primary;
-						background-color: #fff;
-						text-align: center;
-						font-size: 24px;
-						padding: 0;
-						line-height: 46px;
-						width: 52px;
-						height: 52px;
-						margin-top: (-52px)/2;
-						position: absolute;
-						color: inherit;
-						z-index: 2;
-						top: 50%;
-						  left: -($timeline-line-left+66);
-						@include border-radius(50%);
-						.fa-paper-plane{
-							position: relative;
-							left: -2px;
-						}
 					}
 					p:last-child {
 						margin-bottom: 0;
@@ -325,25 +185,6 @@ $timeline-simple-line-left: 30px;
 						min-height: 20px;
 						border: 0;
 						padding: 0;
-						&.border{
-							border: 1px solid darken($body-color,5%);
-							&:after {
-							}
-							&:before {
-								right: 100%;
-								border: solid transparent;
-								content: ' ';
-								height: 0;
-								width: 0;
-								position: absolute;
-								pointer-events: none;
-								border-right-color: darken($body-color,5%);
-								border-width: 8px;
-								top: 50%;
-								margin-top: -8px;
-								z-index: 1;
-							}
-						}
 						.panel-heading{
 							background: transparent;
 						    border-bottom: 0;
@@ -361,22 +202,11 @@ $timeline-simple-line-left: 30px;
 							    	right: 15px;
 							    	top: 50%;
 							    	margin-top: -12px;
-							    	&.accordion-toggle{
-							    		display: inline-block;
-									  	font-family: FontAwesome;
-									  	font-style: normal;
-									  	font-weight: normal;
-									 	-webkit-font-smoothing: antialiased;
-									  	-moz-osx-font-smoothing: grayscale; 
-										&:before{
-							    			content: "\f078";
+							    	&.collapsed{
+								    	&:before{
+							    			content: "\f077";
 							    		}
-							    		&.collapsed{
-									    	&:before{
-								    			 content: "\f077";
-								    		}
-									    }
-							    	}
+								    }
 							    }
 							    .panel-actions-close{
 							    	@include font-size(12);
@@ -423,51 +253,46 @@ $timeline-simple-line-left: 30px;
 							border-top: 1px solid darken($body-color,5%);
 							padding: 15px;
 							line-height: 1.4;
-							@include border-top-radius(0); 
+							@include border-radius(0); 
 						}
 					}
 				}
-			
+			}
 		}
 	}
 	&.timeline-stream{
-		.tm-title {
-			&.tm-title-top{
-				margin-bottom: 25px;
-			}
-		}
 		.tm-body{
 			padding: 0 70px 0 0;
 			margin: 50px 0;
 			.tm-items{
-				.tm-box{
-					margin: 0 0 20px ($timeline-line-left + 40);
-					min-height: 25px;
-					&:after {
-						top: 0;
-						margin-top: 16px;
-					}
-					&:before {
-						content: '';
-						top: 0;
-						position: absolute;
-						left: -49px;
-						border: 3px solid $color-info;
-						font-weight: $font-weight-bold;
-						font-family: $font-primary;
-						background-color: #fff;
-						width: 16px;
-						height: 16px;
-						margin-top: 14px;
-						@include border-radius(50%);
-					}
-					&.panel{
-						.panel-heading{
-							padding: 10px 60px 10px 10px;
-							.panel-title{
-								position: relative;
-								top: 4px;
-								font-family: $font-primary;
+				& > li {
+					padding: 0 0 0 ($timeline-line-left + 40);
+					.tm-box{
+						min-height: 25px;
+						&:after {
+							top: 0;
+							margin-top: 16px;
+						}
+						&:before {
+							content: '';
+							top: 0;
+							position: absolute;
+							left: -49px;
+							border: 3px solid $color-info;
+							font-weight: $font-weight-bold;
+							font-family: $font-primary;
+							background-color: #fff;
+							width: 16px;
+							height: 16px;
+							margin-top: 14px;
+							@include border-radius(50%);
+						}
+						&.panel{
+							.panel-heading{
+								padding: 10px;
+								.panel-title{
+									font-family: $font-primary;
+								}
 							}
 						}
 					}

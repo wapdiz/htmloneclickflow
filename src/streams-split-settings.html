@@ -49,115 +49,87 @@
             <section class="panel">
                 <header class="panel-heading">
                     <div class="panel-actions">
-                        <a href="#" class="fa fa-caret-down"></a>
+                        <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
                     </div>
                     <h2 class="panel-title">2 Сплит <span class="text-muted">( поток «Телетекст 2»)</span></h2>
                 </header>
                 <div class="panel-body">
                     <h3 class="text-info mt-none mb-xlg">Настройки</h3>
                     <form method="get">
-                        <div class="row">
+                        <div class="row mb-lg">
                             <div class="col-md-2 col-sm-3 form-group">
                                 <label class="control-label">Тип редиректа</label>
                                 <div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                            Как в потоке
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input type="radio" name="type_redirect" id="type_redirect_stream" value="option1" checked>
+                                        <label for="type_redirect_stream">Как в потоке</label>
                                     </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                            Прямой
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input type="radio" name="type_redirect" id="type_redirect_direct" value="option2">
+                                        <label for="type_redirect_direct">Прямой</label>
                                     </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-                                            Кликандер
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input type="radio" name="type_redirect" id="type_redirect_clickander" value="option3">
+                                        <label for="type_redirect_clickander">Кликандер</label>
                                     </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
-                                            Блайнд
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input type="radio" name="type_redirect" id="type_redirect_blind" value="option4">
+                                        <label for="type_redirect_blind">Блайнд</label>
                                     </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios5" value="option5">
-                                            Баннер
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input type="radio" name="type_redirect" id="type_redirect_banner" value="option5">
+                                        <label for="type_redirect_banner">Баннер</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-3 form-group">
                                 <label class="control-label">Тип устройства</label>
                                 <div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" checked>
-                                            Мобильный
-                                        </label>
+                                    <div class="checkbox-custom checkbox-default">
+                                        <input type="checkbox" id="type_device_mobile" checked>
+                                        <label for="type_device_mobile">Мобильный</label>
                                     </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" checked>
-                                            Десктоп
-                                        </label>
+                                    <div class="checkbox-custom checkbox-default">
+                                        <input type="checkbox" id="type_device_desktop" checked>
+                                        <label for="type_device_desktop">Десктоп</label>
                                     </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" checked>
-                                            Планшет
-                                        </label>
+                                    <div class="checkbox-custom checkbox-default">
+                                        <input type="checkbox" id="type_device_tablet" checked>
+                                        <label for="type_device_tablet">Планшет</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-3 form-group">
                                 <label class="control-label">OS</label>
                                 <div>
-                                    <div class="radio">
-                                        <label href="#osModal" class="modal-with-move-anim">
-                                            <input type="radio" name="OS" id="OS1" value="option1" checked>
-                                            Все
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input href="#osModal" class="modal-with-move-anim" type="radio" name="OS" id="type_os_1" value="option1" checked>
+                                        <label for="type_os_1">Все</label>
                                     </div>
-                                    <div class="radio">
-                                        <label href="#osModal" class="modal-with-move-anim">
-                                            <input type="radio" name="OS" id="OS2" value="option2">
-                                            Совпадает
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input href="#osModal" class="modal-with-move-anim" type="radio" name="OS" id="type_os_2" value="option2">
+                                        <label for="type_os_2">Совпадает</label>
                                     </div>
-                                    <div class="radio">
-                                        <label href="#osModal" class="modal-with-move-anim">
-                                            <input type="radio" name="OS" id="OS3" value="option3">
-                                            Исключает
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input href="#osModal" class="modal-with-move-anim" type="radio" name="OS" id="type_os_3" value="option3">
+                                        <label for="type_os_3">Исключает</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-3 form-group">
                                 <label class="control-label">Браузер</label>
                                 <div>
-                                    <div class="radio">
-                                        <label href="#browserModal" class="modal-with-move-anim">
-                                            <input type="radio" name="Browser" id="Browser1" value="option1" checked>
-                                            Все
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input href="#browserModal" class="modal-with-move-anim" class="modal-with-move-anim" type="radio" name="Browser" id="type_browser_1" value="option1" checked>
+                                        <label for="type_browser_1">Все</label>
                                     </div>
-                                    <div class="radio">
-                                        <label href="#browserModal" class="modal-with-move-anim">
-                                            <input type="radio" name="Browser" id="Browser2" value="option2">
-                                            Совпадает
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input href="#browserModal" class="modal-with-move-anim" type="radio" name="Browser" id="type_browser_2" value="option2">
+                                        <label for="type_browser_2">Совпадает</label>
                                     </div>
-                                    <div class="radio">
-                                        <label href="#browserModal" class="modal-with-move-anim">
-                                            <input type="radio" name="Browser" id="Browser3" value="option3">
-                                            Исключает
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input href="#browserModal" class="modal-with-move-anim" type="radio" name="Browser" id="type_browser_3" value="option3">
+                                        <label for="type_browser_3">Исключает</label>
                                     </div>
                                 </div>
                             </div>

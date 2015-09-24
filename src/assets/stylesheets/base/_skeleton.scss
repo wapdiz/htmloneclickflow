@@ -36,6 +36,10 @@ a:active {
 	color: darken($color-primary, 5% );
 }
 
+.container-fluid{
+	// padding: 0;
+}
+
 // LAYOUT STYLE - SCROLL
 // -----------------------------------------------------------------------------
 
@@ -97,6 +101,7 @@ a:active {
 	height: $page-header-height;
 	margin: 0 0 $content-body-padding 0;
 	padding: 0;
+	position: relative;
 }
 
 // SIDEBAR LEFT
@@ -249,7 +254,8 @@ a:active {
 	/* Layout Fixed - Sidebar Left Collapsed */
 	html.fixed.sidebar-left-collapsed {
 		.page-header {
-			left: $sidebar-left-collapsed-width;
+			// left: $sidebar-left-collapsed-width;
+			// margin-left: $inner-menu-width;
 		}
 
 		.content-body {
@@ -743,7 +749,7 @@ a:active {
 			left: $sidebar-left-full-width;
 			position: fixed;
 			margin: 0;
-			top: $header-height + $page-header-height + 4;
+			top: $header-height;
 			width: $inner-menu-width;
 			padding: 35px;
 			z-index: $inner-menu-z-index;
@@ -754,7 +760,7 @@ a:active {
 		}
 
 		.inner-body {
-			margin-left: $inner-menu-width;
+			// margin-left: $inner-menu-width;
 			border-top: ($header-height + $page-header-height + 3) solid transparent;
 			margin-top: -110px;
 			min-height: 100vh;
@@ -902,7 +908,7 @@ a:active {
 				display: none;
 			}
 			.inner-body {
-				margin-right: -300px;
+				// margin-right: -300px;
 			}
 			.content-with-menu-has-toolbar {
 				.inner-toolbar {
@@ -914,7 +920,7 @@ a:active {
 
 	html.fixed.inner-menu-opened {
 		.inner-body {
-			margin-left: 300px;
+			// margin-left: 300px;
 		}
 	}
 
@@ -958,7 +964,7 @@ a:active {
 
 	html.fixed.inner-menu-opened {
 		.inner-body {
-			margin-left: 300px;
+			// margin-left: 300px;
 		}
 	}
 

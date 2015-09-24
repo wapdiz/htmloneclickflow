@@ -5,11 +5,54 @@ $color-orange: #E2A917;
 $color-blue: #1BC3E1;
 $color-green: #9AE14F;
 
+.tickets-list{
+	padding: 0;
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li{
+			a.tickets-list-link{
+				&:hover{
+					 background: lighten($body-color,2%);
+				}
+			}
+			.tickets-list-link{
+				display: block;
+				border-bottom:1px solid darken($body-color,5%);
+				@include clearfix();
+				.tickets-list-type,
+				.tickets-list-author,
+				.tickets-list-subject,
+				.tickets-list-date{
+					color: lighten($color-black,15%);
+					display: block;
+					padding-top: 10px;
+					padding-bottom: 10px;
+				}
+			}
+		}
+	}
+}
+.panel-tickets{
+	.panel-body{
+		color: $color-black;
+		@include font-size(16);
+		@include border-top-radius(4px !important);
+		border-top: none !important;
+		padding-bottom: 10px !important;
+	}
+	.panel-footer{
+		padding-top: 0;
+		border-top: none;
+	}
+}
+
 // MAILBOX GENERIC
 // -----------------------------------------------------------------------------
 .mailbox {
 	.content-with-menu-container {
-		background: #FFF;
+		// background: #FFF;
 	}
 
 	.mailbox-bullets {

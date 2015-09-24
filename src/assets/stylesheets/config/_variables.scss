@@ -34,13 +34,21 @@ $font-weight-bold: 700;
 
 // spacement
 $spacement-increment: 5px;
-$spacement-tiny: $spacement-increment/2;
+$spacement-ts: $spacement-increment/2;
 $spacement-xs: $spacement-increment;
 $spacement-sm: $spacement-xs + $spacement-increment;
 $spacement-md: $spacement-sm + $spacement-increment;
 $spacement-lg: $spacement-md + $spacement-increment;
 $spacement-xl: $spacement-lg + $spacement-increment;
-$spacement-xlg: $spacement-xl + $spacement-increment;
+$spacement-xlt: $spacement-xl + $spacement-increment;
+$spacement-xlx: $spacement-xlt + $spacement-increment;
+$spacement-xls: $spacement-xlx + $spacement-increment;
+$spacement-xlm: $spacement-xls + $spacement-increment;
+$spacement-xlg: $spacement-xlm + $spacement-increment;
+$spacement-2xl: $spacement-xl * 2;
+$spacement-3xl: $spacement-xl * 3;
+$spacement-4xl: $spacement-xl * 4;
+$spacement-5xl: $spacement-xl * 5;
 
 // borders
 $border-thin: 3px;
@@ -316,7 +324,7 @@ $menu-children-level1-padding: $menu-item-padding-vertical $menu-item-padding-ho
 $menu-children-level2-padding: $menu-item-padding-vertical $menu-item-padding-horizontal $menu-item-padding-vertical ($menu-children-padding-horizontal + 82);
 
 $menu-item-arrow-padding: 14px 25px;
-$menu-item-children-arrow-padding: 6px 25px;
+$menu-item-children-arrow-padding: 14px 23px;
 
 // =============================================================================
 // SIDEBAR WIDGETS
@@ -333,7 +341,7 @@ $panel-heading-padding: 18px;
 
 	// title
 	$panel-title-color: #2b2e33;
-	$panel-title-size: 20px;
+	$panel-title-size: 16px;
 
 	// subtitle
 	$panel-subtitle-color: #808697;
@@ -434,3 +442,9 @@ $tabs-border-color: #EEE;
 	$pb-default-line: #585564;
 	$pb-light: #f5f5f5;
 	$pb-light-line: #F6F7F8;
+
+// =============================================================================
+// FORMS
+// =============================================================================
+
+	$select2-border-color: #66afe9;

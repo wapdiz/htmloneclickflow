@@ -753,9 +753,38 @@ window.theme = {};
 
 // Panels
 (function( $ ) {
-
 	$(function() {
 		$('.panel')
+			.on( 'click', '.panel-actions a.fa-chevron-up', function( e ) {
+				e.preventDefault();
+
+				var $this,
+					$panel;
+
+				$this = $( this );
+				$panel = $this.closest( '.panel' );
+
+				$this
+					.removeClass( 'fa-chevron-up' )
+					.addClass( 'fa-chevron-down' );
+
+				$panel.find('.panel-body, .panel-footer').slideDown( 200 );
+			})
+			.on( 'click', '.panel-actions a.fa-chevron-down', function( e ) {
+				e.preventDefault();
+
+				var $this,
+					$panel;
+
+				$this = $( this );
+				$panel = $this.closest( '.panel' );
+
+				$this
+					.removeClass( 'fa-chevron-down' )
+					.addClass( 'fa-chevron-up' );
+
+				$panel.find('.panel-body, .panel-footer').slideUp( 200 );
+			})
 			.on( 'click', '.panel-actions a.fa-caret-up', function( e ) {
 				e.preventDefault();
 

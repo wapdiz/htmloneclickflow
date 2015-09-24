@@ -64,7 +64,7 @@
 	/* Layout Fixed - Page header */
 	html.fixed.sidebar-left-sm {
 		.page-header {
-			left: $sidebar-left-sm-full-width;
+			// left: $sidebar-left-sm-full-width;
 		}
 	}
 
@@ -81,7 +81,7 @@
 	/* Layout Fixed - Sidebar Left Collapsed */
 	html.fixed.sidebar-left-collapsed {
 		.page-header {
-			left: $sidebar-left-collapsed-width;
+			// left: $sidebar-left-collapsed-width;
 		}
 
 		.content-body {
@@ -92,7 +92,7 @@
 	/* Layout Fixed - Sidebar Left Collapsed & Sidebar Right Opened */
 	html.fixed.sidebar-left-sm.sidebar-left-collapsed.sidebar-right-opened {
 		.page-header {
-			left: -$sidebar-left-sm-full-width;
+			// left: -$sidebar-left-sm-full-width;
 		}
 	}
 
@@ -268,7 +268,7 @@
 	/* Layout Fixed - Page header */
 	html.fixed.sidebar-left-xs {
 		.page-header {
-			left: $sidebar-left-xs-full-width;
+			// left: $sidebar-left-xs-full-width;
 		}
 	}
 
@@ -285,7 +285,7 @@
 	/* Layout Fixed - Sidebar Left Collapsed */
 	html.fixed.sidebar-left-collapsed {
 		.page-header {
-			left: $sidebar-left-collapsed-width;
+			// left: $sidebar-left-collapsed-width;
 		}
 
 		.content-body {
@@ -296,7 +296,7 @@
 	/* Layout Fixed - Sidebar Left Collapsed & Sidebar Right Opened */
 	html.fixed.sidebar-left-xs.sidebar-left-collapsed.sidebar-right-opened {
 		.page-header {
-			left: -$sidebar-left-xs-full-width;
+			// left: -$sidebar-left-xs-full-width;
 		}
 	}
 

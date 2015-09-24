@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css" />
 <link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css" />
 <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+<link rel="stylesheet" href="assets/vendor/select2/select2.css" />
 
 <!-- Theme CSS -->
 <link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -371,8 +372,8 @@
                             <span>Главная</span>
                         </a>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'referrals')}}">
-                        <a href="/myinfo/referrals">
+                    <li class="@@nav_expanded.referals @@nav_active.referals">
+                        <a href="referals.html">
                             <i class="fa fa-users" aria-hidden="true"></i>
                             <span>Рефералы</span>
                         </a>
@@ -383,29 +384,60 @@
                             <span>Статистика</span>
                         </a>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'news')}}">
-                        <a href="/news">
+                    <li class="@@nav_expanded.news @@nav_active.news">
+                        <a href="news.html">
                             <i class="fa fa-bullhorn" aria-hidden="true"></i>
                             <span>Новости</span>
                         </a>
                     </li>
 
-                    <li class="nav-parent
-                        {{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'tickets_group')}}
-                    ">
+                    <li class="nav-parent @@nav_expanded.tickets">
                         <a>
                             <i class="fa fa-comment" aria-hidden="true"></i>
                             <span>Тикеты</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'tickets_create')}}">
-                                <a href="/tickets/create">Создать</a>
+                            <li class="@@nav_active.tickets_1">
+                                <a href="tickets-create.html">Создать</a>
                             </li>
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'tickets')}}">
-                                <a href="/tickets">Просмотр</a>
+                            <li class="nav-parent @@nav_active.tickets_2 @@nav_expanded.tickets.children">
+                                <a>Просмотр</a>
+                                <ul class="nav nav-children">
+                                    <li class="@@nav_active.tickets_2_1">
+                                        <a href="tickets.html#1">
+                                            <span><i class="color-label" style="border-color: #0000FF"></i> Общий</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_2">
+                                        <a href="tickets.html#2">
+                                            <span><i class="color-label" style="border-color: rgb(0, 255, 0);"></i> Технический</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_3">
+                                        <a href="tickets.html#3">
+                                            <span><i class="color-label" style="border-color: #FF0000"></i> Финансовый</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_4">
+                                        <a href="tickets.html#4">
+                                            <span><i class="color-label" style="border-color: #FFFF00"></i> Жалобы</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_5">
+                                        <a href="tickets.html#5">
+                                            <span><i class="color-label" style="border-color: #00FFFF"></i> Пожелания и предложения</span>
+                                        </a>
+                                    </li>
+                                    <li class="@@nav_active.tickets_2_6">
+                                        <a href="tickets.html#6">
+                                            <span> <i class="color-label" style="border-color: #FFA500"></i>Улучшение системы</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
+
 
                     <li class="nav-parent nav-expanded nav-active">
                         <a>
@@ -422,37 +454,28 @@
                         </ul>
                     </li>
 
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'splits_settings')}}">
-                        <a href="/splits_settings">
-                            <i class="fa fa-list-ol" aria-hidden="true"></i>
-                            <span>Сплиты</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-parent
-                        {{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'payment_group')}}
-                    ">
+                    <li class="nav-parent @@nav_expanded.payment @@nav_active.payment">
                         <a>
                             <i class="fa fa-credit-card" aria-hidden="true"></i>
                             <span>Выплаты</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="">
-                                <a href="/payment/last">Просмотр</a>
+                            <li class="@@nav_active.payment_1">
+                                <a href="payment.html">Просмотр</a>
                             </li>
-                            <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'payment_request')}}">
-                                <a href="/payment/request">Запросить</a>
+                            <li class="@@nav_active.payment_2">
+                                <a href="payment-request.html">Запросить</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'faq')}}">
-                        <a href="/faq">
+                    <li class="@@nav_active.faq">
+                        <a href="faq.html">
                             <i class="fa fa-home" aria-hidden="true"></i>
                             <span>FAQ</span>
                         </a>
                     </li>
-                    <li class="{{MenuHelper::getCssClass($page_settings['sidebar_active_li'] , 'credits')}}">
-                        <a href="/credits">
+                    <li class="@@nav_active.credits">
+                        <a href="credits.html">
                             <i class="fa fa-bank" aria-hidden="true"></i>
                             <span>Кредитование</span>
                         </a>
@@ -480,115 +503,87 @@
             <section class="panel">
                 <header class="panel-heading">
                     <div class="panel-actions">
-                        <a href="#" class="fa fa-caret-down"></a>
+                        <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
                     </div>
                     <h2 class="panel-title">2 Сплит <span class="text-muted">( поток «Телетекст 2»)</span></h2>
                 </header>
                 <div class="panel-body">
                     <h3 class="text-info mt-none mb-xlg">Настройки</h3>
                     <form method="get">
-                        <div class="row">
+                        <div class="row mb-lg">
                             <div class="col-md-2 col-sm-3 form-group">
                                 <label class="control-label">Тип редиректа</label>
                                 <div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                            Как в потоке
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input type="radio" name="type_redirect" id="type_redirect_stream" value="option1" checked>
+                                        <label for="type_redirect_stream">Как в потоке</label>
                                     </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                            Прямой
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input type="radio" name="type_redirect" id="type_redirect_direct" value="option2">
+                                        <label for="type_redirect_direct">Прямой</label>
                                     </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-                                            Кликандер
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input type="radio" name="type_redirect" id="type_redirect_clickander" value="option3">
+                                        <label for="type_redirect_clickander">Кликандер</label>
                                     </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
-                                            Блайнд
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input type="radio" name="type_redirect" id="type_redirect_blind" value="option4">
+                                        <label for="type_redirect_blind">Блайнд</label>
                                     </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios5" value="option5">
-                                            Баннер
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input type="radio" name="type_redirect" id="type_redirect_banner" value="option5">
+                                        <label for="type_redirect_banner">Баннер</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-3 form-group">
                                 <label class="control-label">Тип устройства</label>
                                 <div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" checked>
-                                            Мобильный
-                                        </label>
+                                    <div class="checkbox-custom checkbox-default">
+                                        <input type="checkbox" id="type_device_mobile" checked>
+                                        <label for="type_device_mobile">Мобильный</label>
                                     </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" checked>
-                                            Десктоп
-                                        </label>
+                                    <div class="checkbox-custom checkbox-default">
+                                        <input type="checkbox" id="type_device_desktop" checked>
+                                        <label for="type_device_desktop">Десктоп</label>
                                     </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" checked>
-                                            Планшет
-                                        </label>
+                                    <div class="checkbox-custom checkbox-default">
+                                        <input type="checkbox" id="type_device_tablet" checked>
+                                        <label for="type_device_tablet">Планшет</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-3 form-group">
                                 <label class="control-label">OS</label>
                                 <div>
-                                    <div class="radio">
-                                        <label href="#osModal" class="modal-with-move-anim">
-                                            <input type="radio" name="OS" id="OS1" value="option1" checked>
-                                            Все
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input href="#osModal" class="modal-with-move-anim" type="radio" name="OS" id="type_os_1" value="option1" checked>
+                                        <label for="type_os_1">Все</label>
                                     </div>
-                                    <div class="radio">
-                                        <label href="#osModal" class="modal-with-move-anim">
-                                            <input type="radio" name="OS" id="OS2" value="option2">
-                                            Совпадает
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input href="#osModal" class="modal-with-move-anim" type="radio" name="OS" id="type_os_2" value="option2">
+                                        <label for="type_os_2">Совпадает</label>
                                     </div>
-                                    <div class="radio">
-                                        <label href="#osModal" class="modal-with-move-anim">
-                                            <input type="radio" name="OS" id="OS3" value="option3">
-                                            Исключает
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input href="#osModal" class="modal-with-move-anim" type="radio" name="OS" id="type_os_3" value="option3">
+                                        <label for="type_os_3">Исключает</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-3 form-group">
                                 <label class="control-label">Браузер</label>
                                 <div>
-                                    <div class="radio">
-                                        <label href="#browserModal" class="modal-with-move-anim">
-                                            <input type="radio" name="Browser" id="Browser1" value="option1" checked>
-                                            Все
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input href="#browserModal" class="modal-with-move-anim" class="modal-with-move-anim" type="radio" name="Browser" id="type_browser_1" value="option1" checked>
+                                        <label for="type_browser_1">Все</label>
                                     </div>
-                                    <div class="radio">
-                                        <label href="#browserModal" class="modal-with-move-anim">
-                                            <input type="radio" name="Browser" id="Browser2" value="option2">
-                                            Совпадает
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input href="#browserModal" class="modal-with-move-anim" type="radio" name="Browser" id="type_browser_2" value="option2">
+                                        <label for="type_browser_2">Совпадает</label>
                                     </div>
-                                    <div class="radio">
-                                        <label href="#browserModal" class="modal-with-move-anim">
-                                            <input type="radio" name="Browser" id="Browser3" value="option3">
-                                            Исключает
-                                        </label>
+                                    <div class="radio-custom">
+                                        <input href="#browserModal" class="modal-with-move-anim" type="radio" name="Browser" id="type_browser_3" value="option3">
+                                        <label for="type_browser_3">Исключает</label>
                                     </div>
                                 </div>
                             </div>
@@ -1789,6 +1784,7 @@
 <script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
 <script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+<script src="assets/vendor/select2/select2.js"></script>
 
 <!-- Specific Page Vendor -->
 <script src="assets/vendor/jquery-appear/jquery.appear.js"></script>

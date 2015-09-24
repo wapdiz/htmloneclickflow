@@ -1,0 +1,228 @@
+<!doctype html>
+<html class="fixed" lang="ru" >
+
+<head>
+    @@include('template/head.html', {
+        "title": "Новости"
+    })
+    
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote.css" />
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote-bs3.css" />
+
+</head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+        <!-- {{Общий хедер, используется на всех страницах}} -->
+        <!-- @include('main-header') -->
+        @@include('template/main-header.html')
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+
+        <!-- start: sidebar -->
+        <!-- {{Выше - хрень, левый сайдбар один, меняется класс в <html>}} -->
+        @@include('template/sidebar-left-main.html', {
+            "nav_active": {
+                "news": "nav-active"
+            }
+        })
+        
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <!-- {{Хедер над секцией контента и дополнительной менюшкой}} -->
+            <header class="page-header">
+                <ol class="breadcrumbs">
+                    <li><span>Новости <b class="separator"></b></span></li>
+                </ol>
+            </header>
+
+            <!-- start: page -->
+            <div class="timeline">
+                <div class="tm-body">
+                    <div class="tm-title tm-title-top">
+                        <span class="btn btn-info-light btn-block">Сентябрь</span>
+                    </div>
+                    <ol class="tm-items" id="timelineNews-2015-09">
+                        <li class="tm-box panel" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                            <div class="tm-info">
+                                <div class="tm-icon text-primary" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-info"></i></div>
+                            </div>
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
+                                </div>
+                                <h4 class="panel-title text-primary text-bold h4">
+                                    Новые лендинги МТС
+                                </h4>
+                                2015-08-11 18:49:45
+                            </div>
+                            <div class="panel-body">
+                                Добавлены новые LP:<br>
+                                1) Hot Tube - 20 рублей в сутки, адалт;<br>
+                                2) Sexy Kiski - 35 рублей раз в 2 дня, адалт;<br>
+                                3) TurboBox - 20 рублей в сутки, файлы.<br>
+                            </div>
+                        </li>
+                        <li class="tm-box panel" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                            <div class="tm-info">
+                                <div class="tm-icon text-success" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-usd"></i></div>
+                            </div>
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
+                                </div>
+                                <h4 class="panel-title text-success text-bold h4">
+                                    Еженедельные выплаты
+                                </h4>
+                                2015-09-19 15:24:44
+                            </div>
+                            <div class="panel-body">
+                                Выплаты за период с 12.09.2015 по 19.09.2015 произведены! <br>
+                                Удачной работы :)
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="tm-title">
+                        <span class="btn btn-info-light btn-block">Август</span>
+                    </div>
+                    <ol class="tm-items" id="timelineNews-2015-08">
+                        <li class="tm-box panel" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                            <div class="tm-info">
+                                <div class="tm-icon text-info" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-paper-plane"></i></div>
+                            </div>
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
+                                </div>
+                                <h4 class="panel-title text-info text-bold h4">
+                                    Обновления 1clickflow
+                                </h4>
+                                2015-08-05 14:05:54
+                            </div>
+                            <div class="panel-body">
+                                Добавлены новые LP:<br>
+                                1) Hot Tube - 20 рублей в сутки, адалт;<br>
+                                2) Sexy Kiski - 35 рублей раз в 2 дня, адалт;<br>
+                                3) TurboBox - 20 рублей в сутки, файлы.<br>
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="tm-title">
+                        <span class="btn btn-info-light btn-block">Июль</span>
+                    </div>
+                    <ol class="tm-items" id="timelineNews-2015-07">
+                        <li class="tm-box panel" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                            <div class="tm-info">
+                                <div class="tm-icon text-warning" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-warning"></i></div>
+                            </div>
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
+                                </div>
+                                <h4 class="panel-title text-warning text-bold h4">
+                                    Изменения в правилах операторов
+                                </h4>
+                                2015-08-05 14:05:54
+                            </div>
+                            <div class="panel-body">
+                                Добавлены новые LP:<br>
+                                1) Hot Tube - 20 рублей в сутки, адалт;<br>
+                                2) Sexy Kiski - 35 рублей раз в 2 дня, адалт;<br>
+                                3) TurboBox - 20 рублей в сутки, файлы.<br>
+                            </div>
+                        </li>
+                        <li class="tm-box panel" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                            <div class="tm-info">
+                                <div class="tm-icon text-primary" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-info"></i></div>
+                            </div>
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
+                                </div>
+                                <h4 class="panel-title text-primary text-bold h4">
+                                    Новые лендинги МТС
+                                </h4>
+                                2015-08-11 18:49:45
+                            </div>
+                            <div class="panel-body">
+                                Добавлены новые LP:<br>
+                                1) Hot Tube - 20 рублей в сутки, адалт;<br>
+                                2) Sexy Kiski - 35 рублей раз в 2 дня, адалт;<br>
+                                3) TurboBox - 20 рублей в сутки, файлы.<br>
+                            </div>
+                        </li>
+                        <li class="tm-box panel" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                            <div class="tm-info">
+                                <div class="tm-icon text-success" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-usd"></i></div>
+                            </div>
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
+                                </div>
+                                <h4 class="panel-title text-success text-bold h4">
+                                    Еженедельные выплаты
+                                </h4>
+                                2015-09-19 15:24:44
+                            </div>
+                            <div class="panel-body">
+                                Выплаты за период с 12.09.2015 по 19.09.2015 произведены! <br>
+                                Удачной работы :)
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="tm-title">
+                        <span class="btn btn-info-light btn-block">Июнь</span>
+                    </div>
+                    <ol class="tm-items" id="timelineNews-2015-06">
+                        <li class="tm-box panel" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                            <div class="tm-info">
+                                <div class="tm-icon text-danger" data-appear-animation="fadeInLeft" data-appear-animation-delay="100"><i class="fa fa-flash"></i></div>
+                            </div>
+                            <div class="panel-heading">
+                                <div class="panel-actions">
+                                    <a href="#" class="fa fa-chevron-down panel-actions-collapse"></a>
+                                </div>
+                                <h4 class="panel-title text-danger text-bold h4">
+                                    Тысяча чертей!!!
+                                </h4>
+                                2015-08-05 14:05:54
+                            </div>
+                            <div class="panel-body">
+                                Свистать всех наверх!
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <!-- end: page -->
+        </section>
+    </div>
+    <!-- {{Правый сайдбар, пока тупо для совместимости}} -->
+    @@include('template/sidebar-right.html')
+</section>
+
+
+<!-- {{Блок под алерты}} -->
+<!-- <div id="alert_message">{{$alert_message}}</div> -->
+@@include('template/foot.html')
+
+<!-- Specific Page Vendor -->
+<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="assets/javascripts/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="assets/javascripts/theme.custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="assets/javascripts/theme.init.js"></script>
+
+<!-- Examples -->
+<script src="assets/javascripts/pages/examples.timeline.js"></script>
+</body>
+</html>

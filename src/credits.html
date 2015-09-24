@@ -1,0 +1,194 @@
+<!doctype html>
+<html class="fixed" lang="ru" >
+
+<head>
+    @@include('template/head.html', {
+        "title": "Кредитование"
+    })
+    
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote.css" />
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote-bs3.css" />
+
+</head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+        <!-- {{Общий хедер, используется на всех страницах}} -->
+        <!-- @include('main-header') -->
+        @@include('template/main-header.html')
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+
+        <!-- start: sidebar -->
+        <!-- {{Выше - хрень, левый сайдбар один, меняется класс в <html>}} -->
+        @@include('template/sidebar-left-main.html', {
+            "nav_active": {
+                "credits": "nav-active"
+            }
+        })
+        
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <!-- {{Хедер над секцией контента и дополнительной менюшкой}} -->
+            <header class="page-header">
+                <ol class="breadcrumbs">
+                    <li><span>Кредитование <b class="separator"></b></span></li>
+                </ol>
+            </header>
+
+            <!-- start: page -->
+            <div class="container-fluid">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2>Кредитование</h2>
+                    </header>
+                    <div class="panel-body">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="text-info mt-none mb-md">Запросить кредит</h3>
+                            </div>
+                        </div>
+
+                        <div class="stat-day pl-lg">
+                            <div class="row text-black" id="credit_info_today" style="display: none;">
+                                <div class="col-sm-4">
+                                    <h3 class="fw-bold mb-xs">15</h3>
+                                    <p>Доступных для кредитования подписок</p>
+                                </div>
+                                <div class="col-sm-4 mb-xs">
+                                    <h3 class="fw-bold"><i class="fa fa-rub"></i> 648</h3>
+                                    <p>Доступная сумма кредита</p>
+                                </div>
+                            </div>
+                            <div class="row text-black" id="credit_info_yesterday">
+                                <div class="col-sm-3">
+                                    <h3 class="fw-bold mb-xs">15</h3>
+                                    <p>Доступных для кредитования подписок</p>
+                                </div>
+                                <div class="col-sm-3 mb-xs">
+                                    <h3 class="fw-bold"><i class="fa fa-rub"></i> 648</h3>
+                                    <p>Доступная сумма кредита</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="button" enabled="0" active="false" id="credit_info_button_today" class="mb-xs mt-xs mr-xs btn btn-default">За сегодня</button>
+                                <button type="button" enabled="0" active="true" id="credit_info_button_yesterday" class="mb-xs mt-xs mr-xs btn btn-primary">За вчера</button>
+                            </div>
+                        </div>
+
+                        <hr class="solid hr-panel">
+
+                        <div class="alert alert-warning">
+                            <p class="m-none">Минимальное число подписок за день для оформления кредита: 100</p>
+                            <p class="m-none">Кредит можно брать один раз за определенный день</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="hidden" name="_token" id="_token" value="HlMtgvqxIywj42C5J8e4MdIFcLIBnSxXZZmwLv3J">
+                                <input type="hidden" name="date" id="credit_date_input" value="yesterday">
+                                <button type="button" id="credit_submit_button" class="mb-xs mt-xs mr-xs btn btn-success">Отправить заявку!</button>
+                            </div>
+                        </div>
+
+                        <hr class="solid hr-panel">
+
+                        <div id="error_msg" class="alert alert-danger" style="display: none;"></div>
+                        <div id="msg_success" class="alert alert-success" style="display: none;">Отправлено!</div>
+
+
+                        <div class="table-responsive">
+                            <table class="table table-striped mb-none">
+                                <thead>
+                                    <tr class="info-inverse">
+                                        <th>Дата</th>
+                                        <th>Кол-во подписок</th>
+                                        <th>Сумма кредита</th>
+                                        <th>Осталось выплатить</th>
+                                        <th>Срок погашения, дней</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2015-07-27</td>
+                                        <td>245</td>
+                                        <td>2146 руб.</td>
+                                        <td>1457 руб.</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2015-09-21</td>
+                                        <td>547</td>
+                                        <td>3572 руб.</td>
+                                        <td>2647 руб.</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2015-07-27</td>
+                                        <td>245</td>
+                                        <td>2146 руб.</td>
+                                        <td>1457 руб.</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2015-09-21</td>
+                                        <td>547</td>
+                                        <td>3572 руб.</td>
+                                        <td>2647 руб.</td>
+                                        <td>5</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="primary-inverse">
+                                        <td>Итого:</td>
+                                        <td>457</td>
+                                        <td>10245 руб.</td>
+                                        <td>5405 руб.</td>
+                                        <td>16</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- end: page -->
+        </section>
+    </div>
+    <!-- {{Правый сайдбар, пока тупо для совместимости}} -->
+    @@include('template/sidebar-right.html')
+</section>
+
+
+<!-- {{Блок под алерты}} -->
+<!-- <div id="alert_message">{{$alert_message}}</div> -->
+@@include('template/foot.html')
+
+<!-- Specific Page Vendor -->
+<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="assets/vendor/gmaps/gmaps.js"></script>
+<script src="assets/vendor/ios7-switch/ios7-switch.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="assets/javascripts/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="assets/javascripts/theme.custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="assets/javascripts/theme.init.js"></script>
+
+<!-- Examples -->
+<script src="assets/javascripts/pages/examples.timeline.js"></script>
+<script src="assets/javascripts/ui-elements/examples.modals.js"></script>
+</body>
+</html>

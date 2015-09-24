@@ -1,0 +1,182 @@
+<!doctype html>
+<html class="fixed" lang="ru" >
+
+<head>
+    <link rel="stylesheet" href="assets/vendor/select2/select2.css" />
+    @@include('template/head.html', {
+        "title": "Тикеты"
+    })
+    
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote.css" />
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote-bs3.css" />
+
+</head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+        <!-- {{Общий хедер, используется на всех страницах}} -->
+        <!-- @include('main-header') -->
+        @@include('template/main-header.html')
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+
+        <!-- start: sidebar -->
+        <!-- {{Выше - хрень, левый сайдбар один, меняется класс в <html>}} -->
+        @@include('template/sidebar-left-main.html', {
+            "nav_active": {
+                "tickets": "nav-active",
+                "tickets_2_1": "nav-active"
+            },
+            "nav_expanded": {
+                "tickets": "nav-expanded",
+                "tickets.children": "nav-expanded"
+            }
+        })
+        
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <!-- {{Хедер над секцией контента и дополнительной менюшкой}} -->
+            <header class="page-header">
+                <ol class="breadcrumbs">
+                    <li><a href="">Тикеты <b class="separator"></b></a></li>
+                    <li><span>Общий <b class="separator"></b></span></li>
+                </ol>
+            </header>
+            <!-- start: page -->
+            <div class="tabs tabs-info">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#all" data-toggle="tab"><i class="fa fa-star"></i> Все обращения</a>
+                    </li>
+                    <li>
+                        <a href="#new" data-toggle="tab">Новые</a>
+                    </li>
+                    <li>
+                        <a href="#view" data-toggle="tab">На рассмотрении</a>
+                    </li>
+                    <li>
+                        <a href="#reply " data-toggle="tab">Поступил ответ</a>
+                    </li>
+                    <li>
+                        <a href="#solved" data-toggle="tab">Решено</a>
+                    </li>
+                </ul>
+                <div class="tab-content p-none">
+                    <div id="all" class="tab-pane active">
+                        <div class="tickets-list">
+                            <ul>
+                                <li>
+                                    <span href="tickets-view.html" class="tickets-list-link">
+                                        <span class="tickets-list-type col-xs-1">
+                                            Тип
+                                        </span>
+                                        <span class="tickets-list-author col-xs-3">
+                                            Автор
+                                        </span>
+                                        <span class="tickets-list-subject col-xs-6">
+                                            Тема
+                                        </span>
+                                        <span class="tickets-list-date col-xs-2 text-right">
+                                            Дата
+                                        </span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <a href="tickets-view.html" class="tickets-list-link">
+                                        <span class="tickets-list-type col-xs-1">
+                                            <i class="color-label" style="border-color: #0000FF"></i>
+                                        </span>
+                                        <span class="tickets-list-author col-xs-3">
+                                            Вы
+                                        </span>
+                                        <span class="tickets-list-subject col-xs-6">
+                                            Не работает
+                                        </span>
+                                        <span class="tickets-list-date col-xs-2 text-right">
+                                            24.09.2015
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="tickets-view.html" class="tickets-list-link">
+                                        <span class="tickets-list-type col-xs-1">
+                                            <i class="color-label" style="border-color: #0000FF;"></i>
+                                        </span>
+                                        <span class="tickets-list-author col-xs-3">
+                                            Вы
+                                        </span>
+                                        <span class="tickets-list-subject col-xs-6">
+                                            Не работает
+                                        </span>
+                                        <span class="tickets-list-date col-xs-2 text-right">
+                                            24.09.2015
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="tickets-view.html" class="tickets-list-link">
+                                        <span class="tickets-list-type col-xs-1">
+                                            <i class="color-label" style="border-color: #0000FF"></i>
+                                        </span>
+                                        <span class="tickets-list-author col-xs-3">
+                                            Вы
+                                        </span>
+                                        <span class="tickets-list-subject col-xs-6">
+                                            Не работает
+                                        </span>
+                                        <span class="tickets-list-date col-xs-2 text-right">
+                                            24.09.2015
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="new" class="tab-pane">
+                        <p class="p-md">Обращений нет</p>
+                    </div>
+                    <div id="view" class="tab-pane">
+                        <p class="p-md">Обращений нет</p>
+                    </div>
+                    <div id="reply" class="tab-pane">
+                        <p class="p-md">Обращений нет</p>
+                    </div>
+                    <div id="solved" class="tab-pane">
+                        <p class="p-md">Обращений нет</p>
+                    </div>
+                </div>
+            </div>
+            <!-- end: page -->
+        </section>
+    </div>
+    <!-- {{Правый сайдбар, пока тупо для совместимости}} -->
+    @@include('template/sidebar-right.html')
+</section>
+
+
+<!-- {{Блок под алерты}} -->
+<!-- <div id="alert_message">{{$alert_message}}</div> -->
+@@include('template/foot.html')
+
+<!-- Specific Page Vendor -->
+<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+<script src="assets/vendor/select2/select2.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="assets/javascripts/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="assets/javascripts/theme.custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="assets/javascripts/theme.init.js"></script>
+
+<!-- Examples -->
+<script src="assets/javascripts/pages/examples.timeline.js"></script>
+<script src="assets/javascripts/ui-elements/examples.modals.js"></script>
+</body>
+</html>

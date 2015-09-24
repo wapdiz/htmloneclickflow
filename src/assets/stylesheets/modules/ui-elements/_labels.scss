@@ -9,9 +9,29 @@
 	font-size: 50%;
 }
 
+.color-label {
+	border: 4px solid transparent;
+	display: inline-block;
+	@include border-radius(10px);
+	width: 4px;
+	height: 4px;
+	// @media only screen and (max-width: 767px) {
+	// 	border-radius: 0;
+	// 	border-width: 1px;
+	// 	bottom: 0;
+	// 	left: 0;
+	// 	top: 0;
+	// }
+}
+
 @each $state in $states {
 	.label-#{nth($state,1)} {
 		background: #{nth($state,2)};
 		color: #{nth($state,3)};
+	}
+}
+@each $state in $states {
+	.label-#{nth($state,1)}-inverse {
+		background: #{nth($state,3)};
 	}
 }

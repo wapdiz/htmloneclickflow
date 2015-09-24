@@ -5,7 +5,7 @@
     <!-- Basic -->
 <meta charset="UTF-8">
 
-<title>Создание потока</title>
+<title>Кредитование</title>
 
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -439,16 +439,16 @@
                     </li>
 
 
-                    <li class="nav-parent nav-expanded nav-active">
+                    <li class="nav-parent @@nav_expanded.streams @@nav_active.streams">
                         <a>
                             <i class="fa fa-sitemap" aria-hidden="true"></i>
                             <span>Потоки</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="nav-active">
+                            <li class="@@nav_active.streams_1">
                                 <a href="streams-create.html">Добавить</a>
                             </li>
-                            <li class="nav-active_2">
+                            <li class="@@nav_active.streams_2">
                                 <a href="streams.html">Просмотр</a>
                             </li>
                         </ul>
@@ -474,7 +474,7 @@
                             <span>FAQ</span>
                         </a>
                     </li>
-                    <li class="@@nav_active.credits">
+                    <li class="nav-active">
                         <a href="credits.html">
                             <i class="fa fa-bank" aria-hidden="true"></i>
                             <span>Кредитование</span>
@@ -493,196 +493,130 @@
             <!-- {{Хедер над секцией контента и дополнительной менюшкой}} -->
             <header class="page-header">
                 <ol class="breadcrumbs">
-                    <li><a href="streams.html">Потоки <b class="separator"></b></a></li>
-                    <li><span>Создание потока <b class="separator"></b></span></li>
+                    <li><span>Кредитование <b class="separator"></b></span></li>
                 </ol>
             </header>
 
             <!-- start: page -->
+            <div class="container-fluid">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2>Кредитование</h2>
+                    </header>
+                    <div class="panel-body">
 
-            <section class="panel">
-                <header class="panel-heading">
-                    <h2 class="panel-title">Создание потока</h2>
-                </header>
-                <div class="panel-body">
-
-                    
-                    <input type="hidden" name="_token" value="Yj4pUsDuO5yNVhASDuGKUprSqLE34549PHEfV7tI">
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="name">Название <span style="color:#ff0000">*</span></label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="name" name="name">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="text-info mt-none mb-md">Запросить кредит</h3>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="category">Категория <span style="color:#ff0000">*</span></label>
-                        <div class="col-md-6">
-                            <select data-plugin-selectTwo class="form-control" name="category" id="category">
-                                <option value="1">Музыка</option>
-                                <option value="2">Кино</option>
-                                <option value="3">Софт</option>
-                                <option value="4">Адалт</option>
-                                <option value="5">Авто</option>
-                                <option value="7">Игры</option>
-                                <option value="8">Видео</option>
-                                <option value="9">Гороскопы</option>
-                                <option value="10">Сонники</option>
-                                <option value="11">Диеты</option>
-                                <option value="12">Авторизация</option>
-                                <option value="13">Новости</option>
-                        </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="tb_url">Trafficback URL <span style="color:#ff0000">*</span></label>
-                        <div class="col-md-6">
-                            <input type="url" class="form-control" id="tb_url" name="tb_url" placeholder="http://example.com/">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="time_cookie">Время жизни куки<span style="color:#ff0000">*</span><br>(в минутах, 0 - бесконечно)</label>
-                        <div class="col-md-6">
-                            <div data-plugin-spinner data-plugin-options='{ "max": 99999 }'>
-                                <div class="input-group input-small">
-                                    <input type="text" class="spinner-input form-control" id="time_cookie" name="time_cookie" value="13123">
-                                    <div class="spinner-buttons input-group-btn btn-group-vertical">
-                                        <button type="button" class="btn spinner-up btn-xs btn-default">
-                                            <i class="fa fa-angle-up"></i>
-                                        </button>
-                                        <button type="button" class="btn spinner-down btn-xs btn-default">
-                                            <i class="fa fa-angle-down"></i>
-                                        </button>
-                                    </div>
+                        <div class="stat-day pl-lg">
+                            <div class="row text-black" id="credit_info_today" style="display: none;">
+                                <div class="col-sm-4">
+                                    <h3 class="fw-bold mb-xs">15</h3>
+                                    <p>Доступных для кредитования подписок</p>
+                                </div>
+                                <div class="col-sm-4 mb-xs">
+                                    <h3 class="fw-bold"><i class="fa fa-rub"></i> 648</h3>
+                                    <p>Доступная сумма кредита</p>
+                                </div>
+                            </div>
+                            <div class="row text-black" id="credit_info_yesterday">
+                                <div class="col-sm-3">
+                                    <h3 class="fw-bold mb-xs">15</h3>
+                                    <p>Доступных для кредитования подписок</p>
+                                </div>
+                                <div class="col-sm-3 mb-xs">
+                                    <h3 class="fw-bold"><i class="fa fa-rub"></i> 648</h3>
+                                    <p>Доступная сумма кредита</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-group" id="type_traffic">
-                        <label class="col-md-3 control-label">Тип трафика</label>
-                        <div class="col-md-6">
-                            <div class="radio-custom">
-                                <input type="radio" name="type_traffic" id="type_traffic_your" value="1" checked="">
-                                <label for="type_traffic_your">Свой</label>
-                            </div>
-                            <div class="radio-custom">
-                                <input type="radio" name="type_traffic" id="type_traffic_purchase" value="2">
-                                <label for="type_traffic_purchase">Покупной</label>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="button" enabled="0" active="false" id="credit_info_button_today" class="mb-xs mt-xs mr-xs btn btn-default">За сегодня</button>
+                                <button type="button" enabled="0" active="true" id="credit_info_button_yesterday" class="mb-xs mt-xs mr-xs btn btn-primary">За вчера</button>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="domen_park">URL домена для парковки</label>
-                        <div class="col-md-6">
-                            <input type="url" class="form-control" id="domen_park" name="domen_park">
+                        <hr class="solid hr-panel">
+
+                        <div class="alert alert-warning">
+                            <p class="m-none">Минимальное число подписок за день для оформления кредита: 100</p>
+                            <p class="m-none">Кредит можно брать один раз за определенный день</p>
                         </div>
-                    </div>
 
-                    <div class="form-group" id="type_redirect">
-                        <label class="col-md-3 control-label">Тип редиректа</label>
-                        <div class="col-md-6">
-                            <div class="radio-custom">
-                                <input type="radio" name="type_redirect" id="type_redirect_direct" value="1" checked="">
-                                <label for="type_redirect_direct">Прямой</label>
-                            </div>
-                            <div class="radio-custom">
-                                <input type="radio" name="type_redirect" id="type_redirect_clickander" value="2">
-                                <label for="type_redirect_clickander">Кликандер</label>
-                            </div>
-                            <div class="radio-custom">
-                                <input type="radio" name="type_redirect" id="type_redirect_blind" value="3">
-                                <label for="type_redirect_blind">Блайнд</label>
-                            </div>
-                            <div class="radio-custom">
-                                <input type="radio" name="type_redirect" id="type_redirect_banner" value="4">
-                                <label for="type_redirect_banner">Баннер</label>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="hidden" name="_token" id="_token" value="HlMtgvqxIywj42C5J8e4MdIFcLIBnSxXZZmwLv3J">
+                                <input type="hidden" name="date" id="credit_date_input" value="yesterday">
+                                <button type="button" id="credit_submit_button" class="mb-xs mt-xs mr-xs btn btn-success">Отправить заявку!</button>
                             </div>
                         </div>
-                    </div>
 
-                                                                                                                                                                        
+                        <hr class="solid hr-panel">
 
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">
-                        </label>
-                        <div class="col-md-6">
-                            <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="auto_buyout" id="auto_buyout">
-                                <label for="auto_buyout">Включить автовыкуп подписок</label>
-                            </div>
+                        <div id="error_msg" class="alert alert-danger" style="display: none;"></div>
+                        <div id="msg_success" class="alert alert-success" style="display: none;">Отправлено!</div>
+
+
+                        <div class="table-responsive">
+                            <table class="table table-striped mb-none">
+                                <thead>
+                                    <tr class="info-inverse">
+                                        <th>Дата</th>
+                                        <th>Кол-во подписок</th>
+                                        <th>Сумма кредита</th>
+                                        <th>Осталось выплатить</th>
+                                        <th>Срок погашения, дней</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2015-07-27</td>
+                                        <td>245</td>
+                                        <td>2146 руб.</td>
+                                        <td>1457 руб.</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2015-09-21</td>
+                                        <td>547</td>
+                                        <td>3572 руб.</td>
+                                        <td>2647 руб.</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2015-07-27</td>
+                                        <td>245</td>
+                                        <td>2146 руб.</td>
+                                        <td>1457 руб.</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2015-09-21</td>
+                                        <td>547</td>
+                                        <td>3572 руб.</td>
+                                        <td>2647 руб.</td>
+                                        <td>5</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="primary-inverse">
+                                        <td>Итого:</td>
+                                        <td>457</td>
+                                        <td>10245 руб.</td>
+                                        <td>5405 руб.</td>
+                                        <td>16</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">
-                        </label>
-                        <div class="col-md-6">
-                            <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback" id="postback">
-                                <label for="postback">Включить POSTBACK</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="postback_url">PostBack URL</label>
-                        <div class="col-md-6">
-                            <input type="url" class="form-control" id="postback_url" name="postback_url" placeholder="http://example.com/?">
-                        </div>
-                    </div>
-
-                    <div class="form-group" id="postback_method">
-                        <label class="col-md-3 control-label">Метод отправки POSTBACK</label>
-                        <div class="col-md-6">
-                            <div class="radio-custom">
-                                <input type="radio" name="postback_method" id="postback_method_get" value="get">
-                                <label for="postback_method_get">GET</label>
-                            </div>
-                            <div class="radio-custom">
-                                <input type="radio" name="postback_method" id="postback_method_post" value="post">
-                                <label for="postback_method_post">POST</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">
-                            События, на которые отправлять
-                        </label>
-                        <div class="col-md-6">
-                            <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="subscribe">
-                                <label for="postback_event">Подписка</label>
-                            </div>
-                            <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="unsubscribe">
-                                <label for="postback_event">Отписка</label>
-                            </div>
-                            <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="rebill">
-                                <label for="postback_event">Ребилл</label>
-                            </div>
-                            <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="sell">
-                                <label for="postback_event">Продажа</label>
-                            </div>
-                            <div class="checkbox-custom checkbox-default">
-                                <input type="checkbox" name="postback_event[]" id="postback_event" value="autobuyout">
-                                <label for="postback_event">Выкуп подписки</label>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <footer class="panel-footer">
-                    <button class="btn btn-primary">Создать поток</button>
-                </footer>
-            </section>
+                </section>
+            </div>
             <!-- end: page -->
         </section>
     </div>
@@ -771,7 +705,9 @@
 
 <!-- Specific Page Vendor -->
 <script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
-<script src="assets/vendor/fuelux/js/spinner.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="assets/vendor/gmaps/gmaps.js"></script>
+<script src="assets/vendor/ios7-switch/ios7-switch.js"></script>
 
 <!-- Theme Base, Components and Settings -->
 <script src="assets/javascripts/theme.js"></script>
@@ -783,7 +719,7 @@
 <script src="assets/javascripts/theme.init.js"></script>
 
 <!-- Examples -->
+<script src="assets/javascripts/pages/examples.timeline.js"></script>
 <script src="assets/javascripts/ui-elements/examples.modals.js"></script>
-
 </body>
 </html>

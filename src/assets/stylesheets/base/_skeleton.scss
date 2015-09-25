@@ -452,11 +452,12 @@ a:active {
 	}
 
 	.content-body {
-		padding: 0 15px 15px;
+		padding: $content-body-padding;
+		
 	}
 
 	.page-header {
-		margin: 0 -15px 20px;
+		// margin: 0 -15px 20px;
 	}
 
 	.sidebar-left {

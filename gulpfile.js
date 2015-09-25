@@ -60,7 +60,7 @@ gulp.task('style:build', function () {
     gulp.src(path.src.style)
         .pipe(sourcemaps.init())
         .pipe(sass({errLogToConsole: true}))
-        .pipe(cssmin({compatibility:'ie8'})) //Сожмем
+        // .pipe(cssmin({compatibility:'ie8'})) //Сожмем
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));

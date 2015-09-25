@@ -42,3 +42,24 @@
 		}
 	}
 }
+@media only screen and (max-width: $screen-iphone6plus) {
+	.fileupload {
+		.uneditable-input {
+			width: 160px;
+		}
+	}
+}
+@media only screen and (max-width: $screen-iphone6) {
+	.fileupload {
+		.uneditable-input {
+			width: 130px;
+		}
+	}
+}
+@media only screen and (max-width: $screen-iphone5) {
+	.fileupload {
+		.uneditable-input {
+			width: 70px;
+		}
+	}
+}

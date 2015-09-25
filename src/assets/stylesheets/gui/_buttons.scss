@@ -230,3 +230,26 @@ html.dark {
 		border-color: darken($dark-color-3, 2%);
 	}
 }
+
+// RESPONSIVE
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: $screen-iphone6plus) {
+	body{
+		.btn-split{
+			.split-lnk{
+				.split-inf{
+					display: none;
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: $screen-iphone5) {
+	body{
+		.btn-split{
+			.split-stat{
+				display: none;
+			}
+		}
+	}
+}

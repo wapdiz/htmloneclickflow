@@ -54,20 +54,20 @@
         <div class="toggle-sidebar-left visible-xs" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
             <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
         </div>
+        
+
     </div>
 
     <!-- start: search & user box -->
     <div class="header-right">
-        <div style="display: inline-block; margin-right: 30px;" >
+        <div class="header-balance">
     <p>
-        <b>Баланс: </b>&nbsp;
+        <b class="header-balance-title">Баланс: </b>&nbsp;
             <i class="fa fa-rub"></i>0&nbsp;
             <i class="fa fa-usd"></i>0&nbsp;
             <i class="fa fa-eur"></i>0&nbsp;
     </p>
 </div>
-
-
 <ul class="notifications">
     <li>
         <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
@@ -602,18 +602,18 @@
                                         <tr>
                                             <td class="active">Россия</td>
                                             <td class="p-none">
-                                                <a href="#modalLP" class="btn-group modal-with-move-anim mr-tiny">
+                                                <a href="#modalLP" class="btn-group modal-with-move-anim mb-ts mr-ts">
                                                     <span class="btn btn-sm btn-success">МТС</span>
                                                     <span class="btn btn-sm btn-hr-left btn-success-light">2</span>
                                                 </a>
-                                                <a href="#modalLP" class="btn-group modal-with-move-anim mr-tiny">
+                                                <a href="#modalLP" class="btn-group modal-with-move-anim mb-ts mr-ts">
                                                     <span class="btn btn-sm btn-success">Билайн</span>
                                                 </a>
-                                                <a href="#modalLP" class="btn-group modal-with-move-anim mr-tiny">
+                                                <a href="#modalLP" class="btn-group modal-with-move-anim mb-ts mr-ts">
                                                     <span class="btn btn-sm btn-success">Мегафон</span>
                                                     <span class="btn btn-sm btn-hr-left btn-success-light">42</span>
                                                 </a>
-                                                <a href="#modalLP" class="btn-group modal-with-move-anim mr-tiny">
+                                                <a href="#modalLP" class="btn-group modal-with-move-anim mb-ts mr-ts">
                                                     <span class="btn btn-sm btn-success">ТЕЛЕ2</span>
                                                     <span class="btn btn-sm btn-hr-left btn-success-light">8</span>
                                                 </a>
@@ -622,11 +622,11 @@
                                         <tr>
                                             <td class="active">Азербайджан</td>
                                             <td class="p-none">
-                                                <a href="#modalLP" class="btn-group modal-with-move-anim mr-tiny">
+                                                <a href="#modalLP" class="btn-group modal-with-move-anim mb-ts mr-ts">
                                                     <span class="btn btn-sm btn-success">Baksell</span>
                                                     <span class="btn btn-sm btn-hr-left btn-success-light">2</span>
                                                 </a>
-                                                <a href="#modalLP" class="btn-group modal-with-move-anim mr-tiny">
+                                                <a href="#modalLP" class="btn-group modal-with-move-anim mb-ts mr-ts">
                                                     <span class="btn btn-sm btn-success">Nar Mobile</span>
                                                     <span class="btn btn-sm btn-hr-left btn-success-light">4</span>
                                                 </a>
@@ -637,10 +637,10 @@
                             </div>
                         </div>
                         <div class="pt-xlg mb-lg">
-                            <a href="streams.html" class="btn btn-default text-uppercase text-overflow mr-sm">
+                            <a href="streams.html" class="btn btn-default text-uppercase text-overflow mb-sm mr-sm">
                                 Не сохранять
                             </a>
-                            <button class="btn btn-primary text-uppercase text-overflow">
+                            <button class="btn btn-primary text-uppercase text-overflow  mb-sm">
                                 Сохранить
                             </button>
                         </div>
@@ -660,14 +660,14 @@
                                     <div class="col-sm-8">
                                         <div class="row">
                                             <div class="col-sm-5">
-                                                <select class="form-control mb-md">
+                                                <select data-plugin-selectTwo class="form-control mb-md">
                                                     <option>Новые</option>
                                                     <option>Старые</option>
                                                 </select>
                                             </div>
                                             <div class="visible-xs mb-md"></div>
                                             <div class="col-sm-5">
-                                                <select class="form-control mb-md">
+                                                <select data-plugin-selectTwo class="form-control mb-md">
                                                     <option>Дорогие</option>
                                                     <option>Дешевые</option>
                                                 </select>

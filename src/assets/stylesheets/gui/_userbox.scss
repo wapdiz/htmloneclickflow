@@ -117,8 +117,7 @@
 	.userbox {
 		float: left;
 		margin: 16px 0 0 12px;
-		position: relative;
-
+		 position: relative;
 		&:after {
 			background: #E9E9E6;
 			content: '';
@@ -137,6 +136,25 @@
 		&.open .dropdown-menu {
 			left: -5px;
 			padding: 43px 0 0 0;
+		}
+	}
+}
+@media only screen and (max-width: $screen-iphone5) {
+	.userbox {
+		width: 175px;
+		&:after {
+			display: none;
+		}
+		.profile-info {
+			margin: 0 5px 0 0;
+			float: left;
+			.name{
+				width: 150px;
+				position: relative;
+				  top: 3px;
+				display: block;
+				@include text-overflow();
+			}
 		}
 	}
 }

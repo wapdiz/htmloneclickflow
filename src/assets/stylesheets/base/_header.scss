@@ -18,6 +18,11 @@
 		}
 	}
 
+	.header-balance{
+		display: inline-block;
+		margin-right: $spacement-md;
+	}
+
 	.separator {
 		@include linear-gradient(#F6F6F6 60%, #EDEDED);
 		display: inline-block;
@@ -74,8 +79,33 @@
 			}
 		}
 
+		.header-balance{
+			position: fixed;
+			top: 15px;
+			right: 0;
+			z-index: 100;
+		}
+
 		.search,
 		.separator {
+			display: none;
+		}
+	}
+}
+/* Header Mobile iPhone6 */
+@media only screen and (max-width: $screen-iphone6) {
+	.header {
+		.toggle-sidebar-left {
+			left: 170px;
+		}
+		.header-balance{
+		}
+	}
+}
+/* Header Mobile iPhone3 - iPhone5 */
+@media only screen and (max-width: $screen-iphone5) {
+	.header {
+		.header-balance{
 			display: none;
 		}
 	}

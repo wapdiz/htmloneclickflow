@@ -12,29 +12,37 @@ $color-green: #9AE14F;
 		padding: 0;
 		list-style: none;
 		li{
+			width: 100%;
+			display: table;
 			a.tickets-list-link{
 				&:hover{
-					 background: lighten($body-color,2%);
+					text-decoration: none;
+					background: lighten($body-color,2%);
 				}
 			}
 			.tickets-list-link{
-				width: 100%;
-				display: table;
-				border-bottom:1px solid darken($body-color,5%);
-				@include clearfix();
-				  .tickets-list-link-inner{
-					display: table-row;
-				}
+				display: table-row;
 				.tickets-list-type,
 				.tickets-list-author,
 				.tickets-list-subject,
 				.tickets-list-date{
+					border-bottom:1px solid darken($body-color,5%);
 					display: table-cell;
 					color: lighten($color-black,15%);
-					// padding-top: 10px;
-					// padding-bottom: 10px;
-					 padding: 10px;
-					// @include text-overflow();
+					padding: 10px;
+					white-space: nowrap;
+				}
+				.tickets-list-type{
+					width: 10%;
+				}
+				.tickets-list-author{
+					width: 20%;
+				}
+				.tickets-list-subject{
+					width: 50%;
+				}
+				.tickets-list-date{
+					width: 20%;
 				}
 			}
 		}

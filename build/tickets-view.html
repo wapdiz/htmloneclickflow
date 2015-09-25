@@ -501,7 +501,7 @@
 
             <!-- start: page -->
             <div class="container-fluid"> 
-                <h3 class="text-info mt-none mb-sm">Список сообщений</h3>
+                <h3 class="text-info mt-sm mb-none">Список сообщений</h3>
                 <div class="timeline noline">
                     <div class="tm-body">
                         <ol class="tm-items" id="timelineNews-2015-09">
@@ -553,10 +553,10 @@
                             </p>
                         </div>
                         <div class="panel-body">
-                            <div class="form-group col-md-12">
+                            <div class="form-group">
                                 <textarea name="commentText" id="comment_text_area" cols="30" rows="10" class="form-control"></textarea>
                             </div>
-                            <div class="form-group col-md-12">
+                            <div class="form-group row">
                                 <label class="col-md-3 control-label" for="ticketStatus">Перевести в статус: </label>
                                  <div class="col-md-6">
                                     <select data-plugin-selectTwo class="form-control mb-md" id="ticketStatus" name="ticketStatus">
@@ -565,24 +565,24 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group col-md-12">
+                            <div class="form-group row">
                                 <label class="control-label col-md-3" for="inputFile">Прикрепить файл</label>
                                 <div class="col-md-6">
-                                <div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden">
-                                    <div class="input-append">
-                                        <div class="uneditable-input btn btn-default">
-                                            <i class="fa fa-file fileupload-exists"></i>
-                                            <span class="fileupload-preview"></span>
+                                    <div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden">
+                                        <div class="input-append">
+                                            <div class="uneditable-input btn btn-default">
+                                                <i class="fa fa-file fileupload-exists"></i>
+                                                <span class="fileupload-preview"></span>
+                                            </div>
+                                            <span class="btn btn-default btn-file">
+                                                <span class="fileupload-exists">Изменить</span>
+                                                <span class="fileupload-new">Выберите файл</span>
+                                                <input type="file" name="inputFile" id="inputFile">
+                                            </span>
+                                            <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Удалить</a>
                                         </div>
-                                        <span class="btn btn-default btn-file">
-                                            <span class="fileupload-exists">Изменить</span>
-                                            <span class="fileupload-new">Выберите файл</span>
-                                            <input type="file" name="inputFile" id="inputFile">
-                                        </span>
-                                        <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Удалить</a>
                                     </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
                         <div class="panel-footer">

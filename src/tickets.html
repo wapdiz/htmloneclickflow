@@ -2,7 +2,6 @@
 <html class="fixed" lang="ru" >
 
 <head>
-    <link rel="stylesheet" href="assets/vendor/select2/select2.css" />
     @@include('template/head.html', {
         "title": "Тикеты"
     })
@@ -48,87 +47,81 @@
             </header>
             <!-- start: page -->
             <div class="tabs tabs-info">
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs responsive" id="ticketTab">
                     <li class="active">
-                        <a href="#all" data-toggle="tab"><i class="fa fa-star"></i> Все обращения</a>
+                        <a href="#all" data-toggle="tab"><i class="fa fa-list"></i> Все обращения</a>
                     </li>
                     <li>
-                        <a href="#new" data-toggle="tab">Новые</a>
+                        <a href="#new" data-toggle="tab"><i class="fa fa-asterisk"></i> Новые</a>
                     </li>
                     <li>
-                        <a href="#view" data-toggle="tab">На рассмотрении</a>
+                        <a href="#view" data-toggle="tab"><i class="fa fa-clock-o"></i> На рассмотрении</a>
                     </li>
                     <li>
-                        <a href="#reply " data-toggle="tab">Поступил ответ</a>
+                        <a href="#reply " data-toggle="tab"><i class="fa fa-mail-forward"></i> Поступил ответ</a>
                     </li>
                     <li>
-                        <a href="#solved" data-toggle="tab">Решено</a>
+                        <a href="#solved" data-toggle="tab"><i class="fa fa-check-square"></i> Решено</a>
                     </li>
                 </ul>
-                <div class="tab-content p-none">
+                <div class="tab-content p-none responsive">
                     <div id="all" class="tab-pane active">
                         <div class="tickets-list">
                             <ul class="table-responsive">
                                 <li>
-                                    <span href="tickets-view.html" class="tickets-list-link">
-                                        <span class="tickets-list-type col-xs-1">
+                                    <span class="tickets-list-link">
+                                        <span class="tickets-list-type">
                                             Тип
                                         </span>
-                                        <span class="tickets-list-author col-xs-3">
+                                        <span class="tickets-list-author">
                                             Автор
                                         </span>
-                                        <span class="tickets-list-subject col-xs-6">
+                                        <span class="tickets-list-subject">
                                             Тема
                                         </span>
-                                        <span class="tickets-list-date col-xs-2 text-right">
+                                        <span class="tickets-list-date text-right">
                                             Дата
                                         </span>
                                     </span>
-                                </li>
-                                <li>
                                     <a href="tickets-view.html" class="tickets-list-link">
-                                        <span class="tickets-list-type col-xs-1">
+                                        <span class="tickets-list-type">
                                             <i class="color-label" style="border-color: #0000FF;"></i>
                                         </span>
-                                        <span class="tickets-list-author col-xs-3">
+                                        <span class="tickets-list-author">
                                             Вы
                                         </span>
-                                        <span class="tickets-list-subject col-xs-6">
+                                        <span class="tickets-list-subject">
                                             Не работает
                                         </span>
-                                        <span class="tickets-list-date col-xs-2 text-right">
+                                        <span class="tickets-list-date text-right">
                                             24.09.2015
                                         </span>
                                     </a>
-                                </li>
-                                <li>
                                     <a href="tickets-view.html" class="tickets-list-link">
-                                        <span class="tickets-list-type col-xs-1">
+                                        <span class="tickets-list-type">
                                             <i class="color-label" style="border-color: #0000FF;"></i>
                                         </span>
-                                        <span class="tickets-list-author col-xs-3">
+                                        <span class="tickets-list-author">
                                             Вы
                                         </span>
-                                        <span class="tickets-list-subject col-xs-6">
+                                        <span class="tickets-list-subject">
                                             Не работает
                                         </span>
-                                        <span class="tickets-list-date col-xs-2 text-right">
+                                        <span class="tickets-list-date text-right">
                                             24.09.2015
                                         </span>
                                     </a>
-                                </li>
-                                <li>
                                     <a href="tickets-view.html" class="tickets-list-link">
-                                        <span class="tickets-list-type col-xs-1">
+                                        <span class="tickets-list-type">
                                             <i class="color-label" style="border-color: #0000FF"></i>
                                         </span>
-                                        <span class="tickets-list-author col-xs-3">
+                                        <span class="tickets-list-author">
                                             Вы
                                         </span>
-                                        <span class="tickets-list-subject col-xs-6">
+                                        <span class="tickets-list-subject">
                                             Не работает
                                         </span>
-                                        <span class="tickets-list-date col-xs-2 text-right">
+                                        <span class="tickets-list-date text-right">
                                             24.09.2015
                                         </span>
                                     </a>
@@ -137,16 +130,16 @@
                         </div>
                     </div>
                     <div id="new" class="tab-pane">
-                        <p class="p-md">Обращений нет</p>
+                        Обращений нет
                     </div>
                     <div id="view" class="tab-pane">
-                        <p class="p-md">Обращений нет</p>
+                        Обращений нет
                     </div>
                     <div id="reply" class="tab-pane">
-                        <p class="p-md">Обращений нет</p>
+                        Обращений нет
                     </div>
                     <div id="solved" class="tab-pane">
-                        <p class="p-md">Обращений нет</p>
+                        Обращений нет
                     </div>
                 </div>
             </div>
@@ -164,7 +157,12 @@
 
 <!-- Specific Page Vendor -->
 <script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
-<script src="assets/vendor/select2/select2.js"></script>
+<script src="assets/vendor/bootstrap-responsivetabs/responsive-tabs.js"></script>
+<script>
+  (function($) {
+      fakewaffle.responsiveTabs(['xs', 'sm']);
+  })(jQuery);
+</script>
 
 <!-- Theme Base, Components and Settings -->
 <script src="assets/javascripts/theme.js"></script>
@@ -174,9 +172,5 @@
 
 <!-- Theme Initialization Files -->
 <script src="assets/javascripts/theme.init.js"></script>
-
-<!-- Examples -->
-<script src="assets/javascripts/pages/examples.timeline.js"></script>
-<script src="assets/javascripts/ui-elements/examples.modals.js"></script>
 </body>
 </html>

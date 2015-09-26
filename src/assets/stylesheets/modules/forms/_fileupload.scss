@@ -1,7 +1,17 @@
 // FILE UPLOAD
 // -----------------------------------------------------------------------------
 .fileupload {
+	&.fileupload-exists{
+		.btn-file{
+			width: 20%;
+		}
+		.fileupload-exists{
+			width: 20%;
+			@include text-overflow();
+		}
+	}
 	.uneditable-input {
+		width: 60%;
 		height: 41px;
 		text-align: left;
 		margin-left: 0 !important;
@@ -19,7 +29,13 @@
 			width: 100%;
 		}
 	}
+	.btn-file{
+		@include text-overflow();
+		width: 40%;
+	}
+	
 	.input-append{
+		
 		.btn{
 			&:first-child{
 				@include border-left-radius(4px);
@@ -34,32 +50,32 @@
 		border-radius: 0;
 	}
 }
-
-@media only screen and (max-width: 479px) {
-	.fileupload {
-		.uneditable-input {
-			width: 170px;
-		}
-	}
-}
-@media only screen and (max-width: $screen-iphone6plus) {
-	.fileupload {
-		.uneditable-input {
-			width: 160px;
-		}
-	}
-}
-@media only screen and (max-width: $screen-iphone6) {
-	.fileupload {
-		.uneditable-input {
-			width: 130px;
-		}
-	}
-}
-@media only screen and (max-width: $screen-iphone5) {
-	.fileupload {
-		.uneditable-input {
-			width: 70px;
-		}
-	}
-}
+// Fix sizes
+// @media only screen and (max-width: 479px) {
+// 	.fileupload {
+// 		.uneditable-input {
+// 			width: 170px;
+// 		}
+// 	}
+// }
+// @media only screen and (max-width: $screen-iphone6plus) {
+// 	.fileupload {
+// 		.uneditable-input {
+// 			width: 160px;
+// 		}
+// 	}
+// }
+// @media only screen and (max-width: $screen-iphone6) {
+// 	.fileupload {
+// 		.uneditable-input {
+// 			width: 130px;
+// 		}
+// 	}
+// }
+// @media only screen and (max-width: $screen-iphone5) {
+// 	.fileupload {
+// 		.uneditable-input {
+// 			width: 70px;
+// 		}
+// 	}
+// }

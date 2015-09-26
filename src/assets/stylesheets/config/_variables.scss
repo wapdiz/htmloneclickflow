@@ -11,8 +11,10 @@ $grid-gutter-width: 30px;
 // RESPONSIVE SCREEN SIZES
 // =============================================================================
 $screen-iphone5: 320px; // iPhone3 - iPhone5 
+$screen-galaxys3: 360px;
 $screen-iphone6: 375px;
 $screen-iphone6plus: 414px;
+$screen-ipad: 768px;
 // =============================================================================
 // TYPOGRAPHY
 // =============================================================================
@@ -286,7 +288,7 @@ $page-header-height: 38px;
 // =============================================================================
 // CONTENT WITH MENU
 // =============================================================================
-$inner-menu-width: 300px;
+$inner-menu-width: 560px;
 $inner-menu-toggle-width: 140px;
 $inner-toolbar-height: 52px;
 

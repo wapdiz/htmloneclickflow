@@ -44,6 +44,12 @@ html.dark {
 	}
 }
 
+@each $color in $colors-list {
+	.text-#{nth($color,1)}-dark {
+		color: #{darken(nth($color, 2), 10%)} !important;
+	}
+}
+
 .text-black{
 	color: $color-black;
 }

@@ -439,6 +439,7 @@ html.dark {
 	.select2-drop {
 		background-color: $dark-color-3;
 		border-color: $dark-color-2;
+
 	}
 
 	.select2-container-multi {
@@ -456,4 +457,10 @@ html.dark {
 		color: #EEE;
 	}
 
+}
+.select2-drop-mask {
+	z-index: 99998;
+}
+.select2-drop {
+	z-index: 99998;
 }

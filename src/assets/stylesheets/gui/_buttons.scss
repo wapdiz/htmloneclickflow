@@ -233,7 +233,7 @@ html.dark {
 
 // RESPONSIVE
 // -----------------------------------------------------------------------------
-@media only screen and (max-width: $screen-iphone6plus) {
+@media only screen and (max-width: 768px) {
 	body{
 		.btn-split{
 			.split-lnk{

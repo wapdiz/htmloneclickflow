@@ -2,15 +2,16 @@
 
 (function( $ ) {
 	$(function() {
-		$('.lp-listing>ul>li:nth-child(5n+4),.lp-listing>ul>li:nth-child(5n)').hover(function() {
-			$(this).closest('ul').css('left','-180px');
-		},
-		function() {
-			$(this).closest('ul').css('left','0');
-		});
+		if (window.matchMedia('(min-width: 770px)').matches) {
+			$('.lp-listing>ul>li:nth-last-of-type(1),.lp-listing>ul>li:nth-last-of-type(2)').hover(function() {
+				$(this).closest('ul').css('left','-170px');
+			},
+			function() {
+				$(this).closest('ul').css('left','0');
+			});
+		}
 
 		$('.timebuttons button').click(function() {
-
 			$('.timebuttons li div').removeClass('timebuttons-pos-active');
 			$(this).parent('div').addClass('timebuttons-pos-active');
 		});

@@ -1,4 +1,4 @@
-// TIMELINE
+// TIMELINE ext TM SMALL
 // -----------------------------------------------------------------------------
 $timeline-line-left: 20px;
 $timeline-simple-line-left: 30px;
@@ -21,25 +21,10 @@ $timeline-simple-line-left: 30px;
 		bottom: 0;
 	}
 	.tm-title {
-		position: relative;
-		display: inline-block;
-		text-align: center;
-		min-width: 160px;
-		background-color: transparent;
-		padding: 0;
-		margin: 0 ($timeline-line-left + 30);
-		z-index: 1;  
+		margin-left: ($timeline-line-left + 30);
+		margin-right: ($timeline-line-left + 30);
 		@include border-radius(0);
-		&.tm-title-top{
-			// margin-top: -20px;
-			// top: -17px;
-			&:after{
-				display: none;
-			}
-		}
 		&.tm-title-bottom{
-			// margin-bottom: -20px;
-			// bottom: -24px;
 			&:after{
 				display: none;
 			}
@@ -92,7 +77,7 @@ $timeline-simple-line-left: 30px;
 	}
 	.tm-body{
 		position: relative;
-		padding: 0;
+		padding: 25px 0;
 		margin: 50px 0;
 		&:after {
 			background: darken($body-color,20%);
@@ -109,6 +94,11 @@ $timeline-simple-line-left: 30px;
 			opacity: 0.35;
 		}
 		.tm-items{
+			&:last-child{
+				.tm-box{
+					margin-bottom: 0;
+				}
+			}
 			.tm-box{
 				margin: 20px 0 20px ($timeline-line-left + 40);
 				&:after {
@@ -137,6 +127,8 @@ $timeline-simple-line-left: 30px;
 		}
 	}
 }
+// TIMELINE
+// -----------------------------------------------------------------------------
 .timeline {
 	font-family: $font-secundary;
 	position: relative;
@@ -162,21 +154,26 @@ $timeline-simple-line-left: 30px;
 		display: inline-block;
 		text-align: center;
 		min-width: 160px;
+		height: 42px;
 		background-color: transparent;
 		padding: 0;
-		margin: 0 ($timeline-line-left + 40);
+		margin: 20px ($timeline-line-left + 40);
 		z-index: 1;  
 		@include border-radius(0);
 		&.tm-title-top{
-			// margin-top: -20px;
-			top: -17px;
+			top: 0;
+			position: absolute;
+			margin-top: -17px;
+			margin-bottom: 0;
 			&:after{
 				display: none;
 			}
 		}
 		&.tm-title-bottom{
-			// margin-bottom: -20px;
-			bottom: -24px;
+			bottom: 0;
+			position: absolute;
+			margin-top: 0;
+			margin-bottom: -17px;
 			&:after{
 				display: none;
 			}
@@ -184,6 +181,10 @@ $timeline-simple-line-left: 30px;
 		.btn{
 			@include font-size(16); 
 			@include text-overflow(); 
+			height: 42px;
+			line-height: 42px;
+			padding-top: 0;
+			padding-bottom: 0;
 			text-transform: uppercase;
 			&:after {
 				right: 100%;
@@ -230,7 +231,7 @@ $timeline-simple-line-left: 30px;
 	}
 	.tm-body{
 		position: relative;
-		padding: 0;
+		padding: 50px 0;
 		margin: 50px 0;
 		&:after {
 			background: darken($body-color,20%);
@@ -250,6 +251,11 @@ $timeline-simple-line-left: 30px;
 			list-style: none;
 			padding: 0;
 			margin: 0;
+				&:last-child{
+					.tm-box{
+						margin-bottom: 0;
+					}
+				}
 				.tm-box{
 					margin: 20px 0 20px ($timeline-line-left + 60);
 					padding: 0;
@@ -287,9 +293,9 @@ $timeline-simple-line-left: 30px;
 						margin-top: (-52px)/2;
 						position: absolute;
 						color: inherit;
-						z-index: 2;
+						z-index: 3;
 						top: 50%;
-						  left: -($timeline-line-left+66);
+						left: -($timeline-line-left+66);
 						@include border-radius(50%);
 						.fa-paper-plane{
 							position: relative;
@@ -428,6 +434,7 @@ $timeline-simple-line-left: 30px;
 			display: none;
 		}
 		.tm-body{
+			padding: 0;
 			margin: 25px 0;
 			&:after {
 				display: none;
@@ -448,12 +455,15 @@ $timeline-simple-line-left: 30px;
 			}
 		}
 		.tm-body{
-			padding: 0 70px 0 0;
+			padding: 50px 70px 50px 0;
 			margin: 50px 0;
 			.tm-items{
 				.tm-box{
 					margin: 0 0 20px ($timeline-line-left + 40);
 					min-height: 25px;
+					&:last-child{
+						margin-bottom: 0;
+					}
 					&:after {
 						top: 0;
 						margin-top: 16px;
@@ -492,137 +502,38 @@ $timeline-simple-line-left: 30px;
 // -----------------------------------------------------------------------------
 $timeline-responsive-line-left: 10px;
 $timeline-responsive-simple-line-left: 30px;
-
-@media only screen and (max-width: $screen-iphone6plus) {
+@media only screen and (max-width: $screen-ipad) {
+	.timeline {
+		@include tm-icon-small();
+		&.timeline-stream{
+			.tm-body{
+				.tm-items{
+					.tm-box{
+						&.panel{
+							.panel-heading{
+								.label-link{
+									margin-bottom: $spacement-xs;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 767px) {
 	.container-fluid{
 		 padding: 0;
 	}
 	.timeline {
 		@include tm-icon-small();
-		// &.tm-icon-small{
-		// 	.tm-body {
-		// 		margin: 25px 0
-		// 	}
-		// }
-		// &:before,&:after {
-		// 	background: darken($body-color,10%);
-		// 	left: $timeline-responsive-line-left+-5;
-		// 	content: ' ';
-		// 	height: 8px;
-		// 	width: 8px; 
-		// 	z-index: 2;
-		// }
-		// .tm-title {
-		// 	margin: 0 ($timeline-responsive-line-left + 20);
-		// 	&.tm-title-top{
-		// 		// margin-top: -12px;
-		// 	}
-		// 	&.tm-title-bottom{
-		// 		// margin-bottom: -20px;
-		// 		   // bottom: -9px;
-		// 	}
-		// 	.btn{
-		// 		&:after {
-		// 			border-width: 8px;
-		// 			margin-top: -8px;
-		// 		}
-		// 	}
-		// 	&:after {
-		// 		left: -($timeline-responsive-line-left+25);
-		// 		height: 8px;
-		// 		width: 8px;
-		// 		margin-top: -4px;
-		// 	}
-		// 	&:before {
-		// 		height: 2px;
-		// 		margin-top: -1px;
-		// 		width: $timeline-responsive-line-left+10;
-		// 		left: -($timeline-responsive-line-left+10);
-		// 	}
-		// }
-		// .tm-body{
-		// 	&:after {
-		// 		left: $timeline-responsive-line-left;
-		// 		margin-left: -2px;
-		// 		width: 2px;
-		// 	}
-		// 	.tm-items{
-		// 		.tm-box{
-		// 			margin: 20px 0 20px ($timeline-responsive-line-left + 60);
-		// 			min-height: 40px;;
-		// 			&:after {
-		// 				border-width: 6px;
-		// 				margin-top: -6px;
-		// 			}
-		// 			.tm-icon{
-		// 				border: 3px solid;
-		// 				font-size: 24px;
-		// 				line-height: 46px;
-		// 				width: 52px;
-		// 				height: 52px;
-		// 				margin-top: (-52px)/2;
-		// 				left: -($timeline-responsive-line-left+66);
-		// 				@include border-radius(50%);
-		// 				.fa-paper-plane{
-		// 					position: relative;
-		// 					left: -2px;
-		// 				}
-		// 			}
-		// 			.tm-meta {
-		// 				margin: 10px 0 0;
-		// 				span {
-		// 					padding-right: 8px;
-		// 				}
-		// 			}
-		// 			&.panel{
-		// 				min-height: 20px;
-		// 				&.border{
-		// 					border: 1px solid darken($body-color,5%);
-		// 					&:before {
-		// 						border-width: 8px;
-		// 						top: 50%;
-		// 						margin-top: -8px;
-		// 						z-index: 1;
-		// 					}
-		// 				}
-		// 				.panel-heading{
-		// 				    padding: 15px;
-		// 				    .panel-actions{
-		// 					    .panel-actions-collapse{
-		// 					    	@include font-size(10);
-		// 					    	right: 15px;
-		// 					    	margin-top: -12px;
-		// 					    	&.accordion-toggle{
-		// 								&:before{
-		// 					    		}
-		// 					    		&.collapsed{
-		// 							    	&:before{
-		// 						    		}
-		// 							    }
-		// 					    	}
-		// 					    }
-		// 					    .panel-actions-close{
-		// 					    	@include font-size(12);
-		// 					    	right: -40px;
-		// 					    	margin-top: -12px;
-		// 					    }
-		// 					}
-		// 				}
-		// 				.panel-body{
-		// 					border-top: 1px solid darken($body-color,5%);
-		// 					padding: 15px;
-		// 				}
-		// 			}
-		// 		}
-		// 	}
-		// }
 		&.timeline-stream{
 			.tm-body{
-				padding: 0;
-				margin: 50px 0;
+				padding-right: 0;
 				.tm-items{
 					.tm-box{
-						margin: 0 0 20px ($timeline-responsive-line-left + 40);
+						margin-left: ($timeline-responsive-line-left + 40);
 						min-height: 25px;
 						&:after {
 							top: 0;
@@ -652,9 +563,6 @@ $timeline-responsive-simple-line-left: 30px;
 								}
 								.panel-title{
 									top: 4px;
-								}
-								.label-link{
-									margin-bottom: $spacement-xs;
 								}
 							}
 						}

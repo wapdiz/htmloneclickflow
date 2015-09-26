@@ -485,4 +485,9 @@ html .panel .panel-heading-transparent {
 	border-radius: $border-radius;
 	padding: $panel-body-padding;
 	margin-bottom: $panel-body-padding;
+	.timeline.tm-icon-small{
+		.tm-body{
+			margin: 25px 0;
+		}
+	}
 }

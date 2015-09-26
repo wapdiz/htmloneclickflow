@@ -1051,7 +1051,7 @@ $lp-listing-cart-height:		196px;
 							vertical-align: middle;
 							text-align: center;
 							color: #fff;
-							@include font-size(20);
+							@include font-size(18);
 							text-transform: uppercase;
 							font-weight: $font-weight-bold;
 							text-shadow: 0 -1px 0 rgba(#000,.3);
@@ -1147,7 +1147,6 @@ $lp-listing-cart-height:		196px;
 									border-bottom: 0;
 								}
 								li{
-									padding: 5px 0;
 									height: 30px;
 									line-height: 1;
 									border-top: 1px solid $color-info-inverse;
@@ -1161,6 +1160,7 @@ $lp-listing-cart-height:		196px;
 										color: $color-muted;
 										display: table-cell;
 										white-space: nowrap;
+										vertical-align: middle;
 									}
 									&.lp-listing-cart-cont-body-pricelist-price{
 										text-align: right;
@@ -1197,7 +1197,7 @@ $lp-listing-cart-height:		196px;
 		}
 	}
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
 	.lp-modal{
 		max-width: 100%;
 	}

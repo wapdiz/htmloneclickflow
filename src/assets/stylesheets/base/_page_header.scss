@@ -60,41 +60,22 @@ overflow: hidden;
 			@include font-size($page-header-breadcrumb-size);
 			line-height: $page-header-height;
 			vertical-align: middle;
-			padding: 0 10px 0 ($page-header-height/2)+8;
+			padding: 0 15px 0 ($page-header-height/2)+8;
 			position: relative;
 			.separator {
-				box-sizing: border-box;
-				width: 11px;
-				height: $page-header-height;
-				content: '';
+				@include sprite($separator-arrow);
 				display: inline-block;
 				vertical-align: middle;
-			    border-top: ($page-header-height/2) solid transparent;
-			    border-left: ($page-header-height/2)+-8 solid #fff;
-			    border-bottom: ($page-header-height/2) solid transparent;
 			    position: absolute;
 			    right: (-$page-header-height/2)+8;
 			    top: 0;
 			    z-index: 1;
-			    &:after {
-					box-sizing: border-box;
-					content: '';
-					display: block;
-					vertical-align: middle;
-				    border-top: ($page-header-height/2)+5 solid transparent;
-				    border-left: ($page-header-height/2)+-5 solid #607d8b;
-				    border-bottom: ($page-header-height/2)+5 solid transparent;
-				    position: absolute;
-				    top: -24px; 
-					right: (-$page-header-height/2)+20;
-				}
 			}
 		}
 		a{
 			background: #c5d0d8;
-			.separator:after {
-				border-left-color: #c5d0d8;
-			    
+			.separator {
+				@include sprite($separator-arrow-light);
 			}
 		}
 	}

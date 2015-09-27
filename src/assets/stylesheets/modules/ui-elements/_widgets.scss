@@ -1004,6 +1004,7 @@ $lp-listing-cart-height:		196px;
 							background: $color-info-inverse;
 							text-align: center;
 							line-height: 40px;
+							display: block;
 							@include border-radius(4px);
 							.fa{
 								display: inline-block;
@@ -1086,6 +1087,7 @@ $lp-listing-cart-height:		196px;
 						left: 0;
 						z-index: 1;
 						cursor: pointer;
+						display: none;
 						@include transition(all .3s);
 						.fa{
 							display: none;

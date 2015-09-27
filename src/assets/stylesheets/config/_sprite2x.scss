@@ -1,0 +1,147 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$sprite-ico-cart-add-name: 'sprite_ico-cart-add';
+$sprite-ico-cart-add-x: 105px;
+$sprite-ico-cart-add-y: 0px;
+$sprite-ico-cart-add-offset-x: -105px;
+$sprite-ico-cart-add-offset-y: 0px;
+$sprite-ico-cart-add-width: 42px;
+$sprite-ico-cart-add-height: 42px;
+$sprite-ico-cart-add-total-width: 147px;
+$sprite-ico-cart-add-total-height: 192px;
+$sprite-ico-cart-add-image: '../images/sprite@2x.png';
+$sprite-ico-cart-add: (105px, 0px, -105px, 0px, 42px, 42px, 147px, 192px, '../images/sprite@2x.png', 'sprite_ico-cart-add', );
+$sprite-ico-coin-name: 'sprite_ico-coin';
+$sprite-ico-coin-x: 105px;
+$sprite-ico-coin-y: 42px;
+$sprite-ico-coin-offset-x: -105px;
+$sprite-ico-coin-offset-y: -42px;
+$sprite-ico-coin-width: 42px;
+$sprite-ico-coin-height: 42px;
+$sprite-ico-coin-total-width: 147px;
+$sprite-ico-coin-total-height: 192px;
+$sprite-ico-coin-image: '../images/sprite@2x.png';
+$sprite-ico-coin: (105px, 42px, -105px, -42px, 42px, 42px, 147px, 192px, '../images/sprite@2x.png', 'sprite_ico-coin', );
+$sprite-ico-coins-down-name: 'sprite_ico-coins-down';
+$sprite-ico-coins-down-x: 105px;
+$sprite-ico-coins-down-y: 84px;
+$sprite-ico-coins-down-offset-x: -105px;
+$sprite-ico-coins-down-offset-y: -84px;
+$sprite-ico-coins-down-width: 42px;
+$sprite-ico-coins-down-height: 42px;
+$sprite-ico-coins-down-total-width: 147px;
+$sprite-ico-coins-down-total-height: 192px;
+$sprite-ico-coins-down-image: '../images/sprite@2x.png';
+$sprite-ico-coins-down: (105px, 84px, -105px, -84px, 42px, 42px, 147px, 192px, '../images/sprite@2x.png', 'sprite_ico-coins-down', );
+$sprite-ico-creditcart-name: 'sprite_ico-creditcart';
+$sprite-ico-creditcart-x: 105px;
+$sprite-ico-creditcart-y: 126px;
+$sprite-ico-creditcart-offset-x: -105px;
+$sprite-ico-creditcart-offset-y: -126px;
+$sprite-ico-creditcart-width: 42px;
+$sprite-ico-creditcart-height: 42px;
+$sprite-ico-creditcart-total-width: 147px;
+$sprite-ico-creditcart-total-height: 192px;
+$sprite-ico-creditcart-image: '../images/sprite@2x.png';
+$sprite-ico-creditcart: (105px, 126px, -105px, -126px, 42px, 42px, 147px, 192px, '../images/sprite@2x.png', 'sprite_ico-creditcart', );
+$sprite-separator-arrow-light-name: 'sprite_separator-arrow-light';
+$sprite-separator-arrow-light-x: 0px;
+$sprite-separator-arrow-light-y: 78px;
+$sprite-separator-arrow-light-offset-x: 0px;
+$sprite-separator-arrow-light-offset-y: -78px;
+$sprite-separator-arrow-light-width: 36px;
+$sprite-separator-arrow-light-height: 114px;
+$sprite-separator-arrow-light-total-width: 147px;
+$sprite-separator-arrow-light-total-height: 192px;
+$sprite-separator-arrow-light-image: '../images/sprite@2x.png';
+$sprite-separator-arrow-light: (0px, 78px, 0px, -78px, 36px, 114px, 147px, 192px, '../images/sprite@2x.png', 'sprite_separator-arrow-light', );
+$sprite-separator-arrow-name: 'sprite_separator-arrow';
+$sprite-separator-arrow-x: 36px;
+$sprite-separator-arrow-y: 78px;
+$sprite-separator-arrow-offset-x: -36px;
+$sprite-separator-arrow-offset-y: -78px;
+$sprite-separator-arrow-width: 36px;
+$sprite-separator-arrow-height: 114px;
+$sprite-separator-arrow-total-width: 147px;
+$sprite-separator-arrow-total-height: 192px;
+$sprite-separator-arrow-image: '../images/sprite@2x.png';
+$sprite-separator-arrow: (36px, 78px, -36px, -78px, 36px, 114px, 147px, 192px, '../images/sprite@2x.png', 'sprite_separator-arrow', );
+$sprite-status-check-name: 'sprite_status-check';
+$sprite-status-check-x: 0px;
+$sprite-status-check-y: 0px;
+$sprite-status-check-offset-x: 0px;
+$sprite-status-check-offset-y: 0px;
+$sprite-status-check-width: 105px;
+$sprite-status-check-height: 78px;
+$sprite-status-check-total-width: 147px;
+$sprite-status-check-total-height: 192px;
+$sprite-status-check-image: '../images/sprite@2x.png';
+$sprite-status-check: (0px, 0px, 0px, 0px, 105px, 78px, 147px, 192px, '../images/sprite@2x.png', 'sprite_status-check', );
+$spritesheet-width: 147px;
+$spritesheet-height: 192px;
+$spritesheet-image: '../images/sprite@2x.png';
+$spritesheet-sprites: ($sprite-ico-cart-add, $sprite-ico-coin, $sprite-ico-coins-down, $sprite-ico-creditcart, $sprite-separator-arrow-light, $sprite-separator-arrow, $sprite-status-check, );
+$spritesheet: (147px, 192px, '../images/sprite@2x.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    &.#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

@@ -19,17 +19,23 @@ var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
         html: 'build/',
         css: 'build/assets/stylesheets/',
-        img: 'build/images/'
+        img: 'build/assets/images/',
+        sprite: 'src/assets/images/',
+        sprite2x: 'src/assets/images/'
     },
     src: { //Пути откуда брать исходники
         html: 'src/*.html', 
         style: 'src/assets/stylesheets/*.scss',
-        img: 'src/images/**/*.*'
+        img: 'src/assets/images/**/*.*',
+        sprite: 'src/sprite/*.*',
+        sprite2x: 'src/sprite/2x/*.*'
     },
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         html: 'src/**/*.html',
         style: 'src/assets/stylesheets/**/*.scss',
-        img: 'src/images/**/*.*'
+        img: 'src/assets/images/**/*.*',
+        sprite: 'src/sprite/*.*',
+        sprite2x: 'src/sprite/2x/*.*'
     },
     clean: './build'
 };
@@ -79,10 +85,44 @@ gulp.task('image:build', function () {
         .pipe(reload({stream: true}));
 });
 
+gulp.task('sprite:build', function() {
+    var spriteData = 
+        gulp.src(path.src.sprite) // путь, откуда берем картинки для спрайта
+            .pipe(spritesmith({
+                imgName: 'sprite.png',
+                imgPath: '../images/sprite.png',
+                cssName: '_sprite.scss',
+                cssFormat: 'scss',
+                algorithm: 'binary-tree'
+            }));
+
+    spriteData.img.pipe(gulp.dest(path.build.sprite)); // путь, куда сохраняем картинку
+    spriteData.css.pipe(gulp.dest('src/assets/stylesheets/config/')); // путь, куда сохраняем стили
+});
+gulp.task('sprite2x:build', function() {
+    var spriteData = 
+        gulp.src(path.src.sprite2x) // путь, откуда берем картинки для спрайта
+            .pipe(spritesmith({
+                imgName: 'sprite@2x.png',
+                imgPath: '../images/sprite@2x.png',
+                cssName: '_sprite2x.scss',
+                cssFormat: 'scss',
+                cssVarMap: function (sprite) {
+                  sprite.name = 'sprite_' + sprite.name;
+                },
+                algorithm: 'binary-tree'
+            }));
+
+    spriteData.img.pipe(gulp.dest(path.build.sprite2x)); // путь, куда сохраняем картинку
+    spriteData.css.pipe(gulp.dest('src/assets/stylesheets/config/')); // путь, куда сохраняем стили
+});
+
 gulp.task('build', [
     'html:build',
     'style:build',
-    'image:build'
+    'image:build',
+    'sprite:build',
+    'sprite2x:build'
 ]);
 
 gulp.task('watch', function(){
@@ -94,6 +134,12 @@ gulp.task('watch', function(){
     });
     watch([path.watch.img], function(event, cb) {
         gulp.start('image:build');
+    });
+    watch([path.watch.sprite], function(event, cb) {
+        gulp.start('sprite:build');
+    });
+    watch([path.watch.sprite2x], function(event, cb) {
+        gulp.start('sprite2x:build');
     });
 });
 

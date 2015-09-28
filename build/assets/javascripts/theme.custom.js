@@ -3,7 +3,7 @@
 (function( $ ) {
 	$(function() {
 		if (window.matchMedia('(min-width: 770px)').matches) {
-			$('.lp-listing>ul>li:nth-last-of-type(1),.lp-listing>ul>li:nth-last-of-type(2)').hover(function() {
+			$('.lp-listing>ul>li:nth-child(5n+4),.lp-listing>ul>li:nth-child(5n)').hover(function() {
 				$(this).closest('ul').css('left','-170px');
 			},
 			function() {

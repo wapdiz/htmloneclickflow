@@ -419,6 +419,12 @@ html.dark {
 	margin-right: $spacement-xlg !important;
 }
 
+@media screen and(max-width: 992px){
+	.mr-none-sm{
+		margin-right: 0 !important;
+	}
+}
+  
 /* Spacement Padding */
 .p-none {
 	padding: 0 !important;

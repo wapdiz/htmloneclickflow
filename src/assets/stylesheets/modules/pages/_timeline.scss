@@ -455,7 +455,7 @@ $timeline-simple-line-left: 30px;
 			}
 		}
 		.tm-body{
-			padding: 50px 70px 50px 0;
+			padding: 50px 0;
 			margin: 50px 0;
 			.tm-items{
 				.tm-box{
@@ -466,7 +466,7 @@ $timeline-simple-line-left: 30px;
 					}
 					&:after {
 						top: 0;
-						margin-top: 16px;
+						margin-top: 13px;
 					}
 					&:before {
 						content: '';
@@ -479,7 +479,7 @@ $timeline-simple-line-left: 30px;
 						background-color: #fff;
 						width: 16px;
 						height: 16px;
-						margin-top: 14px;
+						margin-top: 11px;
 						@include border-radius(50%);
 					}
 					&.panel{
@@ -502,6 +502,28 @@ $timeline-simple-line-left: 30px;
 // -----------------------------------------------------------------------------
 $timeline-responsive-line-left: 10px;
 $timeline-responsive-simple-line-left: 30px;
+@media only screen and (max-width: 992px) {
+	.panel-options{
+		// margin-bottom: 10px;
+	}
+	.timeline {
+		&.timeline-stream{
+			.tm-body{
+				.tm-items{
+					.tm-box{
+						&.panel{
+							.panel-heading{
+								.label-link{
+									margin-bottom: $spacement-xs;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 @media only screen and (max-width: $screen-ipad) {
 	.timeline {
 		@include tm-icon-small();

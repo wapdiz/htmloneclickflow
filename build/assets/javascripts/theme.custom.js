@@ -9,6 +9,7 @@
 			function() {
 				$(this).closest('ul').css('left','0');
 			});
+			$('.lp-listing>ul>li:nth-child(5n)').each( function () { $(this).parent().after( $(this).nextAll().wrapAll('<ul/>').parent() ) } );
 		}
 
 		$('.timebuttons button').click(function() {
@@ -20,7 +21,6 @@
 		}).on('hidden.bs.collapse', function(){
 			$(this).closest('.panel').find(".panel-actions-collapse").addClass("collapsed");
 		});
-	
 	});
 
 })( jQuery );

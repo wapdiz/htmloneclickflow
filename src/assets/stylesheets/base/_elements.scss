@@ -52,6 +52,9 @@ h6,
 .text-left{
 	text-align: left !important;
 }
+.text-right{
+	text-align: right !important;
+}
 .left{
 	float: left;
 }
@@ -242,9 +245,12 @@ body a {
 }
 .label-link{
 	display: block;
+	vertical-align: top;
 	height: 28px;
     line-height: 28px;
-    @include text-overflow();
+    text-overflow: ellipsis;
+    white-space: nowrap!important;
+
 }
 // LISTS
 // -----------------------------------------------------------------------------
@@ -406,4 +412,10 @@ ul.nav-list.primary > li {
           background-image: url(../images/sprite@2x.png) !important;
           background-size: $spritesheet-width $spritesheet-height !important;
         }
+}
+
+@media screen and(max-width: 992px){
+	.text-left-sm{
+		text-align: left !important;
+	}
 }

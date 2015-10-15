@@ -778,7 +778,10 @@ html.dark {
 .ws-normal {
 	white-space: normal;
 }
-
+.block-center{
+	display: table;
+	margin: 0 auto;
+}
 // BG STATES
 // -----------------------------------------------------------------------------
 .bg-default {

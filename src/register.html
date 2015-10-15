@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="fixed" lang="ru" >
+    <!-- @if(isset($page_settings['sidebar']) && $page_settings['sidebar'] == 'compact')
+        sidebar-left-collapsed
+    @endif -->
+<head>
+    @@include('template/head.html', {
+        "title": "Регистрация"
+    })
+    
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote.css" />
+    <link rel="stylesheet" href="assets/vendor/summernote/summernote-bs3.css" />
+</head>
+<body>
+    <section class="body-sign">
+        <div class="center-sign">
+            <div class="panel panel-sign">
+                <a href="/" class="logo pull-left">
+                    <img src="assets/images/logo.png" height="35" alt="Porto Admin" />
+                </a>
+                <div class="panel-title-sign text-right">
+                    <h2 class="title text-uppercase text-bold m-none">Регистрация</h2>
+                </div>
+                <div class="panel-body">
+                    <form action="/register" method="post">
+                        <input type="hidden" name="_token" value="6anBGneLz2k3njancXZEA6EIS2nTG801n5XOIkCn">
+
+
+
+                                <div class="form-group mb-lg">
+                                    <div class="col-sm-6">
+                                        <label>Имя<span style="color: red">*</span></label>
+                                        <input name="name" type="text" class="form-control input-lg">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>E-mail <span style="color: red">*</span></label>
+                                        <input name="email" type="email" class="form-control input-lg">
+                                    </div>
+                                </div>
+
+                                <p style="padding-top: 10px" class="text-center">
+                                    Платежная информация
+                                </p>
+
+                                <div class="form-group mb-none">
+                                    <div class="col-sm-4 mb-lg">
+                                        <label>WMR <span style="color: red">*</span> </label>
+                                        <input name="WMR" type="text" class="form-control input-lg" pattern="[ZER]+[0-9]{12}">
+                                    </div>
+                                    <div class="col-sm-4 mb-lg">
+                                        <label>WMZ <span style="color: red">*</span> </label>
+                                        <input name="WMZ" type="text" class="form-control input-lg" pattern="[ZER]+[0-9]{12}">
+                                    </div>
+                                    <div class="col-sm-4 mb-lg">
+                                        <label>WME <span style="color: red">*</span> </label>
+                                        <input name="WME" type="text" class="form-control input-lg" pattern="[ZER]+[0-9]{12}">
+                                    </div>
+                                </div>
+
+                                <p style="padding-top: 10px" class="text-center">
+                                    Контакты
+                                </p>
+
+                                <div class="form-group mb-none">
+                                    <div class="col-sm-3 mb-lg">
+                                        <label>Skype</label>
+                                        <input name="skype" type="text" class="form-control input-lg">
+                                    </div>
+                                    <div class="col-sm-3 mb-lg">
+                                        <label>Jabber</label>
+                                        <input name="jabber" type="text" class="form-control input-lg">
+                                    </div>
+                                    <div class="col-sm-3 mb-lg">
+                                        <label>ICQ</label>
+                                        <input name="icq" type="text" class="form-control input-lg">
+                                    </div>
+                                    <div class="col-sm-3 mb-lg">
+                                        <label>Номер телефона</label>
+                                        <input name="phone" type="text" class="form-control input-lg">
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-none">
+                                    <div class="col-sm-6 mb-lg">
+                                        <label>Пароль <span style="color: red">*</span> </label>
+                                        <input name="password" type="password" class="form-control input-lg">
+                                    </div>
+                                    <div class="col-sm-6 mb-lg">
+                                        <label>Подтверждение пароля <span style="color: red">*</span> </label>
+                                        <input name="password_confirmation" type="password" class="form-control input-lg">
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-none">
+                                    <div class="col-sm-6">
+                                        <div class="checkbox-custom checkbox-default">
+                                            <input id="AgreeTerms" name="agreeterms" type="checkbox">
+                                            <label for="AgreeTerms">Я согласен с <a href="#">правилами</a></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 text-right">
+                                        <button type="submit" class="btn btn-primary hidden-xs">Зарегистрироваться</button>
+                                        <button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Зарегистрироваться</button>
+                                    </div>
+                                </div>
+
+                                <span class="mt-lg mb-lg line-thru text-center text-uppercase">
+                                    <span>Или</span>
+                                </span>
+
+                                <p style="padding-top: 10px" class="text-center mb-none">
+                                    Уже зарегистрированы? <a href="/auth">Войдите!</a>
+                                </p>
+                    </form>
+                </div>
+            </div>
+
+            <p class="text-center text-muted mt-md mb-md">© Copyright 2014. All Rights Reserved.</p>
+        </div>
+    </section>
+<!-- {{Блок под алерты}} -->
+    <!-- <div id="alert_message">{{$alert_message}}</div> -->
+@@include('template/foot.html')
+
+<!-- Specific Page Vendor -->
+<script src="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+<script src="assets/vendor/summernote/summernote.js"></script>
+
+<script src="assets/vendor/flot/jquery.flot.js"></script>
+<script src="assets/vendor/flot/jquery.flot.time.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="assets/javascripts/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="assets/javascripts/theme.custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="assets/javascripts/theme.init.js"></script>
+
+</body>
+</html>
